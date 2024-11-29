@@ -13,10 +13,12 @@ import tseslint from "typescript-eslint";
 export default tseslint.config(
 	{
 		ignores: [
-			"coverage*",
+			".vercel",
+			"coverage",
 			"lib",
 			"node_modules",
 			"pnpm-lock.yaml",
+			"src/env.d.ts",
 			"**/*.snap",
 		],
 	},

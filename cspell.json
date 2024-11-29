@@ -9,5 +9,13 @@
 		"node_modules",
 		"pnpm-lock.yaml"
 	],
-	"words": ["squiggleconf", "tseslint"]
+	"words": [
+		"astrojs",
+		"fontsource",
+		"josefin",
+		"konami",
+		"plone",
+		"squiggleconf",
+		"tseslint"
+	]
 }
