@@ -1,0 +1,30 @@
+---
+interface Props {
+	class?: string;
+	width?: "normal" | "wide";
+}
+
+const { class: className, width = "normal", ...rest } = Astro.props;
+---
+
+<div
+	class:list={["content-area", `content-area-${width}`, className]}
+	{...rest}
+>
+	<slot />
+</div>
+
+<style>
+	.content-area {
+		padding: 0 2rem;
+		max-width: 100%;
+		margin: auto;
+	}
+
+	.content-area-normal {
+		width: var(--sizeContentAreaNormal);
+	}
+	.content-area-wide {
+		width: var(--sizeContentAreaWide);
+	}
+</style>

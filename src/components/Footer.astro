@@ -1,0 +1,28 @@
+---
+import ContentArea from "./ContentArea.astro";
+---
+
+<footer>
+	<ContentArea class="footer-content-area" width="wide">
+		<div>SquiggleConf</div>
+		<div>
+			<div>
+				<a href="https://shop.squiggle.tools">Shop</a>
+				<a href="/code-of-conduct">Code of Conduct</a>
+			</div>
+			<div>Social Links Here</div>
+		</div>
+	</ContentArea>
+</footer>
+
+<style>
+	footer {
+		padding: 2rem;
+		width: 100%;
+	}
+
+	.footer-content-area {
+		display: flex;
+		justify-content: space-between;
+	}
+</style>

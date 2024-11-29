@@ -1,0 +1,42 @@
+:root {
+	/* Raw swatches */
+	--colorWhite: #ffffff;
+	--colorBlue1: #bcdfe9;
+	--colorBlue2: #29ced6;
+	--colorBlue3: #116d9a;
+	--colorBlue4: #063052;
+	--colorBlue5: #041930;
+
+	--colorLight: var(--colorWhite);
+	--colorLightAccent: var(--colorBlue1);
+	--colorSecondAccent: var(--colorBlue2);
+	--colorMediumAccent: var(--colorBlue3);
+	--colorDarkAccent: var(--colorBlue4);
+	--colorDark: var(--colorBlue5);
+
+	--sizeContentAreaNormal: 63rem;
+	--sizeContentAreaWide: 70rem;
+
+	color-scheme: light;
+
+	/* colors */
+}
+
+html {
+	background: var(--colorDark);
+	color: var(--colorLight);
+	min-height: 100%;
+}
+
+html.dark {
+	color-scheme: dark;
+
+	/* Colors TBD */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html,
+	body {
+		scroll-behavior: smooth;
+	}
+}

@@ -1,0 +1,23 @@
+---
+// import "@fontsource-variable/josefin-sans";
+// import "@fontsource/urbanist";
+
+import Head, { Props as HeadProps } from "~/components/Head.astro";
+import Header from "~/components/Header.astro";
+import BodyArea from "~/components/BodyArea.astro";
+import Footer from "~/components/Footer.astro";
+
+import "./base.css";
+import "./normalize.css";
+
+type Props = HeadProps;
+---
+
+<html lang="en">
+	<Head {...Astro.props} />
+	<Header />
+	<BodyArea>
+		<slot />
+	</BodyArea>
+	<Footer />
+</html>

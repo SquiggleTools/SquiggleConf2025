@@ -1,0 +1,108 @@
+---
+export interface Props {
+	description: string;
+	title?: string;
+}
+
+const { description } = Astro.props;
+
+const image = new URL("favicon.png", Astro.site).toString();
+
+const keywords = [
+	"squiggleconf",
+	"conference",
+	"devtools",
+	"javascript",
+	"typescript",
+	"rust",
+	"static analysis",
+];
+
+const title = [
+	Astro.props.title,
+	"SquiggleConf 2025",
+	"Supercharging web devs and their tools",
+]
+	.filter(Boolean)
+	.join(" | ");
+
+const metaPairs = [
+	{
+		content: description,
+		name: `description`,
+	},
+	{
+		content: keywords.join(),
+		name: `keywords`,
+	},
+	{
+		content: title,
+		property: `og:title`,
+	},
+	{
+		content: description,
+		property: `og:description`,
+	},
+	{
+		content: image,
+		property: `og:image`,
+	},
+	{
+		content: image,
+		property: `og:image:secure_url`,
+	},
+	{
+		content: `website`,
+		property: `og:type`,
+	},
+	{
+		content: Astro.url,
+		property: `og:url`,
+	},
+	{
+		content: image,
+		name: `thumbnail`,
+	},
+	{
+		content: `summary`,
+		name: `twitter:card`,
+	},
+	{
+		content: Astro.site,
+		name: `twitter:domain`,
+	},
+	{
+		content: "Josh Goldberg",
+		name: `twitter:creator`,
+	},
+	{
+		content: image,
+		name: `twitter:image`,
+	},
+	{
+		content: `@JoshuaKGoldberg`,
+		name: `twitter:site`,
+	},
+	{
+		content: title,
+		name: `twitter:title`,
+	},
+	{
+		content: description,
+		name: `twitter:description`,
+	},
+];
+---
+
+<head>
+	<meta charset="utf-8" />
+	<link href="/favicon.png" rel="icon" type="image/svg+xml" />
+	<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+	{metaPairs.map((meta) => <meta {...meta} />)}
+	<meta content={description} name="description" />
+	<meta content={keywords.join()} name="keywords" />
+	<meta content={Astro.generator} name="generator" />
+	<meta content="width=device-width" name="viewport" />
+	<meta content="SquiggleConf 2025" name="apple-mobile-web-app-title" />
+	<title>{title}</title>
+</head>

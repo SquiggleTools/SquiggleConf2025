@@ -1,0 +1,32 @@
+---
+import ContentArea from "./ContentArea.astro";
+---
+
+<header>
+	<ContentArea class="header-content-area" width="wide">
+		<a href="/">SquiggleConf</a>
+		<div class="header-links">
+			<a href="/">Home</a>
+			<a href="https://2024.squiggleconf.com">2024 Conf</a>
+			<button>Register</button>
+		</div>
+	</ContentArea>
+</header>
+
+<style>
+	header {
+		border-bottom: 1px solid var(--colorMediumAccent);
+		padding: 2rem;
+		width: 100%;
+	}
+
+	.header-content-area {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.header-links {
+		display: flex;
+		gap: 2rem;
+	}
+</style>
