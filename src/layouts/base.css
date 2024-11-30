@@ -17,11 +17,11 @@
 	--fontFamilyLogo: "Josefin Sans Variable";
 	--fontFamilyText: "Urbanist Variable";
 
-	--fontSizeSmall: 1.15rem;
-	--fontSizeMedium: 1.5rem;
-	--fontSizeLarge: 2rem;
-	--fontSizeHero: 3rem;
-	--fontSizeLogo: 2.25rem;
+	--fontSizeSmall: clamp(1rem, 2.5vw, 1.15rem);
+	--fontSizeMedium: clamp(1.25rem, 3.25vw, 1.5rem);
+	--fontSizeLarge: clamp(1.5rem, 3.75vw, 2rem);
+	--fontSizeHero: clamp(2rem, 5vw, 3rem);
+	--fontSizeLogo: clamp(1.75rem, 4.375vw, 2.25rem);
 
 	--fontWeightLight: 200;
 	--fontWeightMedium: 300;

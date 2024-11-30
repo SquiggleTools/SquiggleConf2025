@@ -1,5 +1,6 @@
 ---
 import ContentArea from "./ContentArea.astro";
+import InlineBlock from "./InlineBlock.astro";
 import Logo from "./Logo.astro";
 import Socials from "./Socials.astro";
 ---
@@ -8,7 +9,10 @@ import Socials from "./Socials.astro";
 	<ContentArea class="footer-content-area" width="wide">
 		<div class="left">
 			<Logo />
-			<div>September 18-19, 2025 · Boston New England Aquarium</div>
+			<div>
+				<InlineBlock>September 18-19, 2025 · </InlineBlock>
+				<InlineBlock>Boston New England Aquarium</InlineBlock>
+			</div>
 		</div>
 		<div class="right">
 			<div class="footer-links">

@@ -1,22 +1,24 @@
 ---
 import ContentArea from "./ContentArea.astro";
+import InlineBlock from "./InlineBlock.astro";
 import TextSquiggly from "./TextSquiggly.astro";
 ---
 
 <ContentArea as="section">
 	<div class="locators">
-		<span class="date">September 18-19, 2025</span>
-		·
-		<span class="location">Boston New England Aquarium</span>
+		<InlineBlock class="date">September 18-19, 2025 ·</InlineBlock>
+		<InlineBlock class="location">Boston New England Aquarium</InlineBlock>
 	</div>
 
 	<div class="tagline">
 		SquiggleConf brings together the admirers, contributors, and maintainers of
 		the latest and greatest in
-		<TextSquiggly width="wide">
-			<Fragment slot="inside">web dev tooling</Fragment>
-			<Fragment slot="after">.</Fragment>
-		</TextSquiggly>
+		<InlineBlock>
+			<TextSquiggly width="wide">
+				<Fragment slot="inside">web dev tooling</Fragment>
+				<Fragment slot="after">.</Fragment>
+			</TextSquiggly>
+		</InlineBlock>
 	</div>
 </ContentArea>
 
@@ -26,7 +28,7 @@ import TextSquiggly from "./TextSquiggly.astro";
 		font-size: var(--fontSizeMedium);
 		font-weight: var(--fontWeightSemibold);
 		letter-spacing: var(--letterSpacingTight);
-		padding: 4.5rem 0 2.75rem;
+		padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(1.5rem, 5vw, 2.75rem);
 	}
 
 	.tagline {

@@ -13,7 +13,6 @@ import Logo from "./Logo.astro";
 			<div class="header-contents-mobile">
 				<a href="/">Home</a>
 				<a href="https://2024.squiggleconf.com">2024 Conf</a>
-				<hr />
 				<Button class="header-button" variant="accent">Register</Button>
 			</div>
 		</details>
@@ -107,9 +106,9 @@ import Logo from "./Logo.astro";
 		z-index: 1;
 	}
 
-	hr {
-		margin: 2rem 0 2.5rem 50%;
-		width: 50%;
+	.header-content-area-mobile button {
+		align-self: end;
+		margin-top: 1rem;
 	}
 
 	.header-content-area-wide {
