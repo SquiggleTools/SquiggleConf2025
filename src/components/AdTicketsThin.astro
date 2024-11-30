@@ -1,10 +1,44 @@
 ---
+import tripleSquiggly from "~/assets/design/triple-squiggly.svg";
+
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
 ---
 
-<section>
-	<ContentArea>
-		<Button>Get extra early bird tickets now!</Button>
+<section class="ad-tickets-thin">
+	<div
+		class="triple-squiggly"
+		style={{ "background-image": `url(${tripleSquiggly.src})` }}
+	>
+	</div>
+	<ContentArea class="ad-tickets-content">
+		<Button size="large" variant="accent"
+			>Get extra early bird tickets now!</Button
+		>
 	</ContentArea>
 </section>
+
+<style>
+	.ad-tickets-thin {
+		align-items: center;
+		display: flex;
+		padding: 2rem 0;
+		position: relative;
+		margin: 1.5rem 0;
+	}
+
+	.triple-squiggly {
+		opacity: 0.9;
+		position: absolute;
+		width: 100%;
+		background-repeat: repeat-x;
+		background-size: contain;
+		display: block;
+		height: 9rem;
+	}
+
+	.ad-tickets-content {
+		position: relative;
+		z-index: 1;
+	}
+</style>

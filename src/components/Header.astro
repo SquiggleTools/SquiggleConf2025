@@ -12,7 +12,7 @@ import Logo from "./Logo.astro";
 			<a class="header-link-inactive" href="https://2024.squiggleconf.com"
 				>2024 Conf</a
 			>
-			<Button variant="accent">Register</Button>
+			<Button class="header-button" variant="accent">Register</Button>
 		</div>
 	</ContentArea>
 </header>
@@ -44,5 +44,9 @@ import Logo from "./Logo.astro";
 
 	.header-link-inactive {
 		text-decoration: none;
+	}
+
+	.header-button {
+		margin-left: 0.35rem;
 	}
 </style>

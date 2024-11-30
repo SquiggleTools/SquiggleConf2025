@@ -1,28 +1,61 @@
 ---
 interface Props {
+	class?: string;
+	size?: "normal" | "large";
 	variant: "accent" | "light";
 }
+
+const { class: className, size = "normal", variant, ...rest } = Astro.props;
 ---
 
-<button class:list={["button", `button-${Astro.props.variant}`]}>
+<button
+	class:list={[
+		"button",
+		`button-size-${size}`,
+		`button-variant-${variant}`,
+		className,
+	]}
+	{...rest}
+>
 	<slot />
 </button>
 
 <style>
 	.button {
 		border: 0;
-		border-radius: 2rem;
 		font-family: inherit;
-		font-size: inherit;
-		padding: 0.75rem 1.5rem;
+		cursor: pointer;
 	}
 
-	.button-accent {
+	.button-size-normal {
+		border-radius: 2rem;
+		font-size: inherit;
+		padding: 0.65rem 1.25rem;
+	}
+
+	.button-size-large {
+		border-radius: 4rem;
+		font-size: 1.5rem;
+		padding: 0.85rem 2rem;
+	}
+
+	.button-variant-accent {
 		background: var(--colorAccentMedium);
 		color: var(--colorLight);
 	}
 
-	.button-light {
+	.button-variant-accent:active {
+		background: var(--colorAccentSecond);
+		color: var(--colorDark);
+	}
+
+	.button-variant-accent:focus,
+	.button-variant-accent:hover {
+		background: var(--colorAccentLight);
+		color: var(--colorDark);
+	}
+
+	.button-variant-light {
 		background: var(--colorLight);
 		color: var(--colorDark);
 	}
