@@ -29,7 +29,6 @@ const { renderAs: As = "em", width } = Astro.props;
 		display: inline-block;
 		font-style: inherit;
 		position: relative;
-		user-select: none;
 	}
 
 	.text {
@@ -40,6 +39,7 @@ const { renderAs: As = "em", width } = Astro.props;
 	.squiggly {
 		position: absolute;
 		left: 0;
+		user-select: none;
 		width: 100%;
 	}
 

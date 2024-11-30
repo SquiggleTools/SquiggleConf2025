@@ -22,6 +22,7 @@ import Socials from "./Socials.astro";
 
 <style>
 	footer {
+		color: var(--colorAccentLight);
 		font-size: var(--fontSizeSmall);
 		font-weight: var(--fontWeightLight);
 		padding: 4rem 0 3rem;
@@ -30,18 +31,18 @@ import Socials from "./Socials.astro";
 
 	.footer-content-area {
 		display: flex;
+		flex-direction: column;
+		gap: 3rem;
 		justify-content: space-between;
 	}
 
 	.left {
-		color: var(--colorAccentLight);
 		display: flex;
 		flex-direction: column;
 		gap: 0.75rem;
 	}
 
 	.right {
-		align-items: flex-end;
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
@@ -54,5 +55,16 @@ import Socials from "./Socials.astro";
 
 	.footer-links a {
 		text-decoration: none;
+	}
+
+	@media (width >= 777px) {
+		.footer-content-area {
+			flex-direction: row;
+		}
+
+		.right {
+			align-items: flex-end;
+			color: var(--colorLight);
+		}
 	}
 </style>

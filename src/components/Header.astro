@@ -5,7 +5,21 @@ import Logo from "./Logo.astro";
 ---
 
 <header>
-	<ContentArea class="header-content-area" width="wide">
+	<ContentArea class="header-content-area-mobile">
+		<a class="logo" href="/"><Logo /></a>
+
+		<details id="details">
+			<summary aria-label="Toggle header">≡</summary>
+			<div class="header-contents-mobile">
+				<a href="/">Home</a>
+				<a href="https://2024.squiggleconf.com">2024 Conf</a>
+				<hr />
+				<Button class="header-button" variant="accent">Register</Button>
+			</div>
+		</details>
+	</ContentArea>
+
+	<ContentArea class="header-content-area-wide" width="wide">
 		<a class="logo" href="/"><Logo /></a>
 		<div class="header-links">
 			<a href="/">Home</a>
@@ -17,6 +31,17 @@ import Logo from "./Logo.astro";
 	</ContentArea>
 </header>
 
+<script>
+	const details = document.querySelector(
+		"details#details",
+	) as HTMLDetailsElement;
+	details.addEventListener("click", (event) => {
+		if ((event.target as Partial<HTMLElement>).tagName === "A") {
+			details.removeAttribute("open");
+		}
+	});
+</script>
+
 <style>
 	header {
 		border-bottom: 1px solid var(--colorAccentMedium);
@@ -25,14 +50,70 @@ import Logo from "./Logo.astro";
 		width: 100%;
 	}
 
-	.header-content-area {
-		align-items: center;
-		display: flex;
-		justify-content: space-between;
-	}
-
 	.logo {
 		text-decoration: none;
+	}
+
+	.header-content-area-mobile {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	details {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 2;
+		text-align: right;
+	}
+
+	summary {
+		display: inline-block;
+		cursor: pointer;
+		font-size: 4rem;
+		list-style: none;
+		padding: 0 1rem;
+		position: relative;
+		z-index: 2;
+	}
+
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.header-contents-mobile {
+		--offsetTop: 4.5rem;
+
+		background: var(--colorDark);
+		box-shadow: 0 0 1rem var(--colorTextShadow);
+		display: flex;
+		flex-direction: column;
+		font-size: var(--fontSizeLarge);
+		font-weight: bold;
+		line-height: 1.5;
+		margin-top: calc(var(--offsetTop) * -1);
+		min-width: 20rem;
+		padding: var(--offsetTop) 1rem 1rem;
+		position: absolute;
+		right: 0;
+		text-align: right;
+		width: 50%;
+		z-index: 1;
+	}
+
+	hr {
+		margin: 2rem 0 2.5rem 50%;
+		width: 50%;
+	}
+
+	.header-content-area-wide {
+		display: none;
 	}
 
 	.header-links {
@@ -48,5 +129,17 @@ import Logo from "./Logo.astro";
 
 	.header-button {
 		margin-left: 0.35rem;
+	}
+
+	@media (width >= 777px) {
+		.header-content-area-mobile {
+			display: none;
+		}
+
+		.header-content-area-wide {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 </style>
