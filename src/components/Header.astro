@@ -1,7 +1,15 @@
 ---
+import { links } from "~/data/links";
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
 import Logo from "./Logo.astro";
+
+function hrefProps(pathname: string) {
+	return {
+		class: Astro.url.pathname === pathname ? "" : "header-link-inactive",
+		href: pathname,
+	};
+}
 ---
 
 <header>
@@ -11,9 +19,15 @@ import Logo from "./Logo.astro";
 		<details id="details">
 			<summary aria-label="Toggle header">≡</summary>
 			<div class="header-contents-mobile">
-				<a href="/">Home</a>
-				<a href="https://2024.squiggleconf.com">2024 Conf</a>
-				<Button class="header-button" variant="accent">Register</Button>
+				<a {...hrefProps("/")}>Home</a>
+				<a {...hrefProps("https://2024.squiggleconf.com")}>2024 Conf</a>
+				<Button
+					as="a"
+					class="header-button"
+					href={links.tickets}
+					target="_blank"
+					variant="accent">Register</Button
+				>
 			</div>
 		</details>
 	</ContentArea>
@@ -21,11 +35,15 @@ import Logo from "./Logo.astro";
 	<ContentArea class="header-content-area-wide" width="wide">
 		<a class="logo" href="/"><Logo /></a>
 		<div class="header-links">
-			<a href="/">Home</a>
-			<a class="header-link-inactive" href="https://2024.squiggleconf.com"
-				>2024 Conf</a
+			<a {...hrefProps("/")}>Home</a>
+			<a {...hrefProps("https://2024.squiggleconf.com")}>2024 Conf</a>
+			<Button
+				as="a"
+				class="header-button"
+				href={links.tickets}
+				target="_blank"
+				variant="accent">Register</Button
 			>
-			<Button class="header-button" variant="accent">Register</Button>
 		</div>
 	</ContentArea>
 </header>
@@ -57,10 +75,6 @@ import Logo from "./Logo.astro";
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-	}
-
-	a {
-		text-decoration: none;
 	}
 
 	details {

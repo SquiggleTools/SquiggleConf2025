@@ -1,14 +1,23 @@
 ---
-interface Props {
+import { HTMLTag, Polymorphic } from "astro/types";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{
+	as: Tag;
 	class?: string;
 	size?: "normal" | "large";
 	variant: "accent" | "light";
-}
+}>;
 
-const { class: className, size = "normal", variant, ...rest } = Astro.props;
+const {
+	as: As,
+	class: className,
+	size = "normal",
+	variant,
+	...rest
+} = Astro.props;
 ---
 
-<button
+<As
 	class:list={[
 		"button",
 		`button-size-${size}`,
@@ -18,13 +27,14 @@ const { class: className, size = "normal", variant, ...rest } = Astro.props;
 	{...rest}
 >
 	<slot />
-</button>
+</As>
 
 <style>
 	.button {
 		border: 0;
-		font-family: inherit;
 		cursor: pointer;
+		font-family: inherit;
+		text-decoration: none;
 	}
 
 	.button-size-normal {

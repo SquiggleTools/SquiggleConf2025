@@ -3,6 +3,7 @@ import tripleSquiggly from "~/assets/design/triple-squiggly.svg";
 
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
+import { links } from "~/data/links";
 ---
 
 <section class="ad-tickets-thin">
@@ -12,8 +13,12 @@ import ContentArea from "./ContentArea.astro";
 	>
 	</div>
 	<ContentArea class="ad-tickets-content">
-		<Button size="large" variant="accent"
-			>Get extra early bird tickets now!</Button
+		<Button
+			as="a"
+			size="large"
+			variant="accent"
+			href={links.tickets}
+			target="_blank">Get extra early bird tickets now!</Button
 		>
 	</ContentArea>
 </section>

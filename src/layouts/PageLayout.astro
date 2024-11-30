@@ -1,23 +1,17 @@
 ---
-import "@fontsource-variable/josefin-sans";
-import "@fontsource-variable/urbanist";
-
-import Head, { Props as HeadProps } from "~/components/Head.astro";
+import { Props as HeadProps } from "~/components/Head.astro";
 import Header from "~/components/Header.astro";
 import BodyArea from "~/components/BodyArea.astro";
 import Footer from "~/components/Footer.astro";
-
-import "./base.css";
-import "./normalize.css";
+import BaseLayout from "./BaseLayout.astro";
 
 type Props = HeadProps;
 ---
 
-<html lang="en">
-	<Head {...Astro.props} />
+<BaseLayout {...Astro.props}>
 	<Header />
 	<BodyArea>
 		<slot />
 	</BodyArea>
 	<Footer />
-</html>
+</BaseLayout>

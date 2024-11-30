@@ -1,0 +1,16 @@
+---
+import "@fontsource-variable/josefin-sans";
+import "@fontsource-variable/urbanist";
+
+import Head, { Props as HeadProps } from "~/components/Head.astro";
+
+import "./base.css";
+import "./normalize.css";
+
+type Props = HeadProps;
+---
+
+<html lang="en">
+	<Head {...Astro.props} />
+	<slot />
+</html>
