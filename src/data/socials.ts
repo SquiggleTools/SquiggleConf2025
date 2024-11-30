@@ -4,7 +4,7 @@ import github from "../assets/logos/github.svg";
 import linkedin from "../assets/logos/linkedin.svg";
 import mastodon from "../assets/logos/mastodon.svg";
 import twitter from "../assets/logos/twitter.svg";
-import youtube from "../assets/logos/YouTube.svg";
+import youtube from "../assets/logos/youtube.svg";
 
 export const socials = [
 	{
