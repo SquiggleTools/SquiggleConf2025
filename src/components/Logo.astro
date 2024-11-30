@@ -1,4 +1,5 @@
 ---
+import EmphasizedText from "./EmphasizedText.astro";
 import TextSquiggly from "./TextSquiggly.astro";
 ---
 
@@ -7,10 +8,12 @@ import TextSquiggly from "./TextSquiggly.astro";
 		<Fragment slot="inside">Squiggle</Fragment>
 		<Fragment slot="after">Conf</Fragment>
 	</TextSquiggly>
+	<EmphasizedText>2025</EmphasizedText>
 </div>
 
 <style>
 	.logo {
+		color: var(--colorLight);
 		font-family: var(--fontFamilyLogo);
 		font-size: var(--fontSizeLogo);
 		font-weight: var(--fontWeightLogo);

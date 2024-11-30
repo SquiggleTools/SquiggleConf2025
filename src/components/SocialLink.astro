@@ -1,0 +1,34 @@
+---
+import { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+	alt: string;
+	href: string;
+	inverted?: boolean;
+	src: ImageMetadata;
+}
+---
+
+<a
+	class:list={["social-link", Astro.props.inverted && "social-link-inverted"]}
+	href={Astro.props.href}
+	target="_blank"
+>
+	<Image alt={Astro.props.alt} class="social-image" src={Astro.props.src} />
+</a>
+
+<style>
+	.social-link {
+		align-items: center;
+		display: flex;
+		gap: 0.5rem;
+		flex-direction: row;
+		text-decoration: none;
+	}
+
+	.social-image {
+		height: 2rem;
+		width: 2rem;
+	}
+</style>

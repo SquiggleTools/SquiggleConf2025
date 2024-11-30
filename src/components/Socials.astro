@@ -1,0 +1,16 @@
+---
+import { socials } from "~/data/socials";
+
+import SocialLink from "./SocialLink.astro";
+---
+
+<div class="socials">
+	{socials.map((social) => <SocialLink {...social} />)}
+</div>
+
+<style>
+	.socials {
+		display: flex;
+		gap: 1rem;
+	}
+</style>

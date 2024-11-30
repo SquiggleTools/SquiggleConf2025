@@ -27,8 +27,9 @@ const { renderAs: As = "em", width } = Astro.props;
 <style>
 	.text-squiggly {
 		display: inline-block;
-		position: relative;
 		font-style: inherit;
+		position: relative;
+		user-select: none;
 	}
 
 	.text {

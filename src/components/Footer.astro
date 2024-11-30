@@ -1,31 +1,58 @@
 ---
 import ContentArea from "./ContentArea.astro";
+import Logo from "./Logo.astro";
+import Socials from "./Socials.astro";
 ---
 
 <footer>
 	<ContentArea class="footer-content-area" width="wide">
-		<div>
-			<div>SquiggleConf</div>
+		<div class="left">
+			<Logo />
 			<div>September 18-19, 2025 · Boston New England Aquarium</div>
 		</div>
-		<div>
-			<div>
+		<div class="right">
+			<div class="footer-links">
 				<a href="https://shop.squiggle.tools">Shop</a>
 				<a href="/code-of-conduct">Code of Conduct</a>
 			</div>
-			<div>Social Links Here</div>
+			<Socials />
 		</div>
 	</ContentArea>
 </footer>
 
 <style>
 	footer {
-		padding: 2rem 0;
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightLight);
+		padding: 4rem 0 3rem;
 		width: 100%;
 	}
 
 	.footer-content-area {
 		display: flex;
 		justify-content: space-between;
+	}
+
+	.left {
+		color: var(--colorAccentLight);
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.right {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.footer-links {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.footer-links a {
+		text-decoration: none;
 	}
 </style>
