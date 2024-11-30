@@ -37,6 +37,11 @@ const {
 		text-decoration: none;
 	}
 
+	.button[disabled] {
+		opacity: 0.8;
+		cursor: not-allowed;
+	}
+
 	.button-size-normal {
 		border-radius: 2rem;
 		font-size: var(--fontSizeSmall);
@@ -66,8 +71,8 @@ const {
 		color: var(--colorDark);
 	}
 
-	.button:focus:not(:active),
-	.button:hover:not(:active) {
+	.button:focus:not(:active, [disabled]),
+	.button:hover:not(:active, [disabled]) {
 		background: var(--colorAccentLight);
 		color: var(--colorDark);
 	}

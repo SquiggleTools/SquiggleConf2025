@@ -13,6 +13,7 @@
 	--colorAccentDark: var(--colorBlue4);
 	--colorDark: var(--colorBlue5);
 	--colorLight: var(--colorWhite);
+	--colorUnhappy: #ffbfc2;
 
 	--fontFamilyLogo: "Josefin Sans Variable";
 	--fontFamilyText: "Urbanist Variable";
