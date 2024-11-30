@@ -48,15 +48,19 @@ import TextSquiggly from "./TextSquiggly.astro";
 	}
 
 	form {
+		align-items: center;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		font-size: var(--fontSizeSmall);
 	}
 
 	.email-input {
-		padding: 1rem 0.5rem;
+		border: none;
+		border-radius: 3px;
 		font-family: var(--fontFamilyText);
+		font-size: var(--fontSizeSmall);
 		margin: 0.5rem 0 1rem;
+		padding: 1rem 0.5rem;
 		width: 25rem;
 	}
 
