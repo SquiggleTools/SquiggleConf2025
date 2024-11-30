@@ -1,4 +1,12 @@
-<p class="body-text">
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<p class:list={["body-text", className]} {...rest}>
 	<slot />
 </p>
 

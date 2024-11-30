@@ -2,7 +2,7 @@
 export interface Props {
 	as?: string;
 	class?: string;
-	width?: "normal" | "wide";
+	width?: "thin" | "normal" | "wide";
 }
 
 const {
@@ -24,9 +24,14 @@ const {
 		margin: auto;
 	}
 
+	.content-area-thin {
+		width: var(--sizeContentAreaThin);
+	}
+
 	.content-area-normal {
 		width: var(--sizeContentAreaNormal);
 	}
+
 	.content-area-wide {
 		width: var(--sizeContentAreaWide);
 	}
