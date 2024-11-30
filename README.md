@@ -18,13 +18,8 @@
 ## Usage
 
 ```shell
-npm i SquiggleConf2025
-```
-
-```ts
-import { greet } from "SquiggleConf2025";
-
-greet("Hello, world! 💖");
+pnpm i
+pnpm dev
 ```
 
 ## Contributors

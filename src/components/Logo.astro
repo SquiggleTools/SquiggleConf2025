@@ -8,7 +8,7 @@ import TextSquiggly from "./TextSquiggly.astro";
 		<Fragment slot="inside">Squiggle</Fragment>
 		<Fragment slot="after">Conf</Fragment>
 	</TextSquiggly>
-	<EmphasizedText>2025</EmphasizedText>
+	<EmphasizedText class="year">2025</EmphasizedText>
 </div>
 
 <style>
@@ -18,5 +18,10 @@ import TextSquiggly from "./TextSquiggly.astro";
 		font-size: var(--fontSizeLogo);
 		font-weight: var(--fontWeightLogo);
 		letter-spacing: var(--letterSpacingLogo);
+	}
+
+	.year {
+		font-family: var(--fontFamilyText);
+		font-weight: 300;
 	}
 </style>
