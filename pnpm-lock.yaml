@@ -17,7 +17,7 @@ importers:
       '@fontsource-variable/josefin-sans':
         specifier: ^5.1.0
         version: 5.1.0
-      '@fontsource/urbanist':
+      '@fontsource-variable/urbanist':
         specifier: ^5.1.0
         version: 5.1.0
       '@konami-emoji-blast/astro':
@@ -822,8 +822,8 @@ packages:
   '@fontsource-variable/josefin-sans@5.1.0':
     resolution: {integrity: sha512-QePgC0aZAm/Xlc0/3w7BKxNqAIIlqRmatbOEPGVy4fqX16f32q154ipM7lKc48Rm4xjVWre+6ZkEIkZYRy3erQ==}
 
-  '@fontsource/urbanist@5.1.0':
-    resolution: {integrity: sha512-TZ+88RPsWRlYommhhHYt9SBIJNDgEtH/AMlpYwCWzTGZSU0Oec89MYbJgqNJ7m1gknLoNFe5MRVBqbH/kHJdsA==}
+  '@fontsource-variable/urbanist@5.1.0':
+    resolution: {integrity: sha512-bYfFwU9rutDpLjWFyAx8kmXmli7Y5y1gJFGsJogHic9TqN/nySRSodpM4B+bW+f5bDt+YpzHQ2w3PGOsWIvYaQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -4449,7 +4449,7 @@ snapshots:
 
   '@fontsource-variable/josefin-sans@5.1.0': {}
 
-  '@fontsource/urbanist@5.1.0': {}
+  '@fontsource-variable/urbanist@5.1.0': {}
 
   '@humanfs/core@0.19.1': {}
 

@@ -1,3 +1,29 @@
-<button>
+---
+interface Props {
+	variant: "accent" | "light";
+}
+---
+
+<button class:list={["button", `button-${Astro.props.variant}`]}>
 	<slot />
 </button>
+
+<style>
+	.button {
+		border: 0;
+		border-radius: 2rem;
+		font-family: inherit;
+		font-size: inherit;
+		padding: 0.75rem 1.5rem;
+	}
+
+	.button-accent {
+		background: var(--colorAccentMedium);
+		color: var(--colorLight);
+	}
+
+	.button-light {
+		background: var(--colorLight);
+		color: var(--colorDark);
+	}
+</style>

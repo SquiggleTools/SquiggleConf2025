@@ -14,10 +14,24 @@
 	--colorDark: var(--colorBlue5);
 	--colorLight: var(--colorWhite);
 
-	--fontFamily: "Urbanist";
+	--fontFamilyLogo: "Josefin Sans Variable";
+	--fontFamilyText: "Urbanist Variable";
 
-	--sizeContentAreaNormal: 67rem;
-	--sizeContentAreaWide: 70rem;
+	--fontSizeSmall: 1.15rem;
+	--fontSizeMedium: 1.5rem;
+	--fontSizeLarge: 3rem;
+	--fontSizeLogo: 2.25rem;
+
+	--fontWeightLight: 200;
+	--fontWeightMedium: 300;
+	--fontWeightSemibold: 500;
+	--fontWeightLogo: 600;
+
+	--letterSpacingLogo: -1px;
+	--letterSpacingTight: -0.5px;
+
+	--sizeContentAreaNormal: 70rem;
+	--sizeContentAreaWide: 75rem;
 
 	color-scheme: light;
 
@@ -28,7 +42,7 @@ html {
 	background: var(--colorDark);
 	color: var(--colorLight);
 	min-height: 100%;
-	font-family: var(--fontFamily);
+	font-family: var(--fontFamilyText);
 }
 
 html.dark {

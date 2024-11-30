@@ -1,14 +1,18 @@
 ---
+import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
+import Logo from "./Logo.astro";
 ---
 
 <header>
 	<ContentArea class="header-content-area" width="wide">
-		<a href="/">SquiggleConf</a>
+		<a class="logo" href="/"><Logo /></a>
 		<div class="header-links">
 			<a href="/">Home</a>
-			<a href="https://2024.squiggleconf.com">2024 Conf</a>
-			<button>Register</button>
+			<a class="header-link-inactive" href="https://2024.squiggleconf.com"
+				>2024 Conf</a
+			>
+			<Button variant="accent">Register</Button>
 		</div>
 	</ContentArea>
 </header>
@@ -16,17 +20,29 @@ import ContentArea from "./ContentArea.astro";
 <style>
 	header {
 		border-bottom: 1px solid var(--colorAccentMedium);
-		padding: 2rem 0;
+		font-size: var(--fontSizeSmall);
+		padding: 1.5rem 0;
 		width: 100%;
 	}
 
 	.header-content-area {
+		align-items: center;
 		display: flex;
 		justify-content: space-between;
 	}
 
+	.logo {
+		text-decoration: none;
+	}
+
 	.header-links {
 		display: flex;
+		align-items: center;
+		font-weight: var(--fontWeightLight);
 		gap: 2rem;
+	}
+
+	.header-link-inactive {
+		text-decoration: none;
 	}
 </style>

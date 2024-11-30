@@ -1,16 +1,36 @@
 ---
 import ContentArea from "./ContentArea.astro";
+import TextSquiggly from "./TextSquiggly.astro";
 ---
 
 <ContentArea as="section">
 	<div class="locators">
-		<div class="date">September 18-19, 2025</div>
+		<span class="date">September 18-19, 2025</span>
 		·
-		<div class="location">Boston New England Aquarium</div>
+		<span class="location">Boston New England Aquarium</span>
 	</div>
 
 	<div class="tagline">
 		SquiggleConf brings together the admirers, contributors, and maintainers of
-		the latest and greatest in web dev tooling.
+		the latest and greatest in
+		<TextSquiggly width="wide">
+			<Fragment slot="inside">web dev tooling</Fragment>
+			<Fragment slot="after">.</Fragment>
+		</TextSquiggly>
 	</div>
 </ContentArea>
+
+<style>
+	.locators {
+		color: var(--colorAccentSecond);
+		font-size: var(--fontSizeMedium);
+		font-weight: var(--fontWeightSemibold);
+		letter-spacing: var(--letterSpacingTight);
+		padding: 4.5rem 0 2.75rem;
+	}
+
+	.tagline {
+		font-size: var(--fontSizeLarge);
+		font-weight: var(--fontWeightMedium);
+	}
+</style>

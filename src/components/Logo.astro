@@ -1,0 +1,19 @@
+---
+import TextSquiggly from "./TextSquiggly.astro";
+---
+
+<div class="logo">
+	<TextSquiggly width="medium">
+		<Fragment slot="inside">Squiggle</Fragment>
+		<Fragment slot="after">Conf</Fragment>
+	</TextSquiggly>
+</div>
+
+<style>
+	.logo {
+		font-family: var(--fontFamilyLogo);
+		font-size: var(--fontSizeLogo);
+		font-weight: var(--fontWeightLogo);
+		letter-spacing: var(--letterSpacingLogo);
+	}
+</style>
