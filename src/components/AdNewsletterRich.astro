@@ -1,10 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import stillAttendeesInSeats from "~/assets/stills/attendees-in-seats.png";
 
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
 import Heading from "./Heading.astro";
-import { Image } from "astro:assets";
 ---
 
 <ContentArea as="section">
@@ -17,7 +17,7 @@ import { Image } from "astro:assets";
 			Email Address
 			<input type="email" placeholder="cool.dev@awesome.com" />
 		</label>
-		<Button>Subscribe</Button>
+		<Button variant="light">Subscribe</Button>
 	</form>
 
 	<Image

@@ -1,6 +1,7 @@
 ---
 import AboutUs from "~/components/AboutUs.astro";
-import AdNewsletter from "~/components/AdNewsletter.astro";
+import AdNewsletterRich from "~/components/AdNewsletterRich.astro";
+import AdNewsletterThin from "~/components/AdNewsletterThin.astro";
 import AdRegistration from "~/components/AdRegistration.astro";
 import AdTicketsThin from "~/components/AdTicketsThin.astro";
 import Explainers from "~/components/Explainers.astro";
@@ -11,8 +12,15 @@ import PageLayout from "~/layouts/PageLayout.astro";
 <PageLayout description="A Boston conference for excellent web dev tooling.">
 	<Hero />
 	<AdTicketsThin />
-	<Explainers />
-	<AboutUs />
-	<AdRegistration />
-	<AdNewsletter />
+	<AdNewsletterThin />
+	{
+		Astro.url.searchParams.has("full") && (
+			<>
+				<Explainers />
+				<AboutUs />
+				<AdRegistration />
+				<AdNewsletterRich />
+			</>
+		)
+	}
 </PageLayout>

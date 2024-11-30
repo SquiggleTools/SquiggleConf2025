@@ -1,0 +1,66 @@
+---
+import Button from "./Button.astro";
+import ContentArea from "./ContentArea.astro";
+import Heading from "./Heading.astro";
+import TextSquiggly from "./TextSquiggly.astro";
+---
+
+<div class="ad-newsletter-thin">
+	<ContentArea as="section" class="ad-newsletter-contents">
+		<Heading class="ad-newsletter-heading" level="h2">
+			Sign up to receive announcements and important
+			<TextSquiggly renderAs="strong" width="medium">
+				<Fragment slot="inside">SquiggleConf</Fragment>
+			</TextSquiggly>
+			info.
+		</Heading>
+
+		<form>
+			<label class="email-label" for="email">Email Address</label>
+			<input
+				class="email-input"
+				name="email"
+				type="email"
+				placeholder="cool.dev@awesome.com"
+			/>
+			<Button variant="light">Subscribe</Button>
+		</form>
+	</ContentArea>
+</div>
+
+<style>
+	.ad-newsletter-thin {
+		background: var(--colorAccentMedium);
+		text-align: center;
+	}
+
+	.ad-newsletter-contents {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 3rem 0;
+	}
+
+	.ad-newsletter-heading {
+		font-size: var(--fontSizeLarge);
+		max-width: 40rem;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.email-input {
+		padding: 1rem 0.5rem;
+		font-family: var(--fontFamilyText);
+		margin: 0.5rem 0 1rem;
+		width: 25rem;
+	}
+
+	.email-input::placeholder {
+		color: var(--colorDark);
+	}
+</style>

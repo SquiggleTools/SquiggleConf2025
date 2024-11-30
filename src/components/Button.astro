@@ -44,19 +44,21 @@ const { class: className, size = "normal", variant, ...rest } = Astro.props;
 		color: var(--colorLight);
 	}
 
-	.button-variant-accent:active {
+	.button-variant-light {
+		background: var(--colorLight);
+		border: 2px solid var(--colorAccentLight);
+		color: var(--colorDark);
+		font-weight: var(--fontWeightSemibold);
+	}
+
+	.button:active {
 		background: var(--colorAccentSecond);
 		color: var(--colorDark);
 	}
 
-	.button-variant-accent:focus,
-	.button-variant-accent:hover {
+	.button:focus:not(:active),
+	.button:hover:not(:active) {
 		background: var(--colorAccentLight);
-		color: var(--colorDark);
-	}
-
-	.button-variant-light {
-		background: var(--colorLight);
 		color: var(--colorDark);
 	}
 </style>
