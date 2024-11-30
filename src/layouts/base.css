@@ -14,6 +14,9 @@
 	--colorDarkAccent: var(--colorBlue4);
 	--colorDark: var(--colorBlue5);
 
+	--fontFamilyBody: "Urbanist";
+	--fontFamilyHeading: "Josefin Sans Variable";
+
 	--sizeContentAreaNormal: 63rem;
 	--sizeContentAreaWide: 70rem;
 

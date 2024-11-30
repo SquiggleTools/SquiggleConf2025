@@ -16,6 +16,7 @@
 		"konami",
 		"plone",
 		"squiggleconf",
-		"tseslint"
+		"tseslint",
+		"vercel"
 	]
 }
