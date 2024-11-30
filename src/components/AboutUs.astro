@@ -1,0 +1,41 @@
+---
+import stillOrganizersHugging from "~/assets/stills/organizers-hugging.png";
+
+import BodyText from "./BodyText.astro";
+import ContentArea from "./ContentArea.astro";
+import EmphasizedText from "./EmphasizedText.astro";
+import Heading from "./Heading.astro";
+import { Image } from "astro:assets";
+---
+
+<ContentArea as="section">
+	<Image
+		alt="Organizers wearing SquiggleConf shirts awkwardly hugging each other"
+		src={stillOrganizersHugging}
+	/>
+
+	<Heading level="h2">About us</Heading>
+
+	<BodyText
+		>SquiggleConf brings web developers together to learn, share, and grow.
+	</BodyText>
+
+	<BodyText
+		>As a program of Squiggle.Tools, a nonprofit organization, we foster
+		community not just at our annual conference, but year-round through
+		<EmphasizedText>Boston TS Club</EmphasizedText> and
+		<EmphasizedText>Michigan TypeScript Club</EmphasizedText>.</BodyText
+	>
+
+	<BodyText
+		>We believe tech education should be accessible to all. Each year around
+		SquiggleConf, we organize
+		<EmphasizedText>volunteering initiatives</EmphasizedText>
+		such as teaching local teens to code. And while SquiggleConf tickets have a cost,
+		we offer multiple paths to attend for free or at a discount.</BodyText
+	>
+
+	SquiggleConf strives to create an inclusive conference that welcomes
+	developers from every background- no matter your age, skill level, or career
+	path.
+</ContentArea>

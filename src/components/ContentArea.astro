@@ -1,18 +1,21 @@
 ---
-interface Props {
+export interface Props {
+	as?: string;
 	class?: string;
 	width?: "normal" | "wide";
 }
 
-const { class: className, width = "normal", ...rest } = Astro.props;
+const {
+	as: As = "div",
+	class: className,
+	width = "normal",
+	...rest
+} = Astro.props;
 ---
 
-<div
-	class:list={["content-area", `content-area-${width}`, className]}
-	{...rest}
->
+<As class:list={["content-area", `content-area-${width}`, className]} {...rest}>
 	<slot />
-</div>
+</As>
 
 <style>
 	.content-area {

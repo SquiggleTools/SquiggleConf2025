@@ -1,0 +1,27 @@
+---
+import stillAttendeesInSeats from "~/assets/stills/attendees-in-seats.png";
+
+import Button from "./Button.astro";
+import ContentArea from "./ContentArea.astro";
+import Heading from "./Heading.astro";
+import { Image } from "astro:assets";
+---
+
+<ContentArea as="section">
+	<Heading level="h2">
+		Sign up to receive announcements and important SquiggleConf info.
+	</Heading>
+
+	<form>
+		<label>
+			Email Address
+			<input type="email" placeholder="cool.dev@awesome.com" />
+		</label>
+		<Button>Subscribe</Button>
+	</form>
+
+	<Image
+		alt="Attendees watching a talk in the IMAX theater"
+		src={stillAttendeesInSeats}
+	/>
+</ContentArea>

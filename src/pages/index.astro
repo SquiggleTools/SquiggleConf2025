@@ -1,7 +1,18 @@
 ---
+import AboutUs from "~/components/AboutUs.astro";
+import AdNewsletter from "~/components/AdNewsletter.astro";
+import AdRegistration from "~/components/AdRegistration.astro";
+import AdTicketsThin from "~/components/AdTicketsThin.astro";
+import Explainers from "~/components/Explainers.astro";
+import Hero from "~/components/Hero.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
 ---
 
 <PageLayout description="A Boston conference for excellent web dev tooling.">
-	<h1>Hello, world!</h1>
+	<Hero />
+	<AdTicketsThin />
+	<Explainers />
+	<AboutUs />
+	<AdRegistration />
+	<AdNewsletter />
 </PageLayout>

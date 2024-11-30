@@ -7,17 +7,16 @@
 	--colorBlue4: #063052;
 	--colorBlue5: #041930;
 
-	--colorLight: var(--colorWhite);
-	--colorLightAccent: var(--colorBlue1);
-	--colorSecondAccent: var(--colorBlue2);
-	--colorMediumAccent: var(--colorBlue3);
-	--colorDarkAccent: var(--colorBlue4);
+	--colorAccentLight: var(--colorBlue1);
+	--colorAccentSecond: var(--colorBlue2);
+	--colorAccentMedium: var(--colorBlue3);
+	--colorAccentDark: var(--colorBlue4);
 	--colorDark: var(--colorBlue5);
+	--colorLight: var(--colorWhite);
 
-	--fontFamilyBody: "Urbanist";
-	--fontFamilyHeading: "Josefin Sans Variable";
+	--fontFamily: "Urbanist";
 
-	--sizeContentAreaNormal: 63rem;
+	--sizeContentAreaNormal: 67rem;
 	--sizeContentAreaWide: 70rem;
 
 	color-scheme: light;
@@ -29,6 +28,7 @@ html {
 	background: var(--colorDark);
 	color: var(--colorLight);
 	min-height: 100%;
+	font-family: var(--fontFamily);
 }
 
 html.dark {
