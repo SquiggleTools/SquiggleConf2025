@@ -33,7 +33,9 @@ const {
 	.button {
 		border: 0;
 		cursor: pointer;
-		font-family: inherit;
+		display: inline-flex;
+		font-family: var(--fontFamilyLogo);
+		font-weight: var(--fontWeightSemibold);
 		text-decoration: none;
 	}
 
@@ -45,25 +47,24 @@ const {
 	.button-size-normal {
 		border-radius: 2rem;
 		font-size: var(--fontSizeSmall);
-		padding: 0.65rem 1.25rem;
+		padding: 0.65rem 1.25rem 0.5rem;
 	}
 
 	.button-size-large {
 		border-radius: 4rem;
 		font-size: var(--fontSizeMedium);
-		padding: 0.85rem 2rem;
+		padding: 0.85rem 2rem 0.75rem;
 	}
 
 	.button-variant-accent {
-		background: var(--colorAccentMedium);
-		color: var(--colorLight);
+		background: var(--colorAccentSecond);
+		color: var(--colorDark);
 	}
 
 	.button-variant-light {
 		background: var(--colorLight);
 		border: 2px solid var(--colorAccentLight);
 		color: var(--colorDark);
-		font-weight: var(--fontWeightSemibold);
 	}
 
 	.button:active {

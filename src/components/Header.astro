@@ -14,7 +14,7 @@ function hrefProps(pathname: string) {
 
 <header>
 	<ContentArea class="header-content-area-mobile">
-		<a class="logo" href="/"><Logo /></a>
+		<a class="logo" href="/"><Logo year /></a>
 
 		<details id="details">
 			<summary aria-label="Toggle header">≡</summary>
@@ -33,7 +33,7 @@ function hrefProps(pathname: string) {
 	</ContentArea>
 
 	<ContentArea class="header-content-area-wide" width="wide">
-		<a class="logo" href="/"><Logo /></a>
+		<a class="logo" href="/"><Logo year /></a>
 		<div class="header-links">
 			<a {...hrefProps("/")}>Home</a>
 			<a {...hrefProps("https://2024.squiggleconf.com")}>2024 Conf</a>
@@ -61,7 +61,6 @@ function hrefProps(pathname: string) {
 
 <style>
 	header {
-		border-bottom: 1px solid var(--colorAccentMedium);
 		font-size: var(--fontSizeSmall);
 		padding: 1.5rem 0;
 		width: 100%;
@@ -144,7 +143,7 @@ function hrefProps(pathname: string) {
 		margin-left: 0.35rem;
 	}
 
-	@media (width >= 777px) {
+	@media (width >= 819px) {
 		.header-content-area-mobile {
 			display: none;
 		}

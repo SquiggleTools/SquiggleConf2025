@@ -3,11 +3,40 @@ import { links } from "~/data/links";
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
 import Heading from "./Heading.astro";
+import TextSquiggly from "./TextSquiggly.astro";
 ---
 
-<ContentArea as="section">
-	<Heading level="h2">Registration is open!</Heading>
-	<Button as="a" href={links.tickets} target="_blank" variant="accent"
-		>Get extra early bird tickets now!</Button
-	>
-</ContentArea>
+<div class="ad-registration">
+	<ContentArea as="section" class="ad-registration-contents">
+		<TextSquiggly renderAs="strong" width="wide">
+			<Fragment slot="inside">
+				<Heading level="h2">Registration is open!</Heading>
+			</Fragment>
+		</TextSquiggly>
+		<Button
+			as="a"
+			href={links.tickets}
+			target="_blank"
+			size="large"
+			variant="accent"
+		>
+			Get extra early bird tickets now!
+		</Button>
+	</ContentArea>
+</div>
+
+<style>
+	.ad-registration-contents {
+		align-items: center;
+		gap: 2.5rem;
+		display: flex;
+		flex-direction: column;
+		padding: 3.5rem;
+	}
+
+	h2 {
+		font-size: var(--fontSizeHero);
+		font-weight: var(--fontWeightMedium);
+		margin-bottom: 0.5rem;
+	}
+</style>

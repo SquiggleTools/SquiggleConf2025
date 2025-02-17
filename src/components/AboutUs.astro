@@ -8,34 +8,91 @@ import Heading from "./Heading.astro";
 import { Image } from "astro:assets";
 ---
 
-<ContentArea as="section">
-	<Image
-		alt="Organizers wearing SquiggleConf shirts awkwardly hugging each other"
-		src={stillOrganizersHugging}
-	/>
+<div class="about-us">
+	<ContentArea as="section" class="about-us-content">
+		<div class="about-us-decorations">
+			<Image
+				alt="Organizers wearing SquiggleConf shirts awkwardly hugging each other"
+				layout="responsive"
+				src={stillOrganizersHugging}
+			/>
+		</div>
 
-	<Heading level="h2">About us</Heading>
+		<div class="about-us-text">
+			<Heading level="h2">About us</Heading>
 
-	<BodyText
-		>SquiggleConf brings web developers together to learn, share, and grow.
-	</BodyText>
+			<BodyText>
+				SquiggleConf brings web developers together to learn, share, and grow.
+			</BodyText>
 
-	<BodyText
-		>As a program of Squiggle.Tools, a nonprofit organization, we foster
-		community not just at our annual conference, but year-round through
-		<EmphasizedText>Boston TS Club</EmphasizedText> and
-		<EmphasizedText>Michigan TypeScript Club</EmphasizedText>.</BodyText
-	>
+			<BodyText>
+				As a program of Squiggle.Tools, a nonprofit organization, we foster
+				community not just at our annual conference, but year-round through
+				<EmphasizedText>Boston TS Club</EmphasizedText> and
+				<EmphasizedText>Michigan TypeScript Club</EmphasizedText>.
+			</BodyText>
 
-	<BodyText
-		>We believe tech education should be accessible to all. Each year around
-		SquiggleConf, we organize
-		<EmphasizedText>volunteering initiatives</EmphasizedText>
-		such as teaching local teens to code. And while SquiggleConf tickets have a cost,
-		we offer multiple paths to attend for free or at a discount.</BodyText
-	>
+			<BodyText>
+				We believe tech education should be accessible to all. Each year around
+				SquiggleConf, we organize
+				<EmphasizedText>volunteering initiatives</EmphasizedText>
+				such as teaching local teens to code. And while SquiggleConf tickets have
+				a cost, we offer multiple paths to attend for free or at a discount.
+			</BodyText>
 
-	SquiggleConf strives to create an inclusive conference that welcomes
-	developers from every background- no matter your age, skill level, or career
-	path.
-</ContentArea>
+			<BodyText>
+				SquiggleConf strives to create an inclusive conference that welcomes
+				developers from every background- no matter your age, skill level, or
+				career path.
+			</BodyText>
+		</div>
+	</ContentArea>
+</div>
+
+<style>
+	.about-us {
+		background: var(--colorDarkest);
+		padding: 2.5rem 1rem;
+	}
+
+	.about-us-decorations {
+		display: none;
+	}
+
+	.about-us-text h2 {
+		font-size: var(--fontSizeLarge);
+		color: var(--colorAccentLight);
+		margin-bottom: 2rem;
+	}
+
+	.about-us-text p {
+		font-weight: var(--fontWeightLight);
+		font-size: var(--fontSizeMedium);
+	}
+
+	.about-us-text p + p {
+		margin-top: 2rem;
+	}
+
+	@media (min-width: 819px) {
+		.about-us {
+			padding: clamp(2.5rem, 5vw, 5rem);
+		}
+
+		.about-us-decorations {
+			display: initial;
+			padding: 0 clamp(1rem, 2.5vw, 2.5rem);
+			position: relative;
+		}
+
+		.about-us-content {
+			display: grid;
+			grid-template-columns: 40% 60%;
+			gap: 3.5rem;
+		}
+
+		.about-us-text {
+			padding: 1rem 2.5rem 1rem 0;
+		}
+	}
+</style>

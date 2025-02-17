@@ -1,38 +1,123 @@
 ---
+import { Image } from "astro:assets";
+
+import { links } from "~/data/links";
+import cityscape from "~/assets/design/cityscape.svg";
+
+import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
 import InlineBlock from "./InlineBlock.astro";
 import TextSquiggly from "./TextSquiggly.astro";
 ---
 
-<ContentArea as="section">
-	<div class="locators">
-		<InlineBlock class="date">September 18-19, 2025 ·</InlineBlock>
-		<InlineBlock class="location">Boston New England Aquarium</InlineBlock>
+<section class="hero">
+	<div class="hero-decorations">
+		<div class="hero-decorations-inner">
+			<Image alt="" class="hero-cityscape" src={cityscape} />
+		</div>
 	</div>
 
-	<div class="tagline">
-		SquiggleConf brings together the admirers, contributors, and maintainers of
-		the latest and greatest in
-		<InlineBlock>
-			<TextSquiggly width="wide">
-				<Fragment slot="inside">web dev tooling</Fragment>
-				<Fragment slot="after">.</Fragment>
-			</TextSquiggly>
-		</InlineBlock>
+	<ContentArea class="hero-contents">
+		<div class="hero-locators">
+			<InlineBlock class="date">September 18-19, 2025 ·</InlineBlock>
+			<InlineBlock class="location">Boston New England Aquarium</InlineBlock>
+		</div>
+
+		<div class="hero-tagline">
+			SquiggleConf brings together the admirers, contributors, and maintainers
+			of the latest and greatest in
+			<InlineBlock>
+				<TextSquiggly width="wide">
+					<Fragment slot="inside">web dev tooling</Fragment>
+					<Fragment slot="after">.</Fragment>
+				</TextSquiggly>
+			</InlineBlock>
+		</div>
+
+		<div class="hero-bottom">
+			<Button
+				as="a"
+				size="large"
+				variant="accent"
+				href={links.tickets}
+				target="_blank"
+			>
+				Get extra early bird tickets now
+			</Button>
+		</div>
+	</ContentArea>
+
+	<div class="hero-scroll-notice">
+		Scroll to explore the depths of SquiggleConf
 	</div>
-</ContentArea>
+</section>
 
 <style>
-	.locators {
+	.hero {
+		--cityscapeHeightArea: clamp(15rem, 30vh, 45rem);
+		background: linear-gradient(180deg, #041a31 0%, #051e33 100%);
+		font-family: var(--fontFamilyLogo);
+		padding-bottom: var(--cityscapeHeightArea);
+		position: relative;
+	}
+
+	.hero-decorations {
+		bottom: -2rem;
+		pointer-events: none;
+		position: absolute;
+		height: 100%;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.hero-decorations-inner {
+		bottom: 0;
+		left: 50%;
+		position: absolute;
+		text-align: center;
+		width: 0;
+	}
+
+	.hero-cityscape {
+		transform: translateX(-40%);
+	}
+
+	.hero-contents {
+		z-index: 1;
+		position: relative;
+	}
+
+	.hero-locators {
 		color: var(--colorAccentSecond);
 		font-size: var(--fontSizeMedium);
 		font-weight: var(--fontWeightSemibold);
 		letter-spacing: var(--letterSpacingTight);
-		padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(1.5rem, 5vw, 2.75rem);
+		padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(1.5rem, 5vw, 2.5rem);
 	}
 
-	.tagline {
+	.hero-tagline {
 		font-size: var(--fontSizeHero);
 		font-weight: var(--fontWeightMedium);
+	}
+
+	.hero-bottom {
+		margin-top: 3.5rem;
+	}
+
+	.hero-scroll-notice {
+		color: var(--colorAccentLight);
+		font-size: var(--fontSizeSmall);
+		font-style: italic;
+		font-weight: var(--fontWeightSemibold);
+		bottom: 1.65rem;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
+
+	@media (width >= 819px) {
+		.hero-cityscape {
+			transform: translateX(-50%);
+		}
 	}
 </style>
