@@ -2,10 +2,12 @@
 	"dictionaries": ["typescript"],
 	"ignorePaths": [
 		".all-contributorsrc",
+		".astro",
 		".github",
+		".vercel",
 		"CHANGELOG.md",
 		"coverage",
-		"lib",
+		"dist",
 		"node_modules",
 		"pnpm-lock.yaml"
 	],

@@ -1,4 +1,6 @@
+.astro
 .github/CODE_OF_CONDUCT.md
+.vercel
 CHANGELOG.md
-lib/
+dist/
 node_modules/
