@@ -13,9 +13,10 @@ import tseslint from "typescript-eslint";
 export default tseslint.config(
 	{
 		ignores: [
+			".astro",
 			".vercel",
 			"coverage",
-			"lib",
+			"dist",
 			"node_modules",
 			"pnpm-lock.yaml",
 			"src/env.d.ts",
@@ -55,6 +56,8 @@ export default tseslint.config(
 			},
 		},
 		rules: {
+			"n/no-unpublished-import": "off",
+
 			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
 				"error",
