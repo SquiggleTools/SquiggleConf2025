@@ -133,7 +133,7 @@ import Heading from "./Heading.astro";
 	.ocean-floor-left {
 		bottom: 0;
 		height: 90%;
-		right: 40%;
+		right: -10%;
 	}
 
 	.ocean-floor-right {
@@ -170,6 +170,7 @@ import Heading from "./Heading.astro";
 		font-family: var(--fontFamilyLogo);
 		font-size: var(--fontSizeSmallest);
 		margin: 0.5rem 0 1rem;
+		max-width: 80vw;
 		padding: 1rem 0.5rem;
 		width: 25rem;
 	}
@@ -184,5 +185,11 @@ import Heading from "./Heading.astro";
 
 	#newsletter-message.unhappy {
 		color: var(--colorUnhappy);
+	}
+
+	@media (width >= 819px) {
+		.ocean-floor-left {
+			right: clamp(10%, 40vw, 50%);
+		}
 	}
 </style>

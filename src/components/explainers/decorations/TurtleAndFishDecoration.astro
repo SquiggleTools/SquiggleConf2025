@@ -17,9 +17,10 @@ import DecorativeImage from "~/components/DecorativeImage.astro";
 	}
 
 	.turtle {
-		left: -22rem;
+		left: -28rem;
 		bottom: -15rem;
 		height: 22rem;
+		z-index: 1;
 	}
 
 	.fish-school {
@@ -27,5 +28,11 @@ import DecorativeImage from "~/components/DecorativeImage.astro";
 		right: -5rem;
 		height: 7.5rem;
 		z-index: 1;
+	}
+
+	@media (width >= 819px) {
+		.turtle {
+			left: -22rem;
+		}
 	}
 </style>

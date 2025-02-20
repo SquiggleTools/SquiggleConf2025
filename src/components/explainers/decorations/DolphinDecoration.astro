@@ -16,19 +16,20 @@ import DecorativeImage from "~/components/DecorativeImage.astro";
 	}
 
 	.dolphin {
-		height: 12.5rem;
-		width: 12.5rem;
+		--dolphinSize: clamp(8rem, 25vw, 12.5rem);
+		height: var(--dolphinSize);
+		width: var(--dolphinSize);
 		z-index: 1;
 	}
 
 	.dolphin-left {
-		left: 6.5rem;
+		left: clamp(-0.5rem, calc(5vw - 1rem), 6.5rem);
 		top: -3.5rem;
 	}
 
 	.dolphin-right {
 		bottom: -2.5rem;
-		right: 3.5rem;
+		right: clamp(-2.5rem, calc(2vw - 1rem), 3.5rem);
 		transform: rotate(180deg);
 	}
 </style>
