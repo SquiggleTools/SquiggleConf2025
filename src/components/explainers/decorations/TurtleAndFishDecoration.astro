@@ -1,14 +1,13 @@
 ---
-import { Image } from "astro:assets";
-
 import turtle from "~/assets/design/turtle.svg";
 import fishSchool from "~/assets/design/fish-school.svg";
 import ContentArea from "~/components/ContentArea.astro";
+import DecorativeImage from "~/components/DecorativeImage.astro";
 ---
 
 <ContentArea class="turtle-and-fish-decoration">
-	<Image alt="" class="turtle" src={turtle} />
-	<Image alt="" class="fish-school" src={fishSchool} />
+	<DecorativeImage class="turtle" src={turtle} />
+	<DecorativeImage class="fish-school" src={fishSchool} />
 	<slot />
 </ContentArea>
 
@@ -21,11 +20,9 @@ import ContentArea from "~/components/ContentArea.astro";
 		left: -22rem;
 		bottom: -15rem;
 		height: 22rem;
-		position: absolute;
 	}
 
 	.fish-school {
-		position: absolute;
 		top: -2.5rem;
 		right: -5rem;
 		height: 7.5rem;

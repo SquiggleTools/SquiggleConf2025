@@ -1,11 +1,14 @@
 ---
+import { Image } from "astro:assets";
+
+import fishSchoolDull from "~/assets/design/fish-school-dull.svg";
 import stillOrganizersHugging from "~/assets/stills/organizers-hugging.png";
 
 import BodyText from "./BodyText.astro";
 import ContentArea from "./ContentArea.astro";
 import EmphasizedText from "./EmphasizedText.astro";
 import Heading from "./Heading.astro";
-import { Image } from "astro:assets";
+import DecorativeImage from "./DecorativeImage.astro";
 ---
 
 <div class="about-us">
@@ -16,6 +19,7 @@ import { Image } from "astro:assets";
 				layout="responsive"
 				src={stillOrganizersHugging}
 			/>
+			<DecorativeImage class="fish-school-dull" src={fishSchoolDull} />
 		</div>
 
 		<div class="about-us-text">
@@ -83,6 +87,12 @@ import { Image } from "astro:assets";
 			display: initial;
 			padding: 0 clamp(1rem, 2.5vw, 2.5rem);
 			position: relative;
+		}
+
+		.fish-school-dull {
+			height: 10rem;
+			left: -8.5rem;
+			top: -4rem;
 		}
 
 		.about-us-content {

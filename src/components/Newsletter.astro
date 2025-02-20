@@ -1,19 +1,22 @@
 ---
+import lightBeam from "~/assets/design/light-beam.svg";
+import oceanFloorLeft from "~/assets/design/ocean-floor-left.svg";
+import oceanFloorRight from "~/assets/design/ocean-floor-right.svg";
+
+import DecorativeImage from "./DecorativeImage.astro";
 import BodyText from "./BodyText.astro";
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
 import Heading from "./Heading.astro";
-import TextSquiggly from "./TextSquiggly.astro";
 ---
 
-<div class="ad-newsletter-thin">
+<div class="ad-newsletter">
+	<DecorativeImage class="light-beam" src={lightBeam} />
+	<DecorativeImage class="ocean-floor-left" src={oceanFloorLeft} />
+	<DecorativeImage class="ocean-floor-right" src={oceanFloorRight} />
 	<ContentArea as="section" class="ad-newsletter-contents">
 		<Heading class="ad-newsletter-heading" level="h2">
-			Sign up to receive announcements and important
-			<TextSquiggly renderAs="strong" width="medium">
-				<Fragment slot="inside">SquiggleConf</Fragment>
-			</TextSquiggly>
-			info.
+			Sign up to receive announcements and important SquiggleConf info.
 		</Heading>
 
 		<form
@@ -29,9 +32,9 @@ import TextSquiggly from "./TextSquiggly.astro";
 				type="email"
 				placeholder="cool.dev@awesome.com"
 			/>
-			<Button as="button" id="submit" type="submit" variant="light"
-				>Subscribe</Button
-			>
+			<Button as="button" id="submit" type="submit" variant="light">
+				Subscribe
+			</Button>
 		</form>
 
 		<BodyText aria-live="assertive" id="newsletter-message" />
@@ -112,10 +115,31 @@ import TextSquiggly from "./TextSquiggly.astro";
 </script>
 
 <style>
-	.ad-newsletter-thin {
+	.ad-newsletter {
 		background: var(--colorAccentMedium);
 		padding: 3rem 0;
+		overflow: hidden;
+		position: relative;
 		text-align: center;
+	}
+
+	.light-beam {
+		left: 10%;
+		width: 75%;
+		height: 100%;
+		top: 0;
+	}
+
+	.ocean-floor-left {
+		bottom: 0;
+		height: 90%;
+		right: 40%;
+	}
+
+	.ocean-floor-right {
+		bottom: 0;
+		height: 90%;
+		left: 50%;
 	}
 
 	.ad-newsletter-contents {
@@ -123,11 +147,14 @@ import TextSquiggly from "./TextSquiggly.astro";
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		position: relative;
+		z-index: 1;
 	}
 
 	.ad-newsletter-heading {
 		font-size: var(--fontSizeLarge);
-		max-width: 40rem;
+		font-weight: var(--fontWeightMedium);
+		max-width: 25rem;
 	}
 
 	form {

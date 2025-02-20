@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets";
-
-import { links } from "~/data/links";
 import cityscape from "~/assets/design/cityscape.svg";
+import DecorativeImage from "~/components/DecorativeImage.astro";
+import { links } from "~/data/links";
 
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
@@ -13,7 +12,7 @@ import TextSquiggly from "./TextSquiggly.astro";
 <section class="hero">
 	<div class="hero-decorations">
 		<div class="hero-decorations-inner">
-			<Image alt="" class="hero-cityscape" src={cityscape} />
+			<DecorativeImage class="hero-cityscape" src={cityscape} />
 		</div>
 	</div>
 
@@ -54,7 +53,7 @@ import TextSquiggly from "./TextSquiggly.astro";
 
 <style>
 	.hero {
-		--cityscapeHeightArea: clamp(15rem, 30vh, 45rem);
+		--cityscapeHeightArea: clamp(15rem, 35vh, 45rem);
 		background: linear-gradient(180deg, #041a31 0%, #051e33 100%);
 		font-family: var(--fontFamilyLogo);
 		padding-bottom: var(--cityscapeHeightArea);
@@ -79,6 +78,8 @@ import TextSquiggly from "./TextSquiggly.astro";
 	}
 
 	.hero-cityscape {
+		opacity: 0.75;
+		position: relative;
 		transform: translateX(-40%);
 	}
 

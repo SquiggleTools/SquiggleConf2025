@@ -1,13 +1,12 @@
 ---
-import { Image } from "astro:assets";
-
 import dolphin from "~/assets/design/dolphin.svg";
 import ContentArea from "~/components/ContentArea.astro";
+import DecorativeImage from "~/components/DecorativeImage.astro";
 ---
 
 <ContentArea class="dolphin-decoration">
-	<Image alt="" class="dolphin dolphin-left" src={dolphin} />
-	<Image alt="" class="dolphin dolphin-right" src={dolphin} />
+	<DecorativeImage class="dolphin dolphin-left" src={dolphin} />
+	<DecorativeImage class="dolphin dolphin-right" src={dolphin} />
 	<slot />
 </ContentArea>
 
@@ -19,8 +18,6 @@ import ContentArea from "~/components/ContentArea.astro";
 	.dolphin {
 		height: 12.5rem;
 		width: 12.5rem;
-		position: absolute;
-		user-select: none;
 		z-index: 1;
 	}
 

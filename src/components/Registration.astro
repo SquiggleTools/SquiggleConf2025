@@ -1,13 +1,21 @@
 ---
+import mantaDown from "~/assets/design/manta-down.svg";
+import mantaUp from "~/assets/design/manta-up.svg";
+import squiggleThickWide from "~/assets/design/squiggle-thick-wide.svg";
 import { links } from "~/data/links";
+
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
+import DecorativeImage from "./DecorativeImage.astro";
 import Heading from "./Heading.astro";
 import TextSquiggly from "./TextSquiggly.astro";
 ---
 
 <div class="ad-registration">
+	<DecorativeImage class="squiggle-thick-wide" src={squiggleThickWide} />
 	<ContentArea as="section" class="ad-registration-contents">
+		<DecorativeImage class="manta manta-down" src={mantaDown} />
+		<DecorativeImage class="manta manta-up" src={mantaUp} />
 		<TextSquiggly renderAs="strong" width="wide">
 			<Fragment slot="inside">
 				<Heading level="h2">Registration is open!</Heading>
@@ -26,12 +34,38 @@ import TextSquiggly from "./TextSquiggly.astro";
 </div>
 
 <style>
+	.ad-registration {
+		background: #083552;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.squiggle-thick-wide {
+		height: 80%;
+		left: 0;
+		top: 10%;
+		width: 100%;
+	}
+
+	.manta-down {
+		height: 5rem;
+		right: -7.5%;
+		top: 2rem;
+	}
+
+	.manta-up {
+		bottom: 2rem;
+		height: 6rem;
+		left: -7.5%;
+	}
+
 	.ad-registration-contents {
 		align-items: center;
 		gap: 2.5rem;
 		display: flex;
+		position: relative;
 		flex-direction: column;
-		padding: 3.5rem;
+		padding: 5rem;
 	}
 
 	h2 {
