@@ -1,7 +1,4 @@
 ---
-import ContentArea from "./ContentArea.astro";
-import Explainer, { ExplainerData } from "./Explainer.astro";
-
 import stillAttendeesNetworking from "~/assets/stills/attendees-networking.png";
 import stillDanInngestPresenting from "~/assets/stills/dan-inngest-presenting.png";
 import stillJoshFromBack from "~/assets/stills/josh-from-back.png";
@@ -15,13 +12,21 @@ import stillThomasSmilingInFrontOfMarquee from "~/assets/stills/thomas-smiling-i
 import stillWorkshopAttendeesSittingFromBack from "~/assets/stills/workshop-attendees-sitting-from-back.png";
 import stillWorkshopAttendeesSittingFromFront from "~/assets/stills/workshop-attendees-sitting-from-front.png";
 
-const explainers: ExplainerData[] = [
+import CoralReefDecoration from "./decorations/CoralReefDecoration.astro";
+import DolphinDecoration from "./decorations/DolphinDecoration.astro";
+import TurtleAndFishDecoration from "./decorations/TurtleAndFishDecoration.astro";
+import WhalesDecoration from "./decorations/WhalesDecoration.astro";
+import ExplainerImages from "./ExplainerImages.astro";
+import ExplainerArea from "./ExplainerArea.astro";
+
+const explainers = [
 	{
 		action: {
 			href: "https://cfp.squiggleconf.com",
 			text: "Apply to be a speaker! CFP now open!",
 		},
 		body: "Enjoy a dozen talks by tooling aficionados, dev experts, and new voices in the space. You’ll emerge with the best techniques to supercharge your projects.",
+		decoration: DolphinDecoration,
 		direction: "up",
 		heading: "Talks",
 		photos: {
@@ -43,6 +48,7 @@ const explainers: ExplainerData[] = [
 	},
 	{
 		body: "Attend workshops from our speakers and sponsors for hands on learning — whether you’re already a tooling wizard or trying to become one.",
+		decoration: WhalesDecoration,
 		direction: "down",
 		heading: "Workshops",
 		photos: {
@@ -64,6 +70,7 @@ const explainers: ExplainerData[] = [
 	},
 	{
 		body: "Experience the tech conference in comfortable theater seats on the most spectacular IMAX screen. Also, a penguin exhibit next door.",
+		decoration: TurtleAndFishDecoration,
 		direction: "down",
 		heading: "The Simons IMAX Theater",
 		photos: {
@@ -85,6 +92,7 @@ const explainers: ExplainerData[] = [
 	},
 	{
 		body: "Mingle with fellow backend, frontend, and full stack web developers at meetups and mixers before, during, and after the conference.",
+		decoration: CoralReefDecoration,
 		direction: "up",
 		heading: "Networking",
 		photos: {
@@ -107,6 +115,23 @@ const explainers: ExplainerData[] = [
 ];
 ---
 
-<ContentArea>
-	{explainers.map((explainer) => <Explainer {...explainer} />)}
-</ContentArea>
+<div class="explainers-list">
+	{
+		explainers.map(({ decoration: Decoration, ...explainer }) => (
+			<ExplainerArea {...explainer}>
+				<Decoration>
+					{/* @ts-expect-error -- 🤷 */}
+					<ExplainerImages {...explainer} />
+				</Decoration>
+			</ExplainerArea>
+		))
+	}
+</div>
+
+<style>
+	.explainers-list {
+		overflow: hidden;
+		padding-bottom: 2.5rem;
+		width: 100%;
+	}
+</style>

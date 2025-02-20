@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+import whales from "~/assets/design/whales.svg";
+import ContentArea from "~/components/ContentArea.astro";
+---
+
+<ContentArea class="whales-decoration">
+	<Image alt="" class="whales" src={whales} />
+	<slot />
+</ContentArea>
+
+<style>
+	.whales-decoration {
+		position: relative;
+	}
+
+	.whales {
+		height: 50rem;
+		left: -50%;
+		position: absolute;
+		top: -19rem;
+	}
+</style>
