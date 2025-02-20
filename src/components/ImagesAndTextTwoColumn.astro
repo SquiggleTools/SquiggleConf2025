@@ -45,7 +45,12 @@ interface Props {
 
 <style>
 	.images-and-text-two-column {
-		background: var(--colorDarkest);
+		background: linear-gradient(
+			180deg,
+			var(--colorBlueBright1) 50%,
+			var(--colorForegroundAccent) 100%
+		);
+		color: var(--colorBackground);
 		padding: 2.5rem 1rem;
 	}
 
@@ -55,7 +60,6 @@ interface Props {
 
 	.images-and-text-two-column-text h2 {
 		font-size: var(--fontSizeLarge);
-		color: var(--colorAccentLight);
 		margin-bottom: 2rem;
 	}
 

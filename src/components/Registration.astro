@@ -11,9 +11,9 @@ import Heading from "./Heading.astro";
 import TextSquiggly from "./TextSquiggly.astro";
 ---
 
-<div class="ad-registration">
+<div class="registration">
 	<DecorativeImage class="squiggle-thick-wide" src={squiggleThickWide} />
-	<ContentArea as="section" class="ad-registration-contents">
+	<ContentArea as="section" class="registration-contents">
 		<DecorativeImage class="manta manta-down" src={mantaDown} />
 		<DecorativeImage class="manta manta-up" src={mantaUp} />
 		<TextSquiggly renderAs="strong" width="wide">
@@ -34,8 +34,9 @@ import TextSquiggly from "./TextSquiggly.astro";
 </div>
 
 <style>
-	.ad-registration {
-		background: #083552;
+	.registration {
+		background: var(--colorBlueBright4);
+		color: var(--colorBackground);
 		overflow: hidden;
 		position: relative;
 	}
@@ -59,13 +60,13 @@ import TextSquiggly from "./TextSquiggly.astro";
 		left: -7.5%;
 	}
 
-	.ad-registration-contents {
+	.registration-contents {
 		align-items: center;
 		gap: 2.5rem;
 		display: flex;
 		position: relative;
 		flex-direction: column;
-		padding: 5rem;
+		padding: 3.5rem;
 	}
 
 	h2 {

@@ -31,7 +31,12 @@ interface Props {
 <style>
 	.hero {
 		--cityscapeHeightArea: clamp(15rem, 35vh, 45rem);
-		background: linear-gradient(180deg, #041a31 0%, #051e33 100%);
+		background: linear-gradient(
+			180deg,
+			var(--colorBlueBright1) 0%,
+			var(--colorBlueBright2) 100%
+		);
+		color: var(--colorBackground);
 		font-family: var(--fontFamilyLogo);
 		padding-bottom: var(--cityscapeHeightArea);
 		position: relative;
@@ -55,7 +60,6 @@ interface Props {
 	}
 
 	.hero-cityscape {
-		opacity: 0.75;
 		position: relative;
 		transform: translateX(-40%);
 	}
@@ -66,10 +70,10 @@ interface Props {
 	}
 
 	.hero-scroll-notice {
-		color: var(--colorAccentLight);
+		color: var(--colorBlue1);
 		font-size: var(--fontSizeSmallest);
 		font-style: italic;
-		font-weight: var(--fontWeightSemibold);
+		font-weight: var(--fontWeightMedium);
 		bottom: 1.65rem;
 		position: absolute;
 		text-align: center;

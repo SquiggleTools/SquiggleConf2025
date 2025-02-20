@@ -1,5 +1,4 @@
 ---
-import lightBeam from "~/assets/design/light-beam.svg";
 import oceanFloorLeft from "~/assets/design/ocean-floor-left.svg";
 import oceanFloorRight from "~/assets/design/ocean-floor-right.svg";
 
@@ -10,12 +9,27 @@ import ContentArea from "./ContentArea.astro";
 import Heading from "./Heading.astro";
 ---
 
-<div class="ad-newsletter">
-	<DecorativeImage class="light-beam" src={lightBeam} />
+<div class="newsletter">
+	<svg
+		class="light-beam"
+		fill="none"
+		height="681"
+		preserveAspectRatio="none"
+		viewBox="0 0 1637 681"
+		width="1637"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path
+			d="M1410.6 -435.752L-90.8221 681.162L187.092 841.197L925.996 768.169L1636.02 -450.454L1410.6 -435.752Z"
+			fill="var(--colorBlueBright5)"
+		>
+		</path>
+	</svg>
+
 	<DecorativeImage class="ocean-floor-left" src={oceanFloorLeft} />
 	<DecorativeImage class="ocean-floor-right" src={oceanFloorRight} />
-	<ContentArea as="section" class="ad-newsletter-contents">
-		<Heading class="ad-newsletter-heading" level="h2">
+	<ContentArea as="section" class="newsletter-contents">
+		<Heading class="newsletter-heading" level="h2">
 			Sign up to receive announcements and important SquiggleConf info.
 		</Heading>
 
@@ -115,8 +129,9 @@ import Heading from "./Heading.astro";
 </script>
 
 <style>
-	.ad-newsletter {
-		background: var(--colorAccentMedium);
+	.newsletter {
+		background: var(--colorBlueBright6);
+		color: var(--colorWhiteIsh);
 		padding: 3rem 0;
 		overflow: hidden;
 		position: relative;
@@ -124,6 +139,7 @@ import Heading from "./Heading.astro";
 	}
 
 	.light-beam {
+		position: absolute;
 		left: 10%;
 		width: 75%;
 		height: 100%;
@@ -142,7 +158,7 @@ import Heading from "./Heading.astro";
 		left: 50%;
 	}
 
-	.ad-newsletter-contents {
+	.newsletter-contents {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
@@ -151,7 +167,7 @@ import Heading from "./Heading.astro";
 		z-index: 1;
 	}
 
-	.ad-newsletter-heading {
+	.newsletter-heading {
 		font-size: var(--fontSizeLarge);
 		font-weight: var(--fontWeightMedium);
 		max-width: 25rem;
@@ -164,7 +180,12 @@ import Heading from "./Heading.astro";
 		font-size: var(--fontSizeSmallest);
 	}
 
+	.email-label {
+		align-self: flex-start;
+	}
+
 	.email-input {
+		background: var(--colorBackground);
 		border: none;
 		border-radius: 3px;
 		font-family: var(--fontFamilyLogo);
@@ -176,7 +197,8 @@ import Heading from "./Heading.astro";
 	}
 
 	.email-input::placeholder {
-		color: var(--colorDark);
+		color: var(--colorForeground);
+		font-weight: var(--fontWeightMedium);
 	}
 
 	#newsletter-message {

@@ -58,24 +58,25 @@ const {
 	}
 
 	.button-variant-accent {
-		background: var(--colorAccentSecond);
-		color: var(--colorDark);
+		background: var(--colorAccentMedium);
+		color: var(--colorForegroundAccent);
+		font-weight: var(--fontWeightMedium);
 	}
 
 	.button-variant-light {
-		background: var(--colorLight);
+		background: var(--colorForegroundAccent);
 		border: 2px solid var(--colorAccentLight);
-		color: var(--colorDark);
+		color: var(--colorBackground);
 	}
 
 	.button:active {
 		background: var(--colorAccentSecond);
-		color: var(--colorDark);
+		color: var(--colorForeground);
 	}
 
 	.button:focus:not(:active, [disabled]),
 	.button:hover:not(:active, [disabled]) {
-		background: var(--colorAccentLight);
-		color: var(--colorDark);
+		background: var(--colorForegroundEmphasized);
+		color: var(--colorAccentLight);
 	}
 </style>
