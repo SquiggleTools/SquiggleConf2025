@@ -1,0 +1,37 @@
+---
+import BodyText from "./BodyText.astro";
+import ContentArea from "./ContentArea.astro";
+import Heading from "./Heading.astro";
+
+interface Props {
+	heading: string;
+}
+---
+
+<ContentArea class="common-content" width="thin">
+	<Heading level="h2">{Astro.props.heading}</Heading>
+
+	<slot />
+</ContentArea>
+
+<style>
+	.common-content {
+		display: flex;
+		flex-direction: column;
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightLight);
+		margin: 5rem auto;
+	}
+
+	.common-content:last-of-type {
+		padding-bottom: 2.5rem;
+	}
+
+	h2 {
+		color: var(--colorAccentLight);
+		font-size: var(--fontSizeLarger);
+		font-weight: var(--fontWeightSemibold);
+		padding-bottom: 2rem;
+		text-align: center;
+	}
+</style>

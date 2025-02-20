@@ -1,108 +1,71 @@
 ---
-import { Image } from "astro:assets";
-
-import fishSchoolDull from "~/assets/design/fish-school-dull.svg";
+import logoBostonTSClub from "~/assets/logos/boston-ts-club.png";
+import logoMichiganTypeScript from "~/assets/logos/michigan-typescript.png";
 import stillOrganizersHugging from "~/assets/stills/organizers-hugging.png";
 
 import BodyText from "./BodyText.astro";
-import ContentArea from "./ContentArea.astro";
 import EmphasizedText from "./EmphasizedText.astro";
-import Heading from "./Heading.astro";
-import DecorativeImage from "./DecorativeImage.astro";
+import ImagesAndTextTwoColumn from "./ImagesAndTextTwoColumn.astro";
 ---
 
-<div class="about-us">
-	<ContentArea as="section" class="about-us-content">
-		<div class="about-us-decorations">
-			<Image
-				alt="Organizers wearing SquiggleConf shirts awkwardly hugging each other"
-				layout="responsive"
-				src={stillOrganizersHugging}
-			/>
-			<DecorativeImage class="fish-school-dull" src={fishSchoolDull} />
-		</div>
+<ImagesAndTextTwoColumn
+	heading="About us"
+	images={{
+		primary: stillOrganizersHugging,
+		secondary: [
+			{
+				alt: "Michigan TypeScript logo",
+				height: "120",
+				src: logoMichiganTypeScript,
+			},
+			{
+				alt: "Boston TS Club logo",
+				height: "120",
+				src: logoBostonTSClub,
+			},
+		],
+	}}
+>
+	<BodyText class="about-us-body-text">
+		SquiggleConf brings web developers together to learn, share, and grow.
+	</BodyText>
 
-		<div class="about-us-text">
-			<Heading level="h2">About us</Heading>
+	<BodyText class="about-us-body-text">
+		As a program of Squiggle.Tools, a nonprofit organization, we foster
+		community not just at our annual conference, but year-round through
+		<EmphasizedText
+			><a href="https://bostonts.club" target="_blank">Boston TS Club</a
+			></EmphasizedText
+		>
+		and
+		<EmphasizedText
+			><a href="https://michigantypescript.com" target="_blank"
+				>Michigan TypeScript</a
+			></EmphasizedText
+		>.
+	</BodyText>
 
-			<BodyText>
-				SquiggleConf brings web developers together to learn, share, and grow.
-			</BodyText>
+	<BodyText class="about-us-body-text">
+		We believe tech education should be accessible to all. Each year around
+		SquiggleConf, we organize
+		<EmphasizedText>volunteering initiatives</EmphasizedText>
+		such as teaching local teens to code. And while SquiggleConf tickets have a cost,
+		we offer multiple paths to attend for free or at a discount.
+	</BodyText>
 
-			<BodyText>
-				As a program of Squiggle.Tools, a nonprofit organization, we foster
-				community not just at our annual conference, but year-round through
-				<EmphasizedText>Boston TS Club</EmphasizedText> and
-				<EmphasizedText>Michigan TypeScript Club</EmphasizedText>.
-			</BodyText>
-
-			<BodyText>
-				We believe tech education should be accessible to all. Each year around
-				SquiggleConf, we organize
-				<EmphasizedText>volunteering initiatives</EmphasizedText>
-				such as teaching local teens to code. And while SquiggleConf tickets have
-				a cost, we offer multiple paths to attend for free or at a discount.
-			</BodyText>
-
-			<BodyText>
-				SquiggleConf strives to create an inclusive conference that welcomes
-				developers from every background- no matter your age, skill level, or
-				career path.
-			</BodyText>
-		</div>
-	</ContentArea>
-</div>
+	<BodyText class="about-us-body-text">
+		SquiggleConf strives to create an inclusive conference that welcomes
+		developers from every background- no matter your age, skill level, or career
+		path.
+	</BodyText>
+</ImagesAndTextTwoColumn>
 
 <style>
-	.about-us {
-		background: var(--colorDarkest);
-		padding: 2.5rem 1rem;
-	}
-
-	.about-us-decorations {
-		display: none;
-	}
-
-	.about-us-text h2 {
-		font-size: var(--fontSizeLarge);
-		color: var(--colorAccentLight);
-		margin-bottom: 2rem;
-	}
-
-	.about-us-text p {
+	.about-us-body-text {
+		font-size: var(--fontSizeSmall);
 		font-weight: var(--fontWeightLight);
-		font-size: var(--fontSizeMedium);
 	}
-
-	.about-us-text p + p {
-		margin-top: 2rem;
-	}
-
-	@media (min-width: 819px) {
-		.about-us {
-			padding: clamp(2.5rem, 5vw, 5rem);
-		}
-
-		.about-us-decorations {
-			display: initial;
-			padding: 0 clamp(1rem, 2.5vw, 2.5rem);
-			position: relative;
-		}
-
-		.fish-school-dull {
-			height: 10rem;
-			left: -8.5rem;
-			top: -4rem;
-		}
-
-		.about-us-content {
-			display: grid;
-			grid-template-columns: 40% 60%;
-			gap: 3.5rem;
-		}
-
-		.about-us-text {
-			padding: 1rem 2.5rem 1rem 0;
-		}
+	.about-us-body-text + .about-us-body-text {
+		margin-top: 1.5rem;
 	}
 </style>

@@ -1,16 +1,67 @@
 ---
 import AboutUs from "~/components/AboutUs.astro";
+import Button from "~/components/Button.astro";
 import ExplainersList from "~/components/explainers/ExplainersList.astro";
-import Hero from "~/components/Hero.astro";
+import Hero from "~/components/hero/Hero.astro";
+import InlineBlock from "~/components/InlineBlock.astro";
 import Newsletter from "~/components/Newsletter.astro";
 import Registration from "~/components/Registration.astro";
+import TextSquiggly from "~/components/TextSquiggly.astro";
+import { links } from "~/data/links";
 import PageLayout from "~/layouts/PageLayout.astro";
 ---
 
 <PageLayout description="A Boston conference for excellent web dev tooling.">
-	<Hero />
+	<Hero scrollNotice>
+		<div class="hero-locators">
+			<InlineBlock class="date">September 18-19, 2025 ·</InlineBlock>
+			<InlineBlock class="location">Boston New England Aquarium</InlineBlock>
+		</div>
+
+		<div class="hero-tagline">
+			SquiggleConf brings together the admirers, contributors, and maintainers
+			of the latest and greatest in
+			<InlineBlock>
+				<TextSquiggly width="wide">
+					<Fragment slot="inside">web dev tooling</Fragment>
+					<Fragment slot="after">.</Fragment>
+				</TextSquiggly>
+			</InlineBlock>
+		</div>
+
+		<div class="hero-bottom">
+			<Button
+				as="a"
+				size="large"
+				variant="accent"
+				href={links.tickets}
+				target="_blank"
+			>
+				Get extra early bird tickets now
+			</Button>
+		</div>
+	</Hero>
 	<ExplainersList />
 	<AboutUs />
 	<Registration />
 	<Newsletter />
 </PageLayout>
+
+<style>
+	.hero-locators {
+		color: var(--colorAccentSecond);
+		font-size: var(--fontSizeMedium);
+		font-weight: var(--fontWeightSemibold);
+		letter-spacing: var(--letterSpacingTight);
+		padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(1.5rem, 5vw, 2.5rem);
+	}
+
+	.hero-tagline {
+		font-size: var(--fontSizeHero);
+		font-weight: var(--fontWeightMedium);
+	}
+
+	.hero-bottom {
+		margin-top: 3.5rem;
+	}
+</style>

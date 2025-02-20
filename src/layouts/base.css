@@ -17,11 +17,14 @@
 	--colorUnhappy: #ffbfc2;
 
 	--fontFamilyBody: "Inter Variable";
+	--fontFamilyHeading: "Urbanist Variable";
 	--fontFamilyLogo: "Josefin Sans Variable";
 
-	--fontSizeSmall: clamp(1rem, 2.5vw, 1.15rem);
+	--fontSizeSmallest: clamp(1rem, 2.5vw, 1.15rem);
+	--fontSizeSmall: clamp(1.125rem, 2.875vw, 1.25rem);
 	--fontSizeMedium: clamp(1.25rem, 3.25vw, 1.5rem);
 	--fontSizeLarge: clamp(1.5rem, 3.75vw, 2rem);
+	--fontSizeLarger: clamp(1.75rem, 4vw, 2.5rem);
 	--fontSizeHero: clamp(2rem, 5vw, 3rem);
 	--fontSizeLogo: clamp(1.75rem, 4.375vw, 2.25rem);
 
@@ -35,7 +38,7 @@
 	--letterSpacingTight: -0.5px;
 
 	--sizeContentAreaEmphasized: 43rem;
-	--sizeContentAreaThin: 56rem;
+	--sizeContentAreaThin: 42rem;
 	--sizeContentAreaNormal: 70.5rem;
 	--sizeContentAreaWide: 75rem;
 
@@ -45,7 +48,7 @@
 }
 
 html {
-	background: var(--colorDark);
+	background: #0f2936;
 	color: var(--colorLight);
 	min-height: 100%;
 	font-family: var(--fontFamilyBody);

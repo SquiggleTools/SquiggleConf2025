@@ -1,0 +1,41 @@
+---
+import Heading from "~/components/Heading.astro";
+import TextSquiggly from "~/components/TextSquiggly.astro";
+import BodyText from "../BodyText.astro";
+
+interface Props {
+	heading: string;
+}
+---
+
+<div class="hero-contents-standard">
+	<TextSquiggly width="medium">
+		<Heading level="h1" slot="inside">{Astro.props.heading}</Heading>
+	</TextSquiggly>
+
+	<BodyText class="hero-contents-standard-body">
+		<slot />
+	</BodyText>
+</div>
+
+<style>
+	.hero-contents-standard {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		padding: 5rem;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: var(--fontSizeHero);
+		font-weight: var(--fontWeightMedium);
+	}
+
+	.hero-contents-standard-body {
+		font-size: var(--fontSizeMedium);
+		font-weight: var(--fontWeightLight);
+		max-width: 35rem;
+	}
+</style>
