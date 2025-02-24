@@ -32,7 +32,7 @@ const {
 <style>
 	.button {
 		align-items: center;
-		border: 0;
+		border: 2px solid transparent;
 		cursor: pointer;
 		display: inline-flex;
 		font-family: var(--fontFamilyHeading);
@@ -81,7 +81,8 @@ const {
 
 	.button:focus:not(:active, [disabled]),
 	.button:hover:not(:active, [disabled]) {
-		background: var(--colorForegroundEmphasized);
-		color: var(--colorAccentLight);
+		background: var(--colorForeground);
+		color: var(--colorBackground);
+		border: 2px solid var(--colorForegroundAccent);
 	}
 </style>

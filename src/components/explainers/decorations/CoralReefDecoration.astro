@@ -27,7 +27,7 @@ import DecorativeImage from "~/components/DecorativeImage.astro";
 	}
 
 	.coral-reef-large {
-		top: 2rem;
+		top: 15rem;
 		height: 42rem;
 		left: 45%;
 	}
@@ -44,5 +44,11 @@ import DecorativeImage from "~/components/DecorativeImage.astro";
 		height: 5rem;
 		right: 13.5rem;
 		z-index: 1;
+	}
+
+	@media (width >= 1117px) {
+		.coral-reef-large {
+			top: 12rem;
+		}
 	}
 </style>
