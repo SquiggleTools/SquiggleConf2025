@@ -48,7 +48,7 @@ interface Props {
 		background: linear-gradient(
 			180deg,
 			var(--colorBlueBright1) 50%,
-			var(--colorForegroundAccent) 100%
+			var(--colorBlueBright2) 100%
 		);
 		color: var(--colorBackground);
 		padding: 2.5rem 1rem;
@@ -59,8 +59,16 @@ interface Props {
 	}
 
 	.images-and-text-two-column-text h2 {
+		font-family: var(--fontFamilyLogo);
 		font-size: var(--fontSizeLarge);
+		font-weight: var(--fontWeightSemibold);
+		color: var(--colorForegroundEmphasized);
 		margin-bottom: 2rem;
+	}
+
+	.two-column-content {
+		font-size: var(--fontSizeSmallest);
+		font-weight: var(--fontWeightMedium);
 	}
 
 	.images-secondary {

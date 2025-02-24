@@ -30,17 +30,18 @@
 	--fontFamilyHeading: "Urbanist Variable";
 	--fontFamilyLogo: "Josefin Sans Variable";
 
-	--fontSizeSmallest: clamp(1rem, 2.5vw, 1.15rem);
+	--fontSizeSmallest: clamp(0.9rem, 2.25vw, 1.1rem);
 	--fontSizeSmall: clamp(1.125rem, 2.875vw, 1.25rem);
 	--fontSizeMedium: clamp(1.25rem, 3.25vw, 1.5rem);
 	--fontSizeLarge: clamp(1.5rem, 3.75vw, 2rem);
-	--fontSizeLarger: clamp(1.75rem, 4vw, 2.5rem);
+	--fontSizeLarger: clamp(2rem, 4.5vw, 3rem);
 	--fontSizeHero: clamp(2rem, 5vw, 3rem);
 	--fontSizeLogo: clamp(1.75rem, 4.375vw, 2.25rem);
 
 	--fontWeightLight: 200;
 	--fontWeightMedium: 300;
-	--fontWeightSemibold: 400;
+	--fontWeightSemibold: 350;
+	--fontWeightBold: 500;
 	--fontWeightLogo: 600;
 
 	--letterSpacingLoose: 1px;
@@ -56,8 +57,6 @@
 }
 
 html {
-	background: #0f2936;
-	color: var(--colorBackground);
 	min-height: 100%;
 	font-family: var(--fontFamilyBody);
 }
@@ -66,8 +65,8 @@ html {
 	:root {
 		color-scheme: dark;
 
-		--colorBlueBright1: var(--colorBlue5);
-		--colorBlueBright2: var(--colorBlue4);
+		--colorBlueBright1: #051b32;
+		--colorBlueBright2: var(--colorBlue5);
 		--colorBlueBright3: var(--colorBlue4);
 		--colorBlueBright4: var(--colorBlue4);
 		--colorBlueBright5: #196d9a;

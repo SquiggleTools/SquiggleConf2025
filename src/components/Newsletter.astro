@@ -29,7 +29,7 @@ import Heading from "./Heading.astro";
 	<DecorativeImage class="ocean-floor-left" src={oceanFloorLeft} />
 	<DecorativeImage class="ocean-floor-right" src={oceanFloorRight} />
 	<ContentArea as="section" class="newsletter-contents">
-		<Heading class="newsletter-heading" level="h2">
+		<Heading level="h2">
 			Sign up to receive announcements and important SquiggleConf info.
 		</Heading>
 
@@ -46,7 +46,13 @@ import Heading from "./Heading.astro";
 				type="email"
 				placeholder="cool.dev@awesome.com"
 			/>
-			<Button as="button" id="submit" type="submit" variant="light">
+			<Button
+				as="button"
+				id="submit"
+				size="large"
+				type="submit"
+				variant="light"
+			>
 				Subscribe
 			</Button>
 		</form>
@@ -167,9 +173,11 @@ import Heading from "./Heading.astro";
 		z-index: 1;
 	}
 
-	.newsletter-heading {
+	h2 {
+		font-family: var(--fontFamilyHeading);
 		font-size: var(--fontSizeLarge);
 		font-weight: var(--fontWeightMedium);
+		line-height: 1;
 		max-width: 25rem;
 	}
 
@@ -177,7 +185,7 @@ import Heading from "./Heading.astro";
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-		font-size: var(--fontSizeSmallest);
+		font-family: var(--fontFamilyHeading);
 	}
 
 	.email-label {
@@ -189,8 +197,9 @@ import Heading from "./Heading.astro";
 		border: none;
 		border-radius: 3px;
 		color: var(--colorBlackIsh);
-		font-family: var(--fontFamilyLogo);
-		font-size: var(--fontSizeSmallest);
+		font-family: var(--fontFamilyHeading);
+		font-weight: var(--fontWeightSemibold);
+		font-size: var(--fontSizeSmaller);
 		margin: 0.5rem 0 1rem;
 		max-width: 80vw;
 		padding: 1rem 0.5rem;

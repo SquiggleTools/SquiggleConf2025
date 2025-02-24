@@ -17,7 +17,7 @@ import Button from "~/components/Button.astro";
 					as="a"
 					href={Astro.props.action.href}
 					size="large"
-					variant="accent"
+					variant="emphasized"
 				>
 					{Astro.props.action.text}
 				</Button>
@@ -34,7 +34,9 @@ import Button from "~/components/Button.astro";
 	}
 
 	h2 {
-		font-size: var(--fontSizeHero);
+		font-family: var(--fontFamilyLogo);
+		font-size: var(--fontSizeLarger);
+		color: var(--colorForegroundEmphasized);
 		font-weight: var(--fontWeightSemibold);
 		padding: 5rem 2rem 3.5rem;
 		position: relative;
@@ -43,13 +45,13 @@ import Button from "~/components/Button.astro";
 	}
 
 	.explainer-body {
-		font-family: var(--fontFamilyBody);
-		font-size: var(--fontSizeMedium);
-		font-weight: var(--fontWeightMedium);
-		letter-spacing: var(--letterSpacingLoose);
+		color: var(--colorBackground);
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightLight);
 		line-height: 1.35;
-		margin: 2.5rem auto;
+		margin: auto;
 		max-width: var(--sizeContentAreaEmphasized);
+		padding: 1.5rem 5.5rem;
 		position: relative;
 		text-align: center;
 		z-index: 1;
@@ -58,7 +60,7 @@ import Button from "~/components/Button.astro";
 	.explainer-action-area {
 		display: flex;
 		justify-content: center;
-		padding: 0 2rem;
+		padding: 0 3.5rem;
 		width: 100%;
 	}
 </style>

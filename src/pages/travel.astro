@@ -18,7 +18,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	</Hero>
 
 	<CommonContent heading="Location">
-		<BodyText>
+		<BodyText class="explore-body-text">
 			SquiggleConf 2024 will be held at the New England Aquarium Simons Theatre
 			at 1 Central Wharf, Boston MA.
 			<br />
@@ -52,7 +52,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	</CommonContent>
 
 	<CommonContent heading="Flights">
-		<BodyText>
+		<BodyText class="explore-body-text">
 			<a
 				href="https://massport.com/logan-airport"
 				target="_blank"
@@ -71,7 +71,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	</CommonContent>
 
 	<CommonContent heading="Hotels">
-		<BodyText>
+		<BodyText class="explore-body-text">
 			We recommend the
 			<a href="https://www.harborsideinnboston.com" target="_blank"
 				>Harborside Inn</a
@@ -80,7 +80,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	</CommonContent>
 
 	<CommonContent heading="Public Transportation">
-		<BodyText>
+		<BodyText class="explore-body-text">
 			Regional & Commuter Trains: The MBTA South Station is a 15–20 minute walk
 			from the conference venue. Amtrak and MBTA Commuter Rail services connect
 			South Station to cities across the Northeast, including ~4-hour trains
@@ -93,7 +93,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	</CommonContent>
 
 	<CommonContent heading="Parking">
-		<BodyText>
+		<BodyText class="explore-body-text">
 			The Boston Harbor Garage is located next to the venue.
 			<br />
 			<br />
@@ -165,10 +165,12 @@ import PageLayout from "~/layouts/PageLayout.astro";
 
 	.travel-links {
 		display: flex;
-		width: 100%;
-		justify-content: center;
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightLight);
 		gap: 1.5rem;
+		justify-content: center;
 		padding: 1rem;
+		width: 100%;
 	}
 
 	.explore-body-text {

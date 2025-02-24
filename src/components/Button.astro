@@ -5,7 +5,7 @@ type Props<Tag extends HTMLTag> = Polymorphic<{
 	as: Tag;
 	class?: string;
 	size?: "normal" | "large";
-	variant: "accent" | "light";
+	variant: "accent" | "emphasized" | "light";
 }>;
 
 const {
@@ -31,10 +31,11 @@ const {
 
 <style>
 	.button {
+		align-items: center;
 		border: 0;
 		cursor: pointer;
 		display: inline-flex;
-		font-family: var(--fontFamilyLogo);
+		font-family: var(--fontFamilyHeading);
 		font-weight: var(--fontWeightSemibold);
 		text-align: center;
 		text-decoration: none;
@@ -47,8 +48,7 @@ const {
 
 	.button-size-normal {
 		border-radius: 2rem;
-		font-size: var(--fontSizeSmallest);
-		padding: 0.65rem 1.25rem 0.5rem;
+		padding: 0.65rem 1.25rem;
 	}
 
 	.button-size-large {
@@ -58,15 +58,20 @@ const {
 	}
 
 	.button-variant-accent {
+		background: var(--colorBlue3);
+		color: var(--colorWhiteIsh);
+	}
+
+	.button-variant-emphasized {
 		background: var(--colorAccentMedium);
 		color: var(--colorForegroundAccent);
-		font-weight: var(--fontWeightMedium);
 	}
 
 	.button-variant-light {
-		background: var(--colorForegroundAccent);
-		border: 2px solid var(--colorAccentLight);
-		color: var(--colorBackground);
+		background: var(--colorWhiteIsh);
+		border: 2px solid var(--colorBlue1);
+		color: var(--colorBlackIsh);
+		font-weight: var(--fontWeightBold);
 	}
 
 	.button:active {

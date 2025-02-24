@@ -1,5 +1,6 @@
 ---
 import AboutUs from "~/components/AboutUs.astro";
+import Arrow from "~/components/Arrow.astro";
 import Button from "~/components/Button.astro";
 import ExplainersList from "~/components/explainers/ExplainersList.astro";
 import Hero from "~/components/hero/Hero.astro";
@@ -32,12 +33,15 @@ import PageLayout from "~/layouts/PageLayout.astro";
 		<div class="hero-bottom">
 			<Button
 				as="a"
+				class="hero-button"
 				size="large"
-				variant="accent"
+				variant="emphasized"
 				href={links.tickets}
 				target="_blank"
 			>
 				Get extra early bird tickets now!
+
+				<Arrow />
 			</Button>
 		</div>
 	</Hero>
@@ -50,19 +54,23 @@ import PageLayout from "~/layouts/PageLayout.astro";
 <style>
 	.hero-locators {
 		color: var(--colorAccentMedium);
+		font-family: var(--fontFamilyHeading);
 		font-size: var(--fontSizeMedium);
-		font-weight: var(--fontWeightSemibold);
-		letter-spacing: var(--letterSpacingTight);
 		padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(1.5rem, 5vw, 2.5rem);
 	}
 
 	.hero-tagline {
 		color: var(--colorBackground);
-		font-size: var(--fontSizeHero);
+		font-family: var(--fontFamilyHeading);
+		font-size: var(--fontSizeLarger);
 		font-weight: var(--fontWeightMedium);
 	}
 
 	.hero-bottom {
 		margin-top: 3.5rem;
+	}
+
+	.hero-button {
+		gap: 0.5rem;
 	}
 </style>
