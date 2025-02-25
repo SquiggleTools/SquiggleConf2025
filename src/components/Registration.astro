@@ -50,14 +50,14 @@ import TextSquiggly from "./TextSquiggly.astro";
 
 	.manta-down {
 		height: 5rem;
-		right: -7.5%;
+		right: -12rem;
 		top: 2rem;
 	}
 
 	.manta-up {
 		bottom: 2rem;
 		height: 6rem;
-		left: -7.5%;
+		left: -7.5rem;
 	}
 
 	section.registration-contents {
@@ -74,5 +74,15 @@ import TextSquiggly from "./TextSquiggly.astro";
 		font-size: var(--fontSizeLarge);
 		font-weight: var(--fontWeightMedium);
 		margin-bottom: 0.5rem;
+	}
+
+	@media (width >= 819px) {
+		.manta-down {
+			right: -7.5%;
+		}
+
+		.manta-up {
+			left: -7.5%;
+		}
 	}
 </style>
