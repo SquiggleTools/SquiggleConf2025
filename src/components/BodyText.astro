@@ -1,0 +1,14 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<p class:list={[className, "body-text"]} {...rest}>
+	<slot />
+</p>
+
+<style>
+	.body-text {
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightLight);
+	}
+</style>

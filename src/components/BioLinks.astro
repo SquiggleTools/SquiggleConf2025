@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+
+import bluesky from "~/assets/logos/bluesky.svg";
+import github from "~/assets/logos/github.svg";
+import linkedin from "~/assets/logos/linkedin.svg";
+import mastodon from "~/assets/logos/mastodon.svg";
+import website from "~/assets/logos/website.svg";
+import youtube from "~/assets/logos/YouTube.svg";
+
+interface Props {
+	class?: string;
+	links: BioLinksPlatforms;
+	name: string;
+}
+
+export interface BioLinksPlatforms {
+	bluesky?: string | null;
+	github?: string | null;
+	linkedin?: string | null;
+	mastodon?: string | null;
+	website?: string | null;
+	youtube?: string | null;
+}
+
+const { class: className, links, name, ...rest } = Astro.props;
+
+const aliases = [
+	["bluesky", "on bluesky", bluesky],
+	["github", "on GitHub", github],
+	["linkedin", "on LinkedIn", linkedin],
+	["mastodon", "on Mastodon", mastodon],
+	["youtube", "on YouTube", youtube],
+	["website", "'s website", website],
+] as const;
+---
+
+<div class:list={["bio-links", className]} {...rest}>
+	{
+		aliases
+			.map(
+				([link, platform, src]) =>
+					links[link] && (
+						<a
+							class="bio-link"
+							href={links[link]}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<img alt={`${name} on ${platform}`} class="link" src={src.src} />
+						</a>
+					),
+			)
+			.filter(Boolean)
+	}
+</div>
+
+<style>
+	.bio-links {
+		--bioLinkImageSize: 1.2rem;
+		--bioLinkPadding: 0.25rem;
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 var(--bioLinkPadding);
+		margin-left: calc(-1 * var(--bioLinkPadding));
+	}
+
+	.bio-link {
+		display: flex;
+		gap: var(--bioLinkPadding);
+		padding: var(--bioLinkPadding);
+		text-decoration: none;
+	}
+
+	.link {
+		height: var(--bioLinkImageSize);
+		width: var(--bioLinkImageSize);
+		user-select: none;
+	}
+
+	html:not(.dark) .link {
+		filter: hue-rotate(180deg) invert();
+	}
+</style>
