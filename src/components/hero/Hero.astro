@@ -1,7 +1,6 @@
 ---
 import cityscape from "~/assets/design/cityscape.svg";
 import ContentArea from "~/components/ContentArea.astro";
-import DecorativeImage from "~/components/DecorativeImage.astro";
 
 interface Props {
 	scrollNotice?: boolean;
@@ -11,7 +10,7 @@ interface Props {
 <section class="hero">
 	<div class="hero-decorations">
 		<div class="hero-decorations-inner">
-			<DecorativeImage class="hero-cityscape" src={cityscape} />
+			<img alt="" class="hero-cityscape" src={cityscape.src} />
 		</div>
 	</div>
 
@@ -59,8 +58,10 @@ interface Props {
 	}
 
 	.hero-cityscape {
+		pointer-events: none;
 		position: relative;
 		transform: translateX(-48.5%);
+		user-select: none;
 	}
 
 	.hero-contents {
