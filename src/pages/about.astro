@@ -3,12 +3,13 @@ import joshGoldberg from "~/assets/avatars/josh-goldberg.png";
 import dimitriMitropoulos from "~/assets/avatars/dimitri-mitropoulos.jpg";
 import bostonTSClub from "~/assets/logos/boston-ts-club.svg";
 import michiganTypeScript from "~/assets/logos/michigan-typescript.png";
-import Bio, { Props as BioProps } from "~/components/Bio.astro";
+import { Props as BioProps } from "~/components/Bio.astro";
 import BodyText from "~/components/BodyText.astro";
 import CommonContent from "~/components/CommonContent.astro";
 import Hero from "~/components/hero/Hero.astro";
 import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
+import Bios from "~/components/Bios.astro";
 
 const biosSquiggleTools: BioProps[] = [
 	{
@@ -53,7 +54,7 @@ const biosSquiggleTools: BioProps[] = [
 
 <PageLayout description="A Boston conference for excellent web dev tooling.">
 	<Hero>
-		<HeroContentsStandard heading="About">
+		<HeroContentsStandard heading="About Us">
 			The SquiggleConf mission and team
 		</HeroContentsStandard>
 	</Hero>
@@ -97,9 +98,7 @@ const biosSquiggleTools: BioProps[] = [
 			their background or resources.
 		</BodyText>
 
-		<ul class="bios">
-			{biosSquiggleTools.map((bio) => <Bio {...bio} />)}
-		</ul>
+		<Bios bios={biosSquiggleTools} />
 	</CommonContent>
 
 	<CommonContent heading="Staff Members">
@@ -109,19 +108,9 @@ const biosSquiggleTools: BioProps[] = [
 		</BodyText>
 
 		<br />
-		<em>(staff members bios coming soon!)</em>
+
+		<BodyText>
+			<em class="staff-soon">(staff members bios coming soon!)</em>
+		</BodyText>
 	</CommonContent>
 </PageLayout>
-
-<style>
-	.bios {
-		display: flex;
-		flex-wrap: wrap;
-		font-family: var(--fontFamilyHeading);
-		justify-content: center;
-		margin-top: 2rem;
-		row-gap: 2rem;
-		text-align: center;
-		width: 100%;
-	}
-</style>
