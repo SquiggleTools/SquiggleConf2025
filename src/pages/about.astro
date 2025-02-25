@@ -50,12 +50,14 @@ const biosSquiggleTools: BioProps[] = [
 		photo: michiganTypeScript,
 	},
 ];
+
+const description = "The SquiggleConf mission and team";
 ---
 
-<PageLayout description="A Boston conference for excellent web dev tooling.">
+<PageLayout description={description} title="About">
 	<Hero>
 		<HeroContentsStandard heading="About">
-			The SquiggleConf mission and team
+			{description}
 		</HeroContentsStandard>
 	</Hero>
 

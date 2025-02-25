@@ -8,12 +8,15 @@ import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
 import ImagesAndTextTwoColumn from "~/components/ImagesAndTextTwoColumn.astro";
 import Registration from "~/components/Registration.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
+
+const description =
+	"How to get to and around Boston when you’re attending SquiggleConf";
 ---
 
-<PageLayout description="A Boston conference for excellent web dev tooling.">
+<PageLayout description={description} title="Travel">
 	<Hero>
 		<HeroContentsStandard heading="Travel">
-			How to get to and around Boston when you’re attending SquiggleConf
+			{description}
 		</HeroContentsStandard>
 	</Hero>
 
