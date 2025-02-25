@@ -1,26 +1,76 @@
 ---
 import AboutUs from "~/components/AboutUs.astro";
-import AdNewsletterRich from "~/components/AdNewsletterRich.astro";
-import AdNewsletterThin from "~/components/AdNewsletterThin.astro";
-import AdRegistration from "~/components/AdRegistration.astro";
-import AdTicketsThin from "~/components/AdTicketsThin.astro";
-import Explainers from "~/components/Explainers.astro";
-import Hero from "~/components/Hero.astro";
+import Arrow from "~/components/Arrow.astro";
+import Button from "~/components/Button.astro";
+import ExplainersList from "~/components/explainers/ExplainersList.astro";
+import Hero from "~/components/hero/Hero.astro";
+import InlineBlock from "~/components/InlineBlock.astro";
+import Newsletter from "~/components/Newsletter.astro";
+import Registration from "~/components/Registration.astro";
+import TextSquiggly from "~/components/TextSquiggly.astro";
+import { links } from "~/data/links";
 import PageLayout from "~/layouts/PageLayout.astro";
 ---
 
 <PageLayout description="A Boston conference for excellent web dev tooling.">
-	<Hero />
-	<AdTicketsThin />
-	<AdNewsletterThin />
-	{
-		Astro.url.searchParams.has("full") && (
-			<>
-				<Explainers />
-				<AboutUs />
-				<AdRegistration />
-				<AdNewsletterRich />
-			</>
-		)
-	}
+	<Hero scrollNotice>
+		<div class="hero-locators">
+			<InlineBlock class="date">September 18-19, 2025 ·</InlineBlock>
+			<InlineBlock class="location">Boston New England Aquarium</InlineBlock>
+		</div>
+
+		<div class="hero-tagline">
+			SquiggleConf brings together the admirers, contributors, and maintainers
+			of the latest and greatest in
+			<InlineBlock>
+				<TextSquiggly width="wide">
+					<Fragment slot="inside">web dev tooling</Fragment>
+					<Fragment slot="after">.</Fragment>
+				</TextSquiggly>
+			</InlineBlock>
+		</div>
+
+		<div class="hero-bottom">
+			<Button
+				as="a"
+				class="hero-button"
+				size="large"
+				variant="emphasized"
+				href={links.tickets}
+				target="_blank"
+			>
+				Get extra early bird tickets now!
+
+				<Arrow />
+			</Button>
+		</div>
+	</Hero>
+	<ExplainersList />
+	<AboutUs />
+	<Registration />
+	<Newsletter />
 </PageLayout>
+
+<style>
+	.hero-locators {
+		color: var(--colorAccentMedium);
+		font-family: var(--fontFamilyHeading);
+		font-size: var(--fontSizeMedium);
+		padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(1.5rem, 5vw, 2.5rem);
+	}
+
+	.hero-tagline {
+		color: var(--colorBackground);
+		font-family: var(--fontFamilyHeading);
+		font-size: var(--fontSizeLarger);
+		font-weight: var(--fontWeightMedium);
+	}
+
+	.hero-bottom {
+		margin-top: 3.5rem;
+	}
+
+	.hero-button {
+		gap: 0.5rem;
+	}
+</style>

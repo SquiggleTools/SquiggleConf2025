@@ -1,19 +1,35 @@
 ---
-import BodyText from "./BodyText.astro";
+import oceanFloorLeft from "~/assets/design/ocean-floor-left.svg";
+import oceanFloorRight from "~/assets/design/ocean-floor-right.svg";
+
+import DecorativeImage from "./DecorativeImage.astro";
 import Button from "./Button.astro";
 import ContentArea from "./ContentArea.astro";
 import Heading from "./Heading.astro";
-import TextSquiggly from "./TextSquiggly.astro";
 ---
 
-<div class="ad-newsletter-thin">
-	<ContentArea as="section" class="ad-newsletter-contents">
-		<Heading class="ad-newsletter-heading" level="h2">
-			Sign up to receive announcements and important
-			<TextSquiggly renderAs="strong" width="medium">
-				<Fragment slot="inside">SquiggleConf</Fragment>
-			</TextSquiggly>
-			info.
+<div class="newsletter">
+	<svg
+		class="light-beam"
+		fill="none"
+		height="681"
+		preserveAspectRatio="none"
+		viewBox="0 0 1637 681"
+		width="1637"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path
+			d="M1410.6 -435.752L-90.8221 681.162L187.092 841.197L925.996 768.169L1636.02 -450.454L1410.6 -435.752Z"
+			fill="var(--colorBlueBright5)"
+		>
+		</path>
+	</svg>
+
+	<DecorativeImage class="ocean-floor-left" src={oceanFloorLeft} />
+	<DecorativeImage class="ocean-floor-right" src={oceanFloorRight} />
+	<ContentArea as="section" class="newsletter-contents">
+		<Heading level="h2">
+			Sign up to receive announcements and important SquiggleConf info.
 		</Heading>
 
 		<form
@@ -29,12 +45,18 @@ import TextSquiggly from "./TextSquiggly.astro";
 				type="email"
 				placeholder="cool.dev@awesome.com"
 			/>
-			<Button as="button" id="submit" type="submit" variant="light"
-				>Subscribe</Button
+			<Button
+				as="button"
+				id="submit"
+				size="large"
+				type="submit"
+				variant="light"
 			>
+				Subscribe
+			</Button>
 		</form>
 
-		<BodyText aria-live="assertive" id="newsletter-message" />
+		<p aria-live="assertive" id="newsletter-message"></p>
 	</ContentArea>
 </div>
 
@@ -112,43 +134,79 @@ import TextSquiggly from "./TextSquiggly.astro";
 </script>
 
 <style>
-	.ad-newsletter-thin {
-		background: var(--colorAccentMedium);
+	.newsletter {
+		background: var(--colorBlueBright6);
+		color: var(--colorWhiteIsh);
 		padding: 3rem 0;
+		overflow: hidden;
+		position: relative;
 		text-align: center;
 	}
 
-	.ad-newsletter-contents {
+	.light-beam {
+		position: absolute;
+		left: 10%;
+		width: 75%;
+		height: 100%;
+		top: 0;
+	}
+
+	.ocean-floor-left {
+		bottom: 0;
+		height: 90%;
+		right: -10%;
+	}
+
+	.ocean-floor-right {
+		bottom: 0;
+		height: 90%;
+		left: 50%;
+	}
+
+	.newsletter-contents {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		position: relative;
+		z-index: 1;
 	}
 
-	.ad-newsletter-heading {
+	h2 {
+		font-family: var(--fontFamilyHeading);
 		font-size: var(--fontSizeLarge);
-		max-width: 40rem;
+		font-weight: var(--fontWeightMedium);
+		line-height: 1;
+		max-width: 25rem;
 	}
 
 	form {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-		font-size: var(--fontSizeSmall);
+		font-family: var(--fontFamilyHeading);
+	}
+
+	.email-label {
+		align-self: flex-start;
 	}
 
 	.email-input {
+		background: var(--colorWhiteIsh);
 		border: none;
 		border-radius: 3px;
-		font-family: var(--fontFamilyText);
-		font-size: var(--fontSizeSmall);
+		color: var(--colorBlackIsh);
+		font-family: var(--fontFamilyHeading);
+		font-weight: var(--fontWeightSemibold);
+		font-size: var(--fontSizeSmaller);
 		margin: 0.5rem 0 1rem;
+		max-width: 80vw;
 		padding: 1rem 0.5rem;
 		width: 25rem;
 	}
 
 	.email-input::placeholder {
-		color: var(--colorDark);
+		font-weight: var(--fontWeightMedium);
 	}
 
 	#newsletter-message {
@@ -157,5 +215,11 @@ import TextSquiggly from "./TextSquiggly.astro";
 
 	#newsletter-message.unhappy {
 		color: var(--colorUnhappy);
+	}
+
+	@media (width >= 819px) {
+		.ocean-floor-left {
+			right: clamp(10%, 40vw, 50%);
+		}
 	}
 </style>

@@ -14,35 +14,35 @@ function hrefProps(pathname: string) {
 
 <header>
 	<ContentArea class="header-content-area-mobile">
-		<a class="logo" href="/"><Logo /></a>
+		<a class="logo" href="/"><Logo year /></a>
 
 		<details id="details">
 			<summary aria-label="Toggle header">≡</summary>
 			<div class="header-contents-mobile">
 				<a {...hrefProps("/")}>Home</a>
-				<a {...hrefProps("https://2024.squiggleconf.com")}>2024 Conf</a>
+				<a {...hrefProps("/travel")}>Travel</a>
 				<Button
 					as="a"
 					class="header-button"
 					href={links.tickets}
 					target="_blank"
-					variant="accent">Register</Button
+					variant="accent">Get your ticket</Button
 				>
 			</div>
 		</details>
 	</ContentArea>
 
 	<ContentArea class="header-content-area-wide" width="wide">
-		<a class="logo" href="/"><Logo /></a>
+		<a class="logo" href="/"><Logo year /></a>
 		<div class="header-links">
 			<a {...hrefProps("/")}>Home</a>
-			<a {...hrefProps("https://2024.squiggleconf.com")}>2024 Conf</a>
+			<a {...hrefProps("/travel")}>Travel</a>
 			<Button
 				as="a"
 				class="header-button"
 				href={links.tickets}
 				target="_blank"
-				variant="accent">Register</Button
+				variant="accent">Get your ticket</Button
 			>
 		</div>
 	</ContentArea>
@@ -61,8 +61,10 @@ function hrefProps(pathname: string) {
 
 <style>
 	header {
-		border-bottom: 1px solid var(--colorAccentMedium);
-		font-size: var(--fontSizeSmall);
+		border-bottom: 1px solid var(--colorBlue3);
+		color: var(--colorWhiteIsh);
+		background: var(--colorForeground);
+		font-size: var(--fontSizeSmallest);
 		padding: 1.5rem 0;
 		width: 100%;
 	}
@@ -102,17 +104,19 @@ function hrefProps(pathname: string) {
 
 	.header-contents-mobile {
 		--offsetTop: 4.5rem;
-
-		background: var(--colorDark);
+		background: var(--colorForeground);
 		box-shadow: 0 0 1rem var(--colorTextShadow);
 		display: flex;
 		flex-direction: column;
+		font-family: var(--fontFamilyHeading);
 		font-size: var(--fontSizeLarge);
+		font-weight: var(--fontWeightSemibold);
 		font-weight: bold;
+		gap: 0.5rem;
 		line-height: 1.5;
 		margin-top: calc(var(--offsetTop) * -1);
 		min-width: 20rem;
-		padding: var(--offsetTop) 1rem 1rem;
+		padding: var(--offsetTop) 1rem 1.5rem;
 		position: absolute;
 		right: 0;
 		text-align: right;
@@ -120,9 +124,9 @@ function hrefProps(pathname: string) {
 		z-index: 1;
 	}
 
-	.header-content-area-mobile button {
+	.header-contents-mobile .header-button {
 		align-self: end;
-		margin-top: 1rem;
+		margin-top: 0.5rem;
 	}
 
 	.header-content-area-wide {
@@ -141,10 +145,11 @@ function hrefProps(pathname: string) {
 	}
 
 	.header-button {
+		justify-content: center;
 		margin-left: 0.35rem;
 	}
 
-	@media (width >= 777px) {
+	@media (width >= 819px) {
 		.header-content-area-mobile {
 			display: none;
 		}

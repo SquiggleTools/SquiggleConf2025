@@ -1,57 +1,89 @@
 :root {
-	/* Raw swatches */
-	--colorWhite: #ffffff;
+	color-scheme: light;
+
+	--colorBlackIsh: #041930;
+	--colorBlueBright0: #e2eff4;
+	--colorBlueBright1: #d8f3ff;
+	--colorBlueBright2: #e6f7fe;
+	--colorBlueBright3: #98d8f3;
+	--colorBlueBright4: #5aa2c2;
+	--colorBlueBright5: #1f7fab;
+	--colorBlueBright6: #196d9a;
 	--colorBlue1: #bcdfe9;
-	--colorBlue2: #29ced6;
+	--colorBlue2: #38ced6;
 	--colorBlue3: #116d9a;
 	--colorBlue4: #063052;
 	--colorBlue5: #041930;
+	--colorRed1: #ffbfc2;
+	--colorWhiteIsh: #eaeaf7;
 
-	--colorAccentLight: var(--colorBlue1);
-	--colorAccentSecond: var(--colorBlue2);
-	--colorAccentMedium: var(--colorBlue3);
 	--colorAccentDark: var(--colorBlue4);
-	--colorDark: var(--colorBlue5);
-	--colorLight: var(--colorWhite);
-	--colorUnhappy: #ffbfc2;
+	--colorAccentLight: var(--colorBlue1);
+	--colorAccentMedium: var(--colorBlue3);
+	--colorAccentSecond: var(--colorBlue2);
+	--colorBackground: var(--colorBlackIsh);
+	--colorBackgroundEmphasized: var(--colorBlueBright3);
+	--colorForeground: var(--colorBlue4);
+	--colorForegroundAccent: var(--colorWhiteIsh);
+	--colorForegroundEmphasized: var(--colorBlue5);
+	--colorUnhappy: var(--colorRed1);
 
+	--fontFamilyBody: "Inter Variable";
+	--fontFamilyHeading: "Urbanist Variable";
 	--fontFamilyLogo: "Josefin Sans Variable";
-	--fontFamilyText: "Urbanist Variable";
 
-	--fontSizeSmall: clamp(1rem, 2.5vw, 1.15rem);
+	--fontSizeSmallest: clamp(0.9rem, 2.25vw, 1.1rem);
+	--fontSizeSmall: clamp(1.125rem, 2.875vw, 1.25rem);
 	--fontSizeMedium: clamp(1.25rem, 3.25vw, 1.5rem);
 	--fontSizeLarge: clamp(1.5rem, 3.75vw, 2rem);
+	--fontSizeLarger: clamp(2rem, 4.5vw, 3rem);
 	--fontSizeHero: clamp(2rem, 5vw, 3rem);
 	--fontSizeLogo: clamp(1.75rem, 4.375vw, 2.25rem);
 
 	--fontWeightLight: 200;
 	--fontWeightMedium: 300;
-	--fontWeightSemibold: 500;
+	--fontWeightSemibold: 350;
+	--fontWeightBold: 500;
 	--fontWeightLogo: 600;
 
+	--letterSpacingLoose: 1px;
 	--letterSpacingLogo: -1px;
 	--letterSpacingTight: -0.5px;
 
-	--sizeContentAreaThin: 56rem;
-	--sizeContentAreaNormal: 70rem;
+	--sizeContentAreaEmphasized: 43rem;
+	--sizeContentAreaThin: 49rem;
+	--sizeContentAreaNormal: 70.5rem;
 	--sizeContentAreaWide: 75rem;
 
 	color-scheme: light;
-
-	/* colors */
 }
 
 html {
-	background: var(--colorDark);
-	color: var(--colorLight);
 	min-height: 100%;
-	font-family: var(--fontFamilyText);
+	font-family: var(--fontFamilyBody);
 }
 
 html.dark {
 	color-scheme: dark;
 
-	/* Colors TBD */
+	--colorBlueBright0: #030f1c;
+	--colorBlueBright1: #051b32;
+	--colorBlueBright2: var(--colorBlue5);
+	--colorBlueBright3: var(--colorBlue4);
+	--colorBlueBright4: var(--colorBlue4);
+	--colorBlueBright5: #196d9a;
+	--colorBlueBright6: #1f7fab;
+
+	--colorAccentLight: var(--colorBlue5);
+	--colorAccentSecond: var(--colorBlue4);
+	--colorAccentMedium: var(--colorBlue2);
+	--colorAccentDark: var(--colorBlue2);
+	--colorBackground: var(--colorWhiteIsh);
+	--colorBackgroundEmphasized: var(--colorBlue4);
+	--colorForeground: var(--colorBlue4);
+	--colorForegroundAccent: var(--colorBlackIsh);
+	--colorForegroundEmphasized: var(--colorBlue1);
+	--colorUnhappy: var(--colorRed1);
 }
 
 @media (prefers-reduced-motion: no-preference) {

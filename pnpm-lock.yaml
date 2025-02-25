@@ -14,6 +14,9 @@ importers:
       '@astrojs/vercel':
         specifier: ^8.0.7
         version: 8.0.7(astro@5.3.0(@types/node@22.13.4)(jiti@2.4.2)(rollup@4.34.8)(typescript@5.7.3)(yaml@2.7.0))(rollup@4.34.8)
+      '@fontsource-variable/inter':
+        specifier: ^5.1.1
+        version: 5.1.1
       '@fontsource-variable/josefin-sans':
         specifier: ^5.1.1
         version: 5.1.1
@@ -639,6 +642,9 @@ packages:
   '@eslint/plugin-kit@0.2.5':
     resolution: {integrity: sha512-lB05FkqEdUg2AA0xEbUz0SnkXT1LcCTa438W4IWTUh4hdOnVbQyOJ81OrDXsJk/LSiJHubgGEFoR5EHq1NsH1A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource-variable/inter@5.1.1':
+    resolution: {integrity: sha512-OpXFTmiH6tHkYijMvQTycFKBLK4X+SRV6tet1m4YOUH7SzIIlMqDja+ocDtiCA72UthBH/vF+3ZtlMr2rN/wIw==}
 
   '@fontsource-variable/josefin-sans@5.1.1':
     resolution: {integrity: sha512-yNnqEfwy0iV61kylO4gHv10tIYTE+/qq2jssI5ppsm/xaUgEWdeUCQibVqBZJTrOSucUBTnCx4VFtLiwE4IIgQ==}
@@ -4081,6 +4087,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.10.0
       levn: 0.4.1
+
+  '@fontsource-variable/inter@5.1.1': {}
 
   '@fontsource-variable/josefin-sans@5.1.1': {}
 

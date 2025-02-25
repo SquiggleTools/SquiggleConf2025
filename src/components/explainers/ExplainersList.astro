@@ -1,12 +1,6 @@
 ---
-import ContentArea from "./ContentArea.astro";
-import Explainer, { ExplainerData } from "./Explainer.astro";
-import Heading from "./Heading.astro";
-
 import stillAttendeesNetworking from "~/assets/stills/attendees-networking.png";
-import stillBostonHarbor from "~/assets/stills/boston-harbor.png";
 import stillDanInngestPresenting from "~/assets/stills/dan-inngest-presenting.png";
-import stillDowntownBostonTower from "~/assets/stills/downtown-boston-tower.png";
 import stillJoshFromBack from "~/assets/stills/josh-from-back.png";
 import stillLorisSpeaking from "~/assets/stills/loris-speaking.png";
 import stillMariahSmiling from "~/assets/stills/mariah-smiling.png";
@@ -14,16 +8,27 @@ import stillNickInterviewingCorina from "~/assets/stills/nick-interviewing-corin
 import stillPresentingInsideVenue from "~/assets/stills/presenting-inside-venue.png";
 import stillRobbySpeaking from "~/assets/stills/robby-speaking.png";
 import stillSignageOutsideVenue from "~/assets/stills/signage-outside-venue.png";
-import stillSpeakersEventGroup from "~/assets/stills/speakers-event-group.png";
 import stillThomasSmilingInFrontOfMarquee from "~/assets/stills/thomas-smiling-in-front-of-marquee.png";
 import stillWorkshopAttendeesSittingFromBack from "~/assets/stills/workshop-attendees-sitting-from-back.png";
 import stillWorkshopAttendeesSittingFromFront from "~/assets/stills/workshop-attendees-sitting-from-front.png";
 
-const explainers: ExplainerData[] = [
+import CoralReefDecoration from "./decorations/CoralReefDecoration.astro";
+import DolphinDecoration from "./decorations/DolphinDecoration.astro";
+import TurtleAndFishDecoration from "./decorations/TurtleAndFishDecoration.astro";
+import WhalesDecoration from "./decorations/WhalesDecoration.astro";
+import ExplainerImages from "./ExplainerImages.astro";
+import ExplainerArea from "./ExplainerArea.astro";
+
+const explainers = [
 	{
+		action: {
+			href: "https://cfp.squiggleconf.com",
+			text: "Apply to be a speaker! CFP now open!",
+		},
 		body: "Enjoy a dozen talks by tooling aficionados, dev experts, and new voices in the space. You’ll emerge with the best techniques to supercharge your projects.",
+		decoration: DolphinDecoration,
 		direction: "up",
-		heading: "🗣️ Talks",
+		heading: "Talks",
 		photos: {
 			primary: {
 				alt: "Nick Nisi interviewing Corina Murg",
@@ -43,50 +48,31 @@ const explainers: ExplainerData[] = [
 	},
 	{
 		body: "Attend workshops from our speakers and sponsors for hands on learning — whether you’re already a tooling wizard or trying to become one.",
+		decoration: WhalesDecoration,
 		direction: "down",
-		heading: "🛠️ Workshops",
+		heading: "Workshops",
 		photos: {
 			primary: {
-				alt: "Dan Farrelly from Inngest presenting a workshop at Faneuil Hall Marketplace",
-				src: stillDanInngestPresenting,
+				alt: "Back view of workshop attendees at Faneuil Hall Marketplace",
+				src: stillWorkshopAttendeesSittingFromFront,
 			},
 			secondary: [
+				{
+					alt: "Dan Farrelly from Inngest presenting a workshop at Faneuil Hall Marketplace",
+					src: stillDanInngestPresenting,
+				},
 				{
 					alt: "Back view of workshop attendees at Faneuil Hall Marketplace",
 					src: stillWorkshopAttendeesSittingFromBack,
-				},
-				{
-					alt: "Back view of workshop attendees at Faneuil Hall Marketplace",
-					src: stillWorkshopAttendeesSittingFromFront,
-				},
-			],
-		},
-	},
-	{
-		body: "Mingle with fellow backend, frontend, and full stack web developers at meetups and mixers before, during, and after the conference.",
-		direction: "up",
-		heading: "🤝 Networking",
-		photos: {
-			primary: {
-				alt: "Assorted conference attendees with SquiggleConf 2024 badges mingling",
-				src: stillAttendeesNetworking,
-			},
-			secondary: [
-				{
-					alt: "A smiling woman in a SquiggleConf 2024 shirt and badge",
-					src: stillMariahSmiling,
-				},
-				{
-					alt: "Back view of Josh Goldberg talking to a crowd",
-					src: stillJoshFromBack,
 				},
 			],
 		},
 	},
 	{
 		body: "Experience the tech conference in comfortable theater seats on the most spectacular IMAX screen. Also, a penguin exhibit next door.",
+		decoration: TurtleAndFishDecoration,
 		direction: "down",
-		heading: "🎥 The Simons IMAX Theater",
+		heading: "The Simons IMAX Theater",
 		photos: {
 			primary: {
 				alt: "Corina Murg presenting a slide saying 'An (accessible) navigation button*' in the huge Simons IMAX theater",
@@ -105,22 +91,23 @@ const explainers: ExplainerData[] = [
 		},
 	},
 	{
-		body: "SquiggleConf is located right in the heart of downtown Boston’s historic district, next to Faneuil Hall Marketplace, sitting in the Boston harbor.",
+		body: "Mingle with fellow backend, frontend, and full stack web developers at meetups and mixers before, during, and after the conference.",
+		decoration: CoralReefDecoration,
 		direction: "up",
-		heading: "🏙️ Beautiful Boston",
+		heading: "Networking",
 		photos: {
 			primary: {
-				alt: "Happy group photo of speakers and organizers at the Boston Duck Tour launch point",
-				src: stillSpeakersEventGroup,
+				alt: "Assorted conference attendees with SquiggleConf 2024 badges mingling",
+				src: stillAttendeesNetworking,
 			},
 			secondary: [
 				{
-					alt: "The Custom House Tower in Boston downtown",
-					src: stillDowntownBostonTower,
+					alt: "A smiling woman in a SquiggleConf 2024 shirt and badge",
+					src: stillMariahSmiling,
 				},
 				{
-					alt: "Small boats floating in the Boston Harbor on a sunny day",
-					src: stillBostonHarbor,
+					alt: "Back view of Josh Goldberg talking to a crowd",
+					src: stillJoshFromBack,
 				},
 			],
 		},
@@ -128,7 +115,28 @@ const explainers: ExplainerData[] = [
 ];
 ---
 
-<ContentArea>
-	<Heading level="h2" link>Why SquiggleConf?</Heading>
-	{explainers.map((explainer) => <Explainer {...explainer} />)}
-</ContentArea>
+<div class="explainers-list">
+	{
+		explainers.map(({ decoration: Decoration, ...explainer }) => (
+			<ExplainerArea {...explainer}>
+				<Decoration>
+					{/* @ts-expect-error -- 🤷 */}
+					<ExplainerImages {...explainer} />
+				</Decoration>
+			</ExplainerArea>
+		))
+	}
+</div>
+
+<style>
+	.explainers-list {
+		background: linear-gradient(
+			180deg,
+			var(--colorBlueBright3) 0%,
+			var(--colorBlueBright4) 100%
+		);
+		overflow: hidden;
+		padding-bottom: 1.5rem;
+		width: 100%;
+	}
+</style>

@@ -4,6 +4,7 @@ import Header from "~/components/Header.astro";
 import BodyArea from "~/components/BodyArea.astro";
 import Footer from "~/components/Footer.astro";
 import BaseLayout from "./BaseLayout.astro";
+import ThemeToggle from "~/components/ThemeToggle.astro";
 
 type Props = HeadProps;
 ---
@@ -12,6 +13,7 @@ type Props = HeadProps;
 	<Header />
 	<BodyArea>
 		<slot />
+		<ThemeToggle />
 	</BodyArea>
 	<Footer />
 </BaseLayout>

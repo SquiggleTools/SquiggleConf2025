@@ -1,10 +1,25 @@
-<em {...Astro.props}>
+---
+const { class: className, underline, ...rest } = Astro.props;
+---
+
+<em
+	class:list={[
+		className,
+		"emphasized-text",
+		underline && "emphasized-text-underline",
+	]}
+	{...rest}
+>
 	<slot />
 </em>
 
 <style>
-	em {
-		color: var(--colorAccentSecond);
+	.emphasized-text {
+		color: var(--colorAccentMedium);
 		font-style: inherit;
+	}
+
+	.emphasized-text-underline {
+		text-decoration: underline;
 	}
 </style>

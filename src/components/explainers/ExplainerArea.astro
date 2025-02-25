@@ -1,0 +1,65 @@
+---
+import Heading from "~/components/Heading.astro";
+import Button from "~/components/Button.astro";
+---
+
+<div class="explainer-area">
+	<Heading level="h2">{Astro.props.heading}</Heading>
+	<div class="explainer-images">
+		<slot />
+	</div>
+	<p class="explainer-body">{Astro.props.body}</p>
+	{
+		Astro.props.action && (
+			<div class="explainer-action-area">
+				<Button
+					as="a"
+					href={Astro.props.action.href}
+					size="large"
+					variant="emphasized"
+				>
+					{Astro.props.action.text}
+				</Button>
+			</div>
+		)
+	}
+</div>
+
+<style>
+	.explainer-area {
+		color: var(--colorBackground);
+		margin: 0 2rem;
+		position: relative;
+	}
+
+	h2 {
+		font-family: var(--fontFamilyLogo);
+		font-size: var(--fontSizeLarger);
+		color: var(--colorForegroundEmphasized);
+		font-weight: var(--fontWeightSemibold);
+		padding: 5rem 2rem 3.5rem;
+		position: relative;
+		text-align: center;
+		z-index: 1;
+	}
+
+	.explainer-body {
+		color: var(--colorBackground);
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightMedium);
+		line-height: 1.35;
+		margin: auto;
+		max-width: var(--sizeContentAreaEmphasized);
+		padding: 1.5rem 5.5rem;
+		position: relative;
+		text-align: center;
+		z-index: 1;
+	}
+
+	.explainer-action-area {
+		display: flex;
+		justify-content: center;
+		padding: 0 3.5rem;
+		width: 100%;
+	}
+</style>

@@ -1,0 +1,93 @@
+---
+import themeMoon from "~/assets/design/theme-moon.svg";
+import themeSun from "~/assets/design/theme-sun.svg";
+---
+
+<div class="theme-toggle">
+	<button
+		aria-label="Theme toggle (enable JavaScript to use)"
+		class="theme-button"
+		id="themeToggle"
+	>
+		<img alt="" class="moon" src={themeMoon.src} />
+		<img alt="" class="sun" src={themeSun.src} />
+	</button>
+</div>
+
+<script is:inline>
+	const html = () => document.documentElement;
+	const toggle = () => document.getElementById("themeToggle");
+
+	function getThemePreference() {
+		return matchMedia("(prefers-color-scheme: dark)").matches
+			? "dark"
+			: "light";
+	}
+
+	/**
+	 * @param {string} newTheme
+	 */
+	function updateElementsForTheme(newTheme) {
+		if (newTheme === "light") {
+			html().classList.remove("dark");
+		} else {
+			html().classList.add("dark");
+		}
+
+		toggle().setAttribute("aria-label", `Theme toggle (current: ${newTheme})`);
+	}
+
+	function initialize() {
+		const startingTheme =
+			typeof localStorage !== "undefined" && localStorage.getItem("theme");
+
+		const theme = startingTheme ?? getThemePreference();
+
+		updateElementsForTheme(theme);
+
+		toggle().addEventListener("click", () => {
+			const newTheme = html().classList.contains("dark") ? "light" : "dark";
+			updateElementsForTheme(newTheme);
+			localStorage.setItem("theme", newTheme);
+		});
+	}
+
+	initialize();
+
+	document.addEventListener("astro:after-swap", initialize);
+</script>
+
+<style>
+	.theme-toggle {
+		opacity: 0.9;
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		z-index: 1;
+	}
+
+	.theme-button {
+		background: none;
+		border: transparent;
+		cursor: pointer;
+	}
+
+	#themeToggle {
+		font-size: 1.5rem;
+		height: 2rem;
+		position: relative;
+		width: 2.25rem;
+	}
+
+	img {
+		height: 1.75rem;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	html.dark .sun,
+	html:not(.dark) .moon {
+		display: none;
+	}
+</style>

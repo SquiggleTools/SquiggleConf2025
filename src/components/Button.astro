@@ -5,7 +5,7 @@ type Props<Tag extends HTMLTag> = Polymorphic<{
 	as: Tag;
 	class?: string;
 	size?: "normal" | "large";
-	variant: "accent" | "light";
+	variant: "accent" | "emphasized" | "light";
 }>;
 
 const {
@@ -31,49 +31,65 @@ const {
 
 <style>
 	.button {
-		border: 0;
+		--colorButtonBackgroundHover: var(--colorBlue1);
+		--colorButtonBorderHover: transparent;
+		--colorButtonColorHover: var(--colorBlackIsh);
+		background: var(--colorButtonBackground);
+		color: var(--colorButtonColor);
+		align-items: center;
+		border: 2px solid transparent;
 		cursor: pointer;
-		font-family: inherit;
+		display: inline-flex;
+		font-family: var(--fontFamilyHeading);
+		font-weight: var(--fontWeightSemibold);
+		text-align: center;
 		text-decoration: none;
 	}
 
 	.button[disabled] {
-		opacity: 0.8;
 		cursor: not-allowed;
+		opacity: 0.8;
 	}
 
 	.button-size-normal {
 		border-radius: 2rem;
-		font-size: var(--fontSizeSmall);
 		padding: 0.65rem 1.25rem;
 	}
 
 	.button-size-large {
 		border-radius: 4rem;
 		font-size: var(--fontSizeMedium);
-		padding: 0.85rem 2rem;
+		padding: 0.85rem 2rem 0.75rem;
 	}
 
 	.button-variant-accent {
-		background: var(--colorAccentMedium);
-		color: var(--colorLight);
+		--colorButtonBackground: var(--colorBlue3);
+		--colorButtonColor: var(--colorWhiteIsh);
+	}
+
+	.button-variant-emphasized {
+		--colorButtonBackground: var(--colorAccentMedium);
+		--colorButtonColor: var(--colorForegroundAccent);
 	}
 
 	.button-variant-light {
-		background: var(--colorLight);
-		border: 2px solid var(--colorAccentLight);
-		color: var(--colorDark);
-		font-weight: var(--fontWeightSemibold);
+		--colorButtonBackground: var(--colorWhiteIsh);
+		--colorButtonCorder: 2px solid var(--colorBlue1);
+		--colorButtonBackgroundHover: var(--colorBlue2);
+		--colorButtonBorderHover: var(--colorBlue1);
+		color: var(--colorBlackIsh);
+		font-weight: var(--fontWeightBold);
 	}
 
 	.button:active {
-		background: var(--colorAccentSecond);
-		color: var(--colorDark);
+		--colorButtonBackground: var(--colorAccentSecond);
+		--colorButtonColor: var(--colorForeground);
 	}
 
 	.button:focus:not(:active, [disabled]),
 	.button:hover:not(:active, [disabled]) {
-		background: var(--colorAccentLight);
-		color: var(--colorDark);
+		background: var(--colorButtonBackgroundHover);
+		color: var(--colorButtonColorHover);
+		border: 2px solid var(--colorButtonBorderHover);
 	}
 </style>

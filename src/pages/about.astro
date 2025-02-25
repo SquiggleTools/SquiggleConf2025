@@ -1,0 +1,116 @@
+---
+import joshGoldberg from "~/assets/avatars/josh-goldberg.png";
+import dimitriMitropoulos from "~/assets/avatars/dimitri-mitropoulos.jpg";
+import bostonTSClub from "~/assets/logos/boston-ts-club.svg";
+import michiganTypeScript from "~/assets/logos/michigan-typescript.png";
+import { Props as BioProps } from "~/components/Bio.astro";
+import BodyText from "~/components/BodyText.astro";
+import CommonContent from "~/components/CommonContent.astro";
+import Hero from "~/components/hero/Hero.astro";
+import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
+import PageLayout from "~/layouts/PageLayout.astro";
+import Bios from "~/components/Bios.astro";
+
+const biosSquiggleTools: BioProps[] = [
+	{
+		links: {
+			bluesky: "https://bsky.app/profile/bostonts.club",
+			linkedin: "https://www.linkedin.com/groups/13008308",
+			mastodon: "https://mastodon.social/@BostonTS",
+			website: "https://bostonts.club",
+		},
+		name: "Boston TS Club",
+		photo: bostonTSClub,
+	},
+	{
+		links: {
+			github: "https://github.com/dimitropoulos",
+			linkedin: "https://linkedin.com/in/dimitrimitropoulos",
+		},
+		name: "Dimitri Mitropoulos",
+		photo: dimitriMitropoulos,
+	},
+	{
+		links: {
+			bluesky: "https://bsky.app/profile/joshuakgoldberg.com",
+			github: "https://github.com/JoshuaKGoldberg",
+			mastodon: "https://fosstodon.org/@JoshuaKGoldberg",
+			website: "https://joshuakgoldberg.com",
+		},
+		name: "Josh Goldberg",
+		photo: joshGoldberg,
+	},
+	{
+		links: {
+			bluesky: "https://bsky.app/profile/michigantypescript.com",
+			mastodon: "https://fosstodon.org/@MichiganTypeScript",
+			youtube: "https://youtube.com/@MichiganTypeScript",
+		},
+		name: "Michigan TypeScript",
+		photo: michiganTypeScript,
+	},
+];
+---
+
+<PageLayout description="A Boston conference for excellent web dev tooling.">
+	<Hero>
+		<HeroContentsStandard heading="About">
+			The SquiggleConf mission and team
+		</HeroContentsStandard>
+	</Hero>
+
+	<CommonContent heading="A Web Dev Tooling Conference">
+		<BodyText>
+			Our goal with SquiggleConf is to create an enriching conference
+			environment to talk about the latest and greatest in web developer
+			tooling. We aim to include everyone from newcomers to the space and web
+			platform team members to authors & maintainers of open source tools.
+		</BodyText>
+	</CommonContent>
+
+	<CommonContent heading="Branding">
+		<BodyText>
+			When referring to us in announcements, social media posts, or other broad
+			communications, please use <em>"SquiggleConf"</em>. That's
+			<em>"Squiggle"</em> and <em>"Conf"</em>, no space. We are not
+			<em>"Squiggle Conf"</em>,
+			<em>"Squiggle Conference"</em>, or
+			<em>"SquiggleCon"</em>.
+			<br />
+			<br />
+			Please include alt text with any images [<a
+				href="https://www.linkedin.com/help/linkedin/answer/a519856/adding-alternative-text-to-images-for-accessibility?lang=en"
+				>LinkedIn alt text help</a
+			>] and follow platform accessibility guidelines. We can only share posts
+			that are inclusive to all potential recipients.
+			<br />
+			<br />
+			We don't yet have branding assets finalized for 2025, but will post them here
+			once we do.
+		</BodyText>
+	</CommonContent>
+
+	<CommonContent heading="Squiggle.Tools">
+		<BodyText>
+			SquiggleConf is a production of Squiggle.Tools, a nonprofit organization
+			(501(c)3 pending) offering ongoing learning opportunities that enable
+			participants to engage, learn, and advance their careers—regardless of
+			their background or resources.
+		</BodyText>
+
+		<Bios bios={biosSquiggleTools} />
+	</CommonContent>
+
+	<CommonContent heading="Staff Members">
+		<BodyText>
+			SquiggleConf 2025 includes a staff of volunteers who are passionate about
+			the conference and working through the year.
+		</BodyText>
+
+		<br />
+
+		<BodyText>
+			<em class="staff-soon">(staff members bios coming soon!)</em>
+		</BodyText>
+	</CommonContent>
+</PageLayout>

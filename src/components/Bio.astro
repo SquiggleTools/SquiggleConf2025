@@ -1,0 +1,43 @@
+---
+import { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import BioLinks, { BioLinksPlatforms } from "./BioLinks.astro";
+
+export interface Props {
+	class?: string;
+	links: BioLinksPlatforms;
+	name: string;
+	photo: ImageMetadata;
+}
+
+const { class: className, links, name, photo, ...rest } = Astro.props;
+---
+
+<li {...rest} class:list={["bio", className]}>
+	<Image alt="" class="bio-image" src={photo} />
+	<div class="name">{name}</div>
+	<BioLinks name={name} links={links} />
+</li>
+
+<style>
+	.bio {
+		align-items: center;
+		display: flex;
+		color: var(--colorForegroundEmphasized);
+		flex-basis: 0;
+		flex-direction: column;
+		flex-grow: 2;
+		min-width: 7.5rem;
+		gap: 0.25rem;
+	}
+
+	.bio-image {
+		--imageSize: 5rem;
+		border-radius: 100%;
+		height: var(--imageSize);
+		margin-bottom: 0.5rem;
+		user-select: none;
+		width: var(--imageSize);
+	}
+</style>

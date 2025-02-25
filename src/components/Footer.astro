@@ -16,8 +16,9 @@ import Socials from "./Socials.astro";
 		</div>
 		<div class="right">
 			<div class="footer-links">
-				<a href="https://shop.squiggle.tools" target="_blank">Shop</a>
 				<a href="/code-of-conduct">Code of Conduct</a>
+				<a href="https://shop.squiggle.tools" target="_blank">Shop</a>
+				<a href="https://2024.squiggleconf.com" target="_blank">2024</a>
 			</div>
 			<Socials />
 		</div>
@@ -26,9 +27,9 @@ import Socials from "./Socials.astro";
 
 <style>
 	footer {
-		color: var(--colorAccentLight);
-		font-size: var(--fontSizeSmall);
-		font-weight: var(--fontWeightLight);
+		background: #0f2936;
+		color: var(--colorForegroundEmphasized);
+		font-family: var(--fontFamilyHeading);
 		padding: 3.5rem 0;
 		width: 100%;
 	}
@@ -41,6 +42,7 @@ import Socials from "./Socials.astro";
 	}
 
 	.left {
+		color: var(--colorBlue1);
 		display: flex;
 		flex-direction: column;
 		gap: 0.75rem;
@@ -54,21 +56,21 @@ import Socials from "./Socials.astro";
 
 	.footer-links {
 		display: flex;
-		gap: 2rem;
+		gap: 1rem;
 	}
 
 	.footer-links a {
 		text-decoration: none;
 	}
 
-	@media (width >= 777px) {
+	@media (width >= 819px) {
 		.footer-content-area {
 			flex-direction: row;
 		}
 
 		.right {
 			align-items: flex-end;
-			color: var(--colorLight);
+			color: var(--colorWhiteIsh);
 		}
 	}
 </style>

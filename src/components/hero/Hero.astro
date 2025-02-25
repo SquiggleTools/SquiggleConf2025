@@ -1,0 +1,96 @@
+---
+import cityscape from "~/assets/design/cityscape.svg";
+import ContentArea from "~/components/ContentArea.astro";
+
+interface Props {
+	scrollNotice?: boolean;
+}
+---
+
+<section class="hero">
+	<div class="hero-decorations">
+		<div class="hero-decorations-inner">
+			<div
+				class="hero-cityscape"
+				style={{ backgroundImage: `url(${cityscape.src})` }}
+			>
+			</div>
+		</div>
+	</div>
+
+	<ContentArea class="hero-contents">
+		<slot />
+	</ContentArea>
+
+	{
+		Astro.props.scrollNotice && (
+			<div class="hero-scroll-notice">
+				Scroll to explore the depths of SquiggleConf
+			</div>
+		)
+	}
+</section>
+
+<style>
+	.hero {
+		--cityscapeHeightArea: 16rem;
+		background: linear-gradient(
+			180deg,
+			var(--colorBlueBright1) 0%,
+			var(--colorBlueBright2) 100%
+		);
+		color: var(--colorBackground);
+		padding-bottom: var(--cityscapeHeightArea);
+		position: relative;
+	}
+
+	.hero-decorations {
+		bottom: -2.5rem;
+		pointer-events: none;
+		position: absolute;
+		height: 100%;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.hero-decorations-inner {
+		bottom: 0;
+		left: 50%;
+		position: absolute;
+		text-align: center;
+		width: 0;
+	}
+
+	.hero-cityscape {
+		background-repeat: repeat-x;
+		height: 32rem;
+		pointer-events: none;
+		position: relative;
+		transform: translateX(-48.5%);
+		user-select: none;
+		min-width: 100vw;
+		width: 150rem;
+	}
+
+	.hero-contents {
+		z-index: 1;
+		position: relative;
+	}
+
+	.hero-scroll-notice {
+		color: var(--colorBlue1);
+		font-family: var(--fontFamilyHeading);
+		font-weight: var(--fontWeightSemibold);
+		font-style: italic;
+		bottom: 2rem;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
+
+	@media (width >= 819px) {
+		.hero-cityscape {
+			transform: translateX(-50%);
+		}
+	}
+</style>

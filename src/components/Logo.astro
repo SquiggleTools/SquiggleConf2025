@@ -1,6 +1,9 @@
 ---
-import EmphasizedText from "./EmphasizedText.astro";
 import TextSquiggly from "./TextSquiggly.astro";
+
+interface Props {
+	year?: boolean;
+}
 ---
 
 <div class="logo">
@@ -8,20 +11,19 @@ import TextSquiggly from "./TextSquiggly.astro";
 		<Fragment slot="inside">Squiggle</Fragment>
 		<Fragment slot="after">Conf</Fragment>
 	</TextSquiggly>
-	<EmphasizedText class="year">2025</EmphasizedText>
+	{Astro.props.year && <span class="year">2025</span>}
 </div>
 
 <style>
 	.logo {
-		color: var(--colorLight);
+		color: var(--colorWhiteIsh);
 		font-family: var(--fontFamilyLogo);
 		font-size: var(--fontSizeLogo);
-		font-weight: var(--fontWeightLogo);
-		letter-spacing: var(--letterSpacingLogo);
+		font-style: initial;
 	}
 
 	.year {
-		font-family: var(--fontFamilyText);
-		font-weight: 300;
+		color: var(--colorBlue2);
+		font-family: var(--fontFamilyHeading);
 	}
 </style>

@@ -1,0 +1,88 @@
+---
+import mantaDown from "~/assets/design/manta-down.svg";
+import mantaUp from "~/assets/design/manta-up.svg";
+import squiggleThickWide from "~/assets/design/squiggle-thick-wide.svg";
+import { links } from "~/data/links";
+
+import Button from "./Button.astro";
+import ContentArea from "./ContentArea.astro";
+import DecorativeImage from "./DecorativeImage.astro";
+import Heading from "./Heading.astro";
+import TextSquiggly from "./TextSquiggly.astro";
+---
+
+<div class="registration">
+	<DecorativeImage class="squiggle-thick-wide" src={squiggleThickWide} />
+	<ContentArea as="section" class="registration-contents">
+		<DecorativeImage class="manta manta-down" src={mantaDown} />
+		<DecorativeImage class="manta manta-up" src={mantaUp} />
+		<TextSquiggly renderAs="strong" width="wide">
+			<Fragment slot="inside">
+				<Heading level="h2">Registration is open!</Heading>
+			</Fragment>
+		</TextSquiggly>
+		<Button
+			as="a"
+			href={links.tickets}
+			target="_blank"
+			size="large"
+			variant="emphasized"
+		>
+			Get extra early bird tickets now!
+		</Button>
+	</ContentArea>
+</div>
+
+<style>
+	.registration {
+		background: var(--colorBlueBright4);
+		color: var(--colorBackground);
+		overflow: hidden;
+		position: relative;
+	}
+
+	.squiggle-thick-wide {
+		height: 80%;
+		left: 0;
+		top: 10%;
+		width: 100%;
+	}
+
+	.manta-down {
+		height: 5rem;
+		right: -12rem;
+		top: 2rem;
+	}
+
+	.manta-up {
+		bottom: 2rem;
+		height: 6rem;
+		left: -7.5rem;
+	}
+
+	section.registration-contents {
+		align-items: center;
+		gap: 2.5rem;
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		padding: 3.5rem;
+	}
+
+	h2 {
+		font-family: var(--fontFamilyHeading);
+		font-size: var(--fontSizeLarge);
+		font-weight: var(--fontWeightMedium);
+		margin-bottom: 0.5rem;
+	}
+
+	@media (width >= 819px) {
+		.manta-down {
+			right: -7.5%;
+		}
+
+		.manta-up {
+			left: -7.5%;
+		}
+	}
+</style>
