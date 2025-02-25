@@ -10,7 +10,11 @@ interface Props {
 <section class="hero">
 	<div class="hero-decorations">
 		<div class="hero-decorations-inner">
-			<img alt="" class="hero-cityscape" src={cityscape.src} />
+			<div
+				class="hero-cityscape"
+				style={{ backgroundImage: `url(${cityscape.src})` }}
+			>
+			</div>
 		</div>
 	</div>
 
@@ -58,10 +62,14 @@ interface Props {
 	}
 
 	.hero-cityscape {
+		background-repeat: repeat-x;
+		height: 32rem;
 		pointer-events: none;
 		position: relative;
 		transform: translateX(-48.5%);
 		user-select: none;
+		min-width: 100vw;
+		width: 150rem;
 	}
 
 	.hero-contents {
@@ -82,7 +90,7 @@ interface Props {
 
 	@media (width >= 819px) {
 		.hero-cityscape {
-			transform: translateX(-49%);
+			transform: translateX(-50%);
 		}
 	}
 </style>
