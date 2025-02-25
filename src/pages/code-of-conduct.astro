@@ -1,4 +1,5 @@
 ---
+import BodyText from "~/components/BodyText.astro";
 import ContentArea from "~/components/ContentArea.astro";
 import Heading from "~/components/Heading.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
@@ -11,16 +12,16 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	<ContentArea class="code-of-conduct-body-area" width="thin">
 		<Heading level="h1">Code of Conduct</Heading>
 
-		<p class="code-of-conduct-body-text">
+		<BodyText class="code-of-conduct-body-text">
 			SquiggleConf is dedicated to providing a respectful, harassment-free
 			community for everyone. We do not tolerate harassment or bullying of any
 			community member in any form. This does not only extend to members of the
 			SquiggleConf, but to anyone who chooses to become involved in the larger
 			SquiggleConf community of users, developers and integrators through events
 			or interactions.
-		</p>
+		</BodyText>
 
-		<p class="code-of-conduct-body-text">
+		<BodyText class="code-of-conduct-body-text">
 			Harassment includes offensive verbal/electronic comments related to
 			personal characteristics or choices, sexual images or comments in public
 			or online spaces, deliberate intimidation, bullying, stalking, following,
@@ -29,28 +30,28 @@ import PageLayout from "~/layouts/PageLayout.astro";
 			inappropriate physical contact, or unwelcome sexual attention.
 			Participants asked to stop any harassing or bullying behavior are expected
 			to comply immediately.
-		</p>
+		</BodyText>
 
-		<p class="code-of-conduct-body-text">
+		<BodyText class="code-of-conduct-body-text">
 			If a participant engages in harassing behavior, representatives of the
 			community may take reasonable action they deem appropriate, including
 			warning the offender, expulsion from any SquiggleConf event, or expulsion
 			from mailing lists, Discord groups, discussion boards, and other
 			electronic communications channels to resolve the issue. This may include
 			expulsion from SquiggleConf membership.
-		</p>
+		</BodyText>
 
-		<p class="code-of-conduct-body-text">
+		<BodyText class="code-of-conduct-body-text">
 			If you are being harassed, notice that someone else is being harassed, or
 			have any other concerns, please act to intercede or ask for help from any
 			member of the SquiggleConf, Discord group admins, website admins, or
 			organizers/representatives of any physical events put on under the
 			auspices of the SquiggleConf.
-		</p>
+		</BodyText>
 
-		<p class="code-of-conduct-body-text">—</p>
+		<BodyText class="code-of-conduct-body-text">—</BodyText>
 
-		<p class="code-of-conduct-body-text">
+		<BodyText class="code-of-conduct-body-text">
 			This Code of Conduct adapted from
 			<a
 				href="https://plone.org/foundation/materials/foundation-resolutions/code-of-conduct"
@@ -59,12 +60,12 @@ import PageLayout from "~/layouts/PageLayout.astro";
 			>
 				plone.org/foundation/materials/foundation-resolutions/code-of-conduct</a
 			>.
-		</p>
+		</BodyText>
 
-		<p class="code-of-conduct-body-text">
+		<BodyText class="code-of-conduct-body-text">
 			The content of this Code of Conduct is licensed under a Creative Commons
 			Attribution-ShareAlike 4.0 International license.
-		</p>
+		</BodyText>
 	</ContentArea>
 </PageLayout>
 
@@ -79,9 +80,6 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	}
 
 	.code-of-conduct-body-text {
-		font-size: var(--fontSizeMedium);
-		font-weight: var(--fontWeightMedium);
-		line-height: 2.125rem;
 		padding-bottom: 2rem;
 	}
 </style>
