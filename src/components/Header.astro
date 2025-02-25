@@ -104,17 +104,19 @@ function hrefProps(pathname: string) {
 
 	.header-contents-mobile {
 		--offsetTop: 4.5rem;
-
 		background: var(--colorForeground);
 		box-shadow: 0 0 1rem var(--colorTextShadow);
 		display: flex;
 		flex-direction: column;
+		font-family: var(--fontFamilyHeading);
 		font-size: var(--fontSizeLarge);
+		font-weight: var(--fontWeightSemibold);
 		font-weight: bold;
+		gap: 0.5rem;
 		line-height: 1.5;
 		margin-top: calc(var(--offsetTop) * -1);
 		min-width: 20rem;
-		padding: var(--offsetTop) 1rem 1rem;
+		padding: var(--offsetTop) 1rem 1.5rem;
 		position: absolute;
 		right: 0;
 		text-align: right;
@@ -122,9 +124,9 @@ function hrefProps(pathname: string) {
 		z-index: 1;
 	}
 
-	.header-content-area-mobile button {
+	.header-contents-mobile .header-button {
 		align-self: end;
-		margin-top: 1rem;
+		margin-top: 0.5rem;
 	}
 
 	.header-content-area-wide {
@@ -143,6 +145,7 @@ function hrefProps(pathname: string) {
 	}
 
 	.header-button {
+		justify-content: center;
 		margin-left: 0.35rem;
 	}
 
