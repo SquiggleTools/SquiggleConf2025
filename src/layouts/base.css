@@ -2,6 +2,7 @@
 	color-scheme: light;
 
 	--colorBlackIsh: #041930;
+	--colorBlueBright0: #e2eff4;
 	--colorBlueBright1: #d8f3ff;
 	--colorBlueBright2: #e6f7fe;
 	--colorBlueBright3: #98d8f3;
@@ -65,6 +66,7 @@ html {
 html.dark {
 	color-scheme: dark;
 
+	--colorBlueBright0: #030f1c;
 	--colorBlueBright1: #051b32;
 	--colorBlueBright2: var(--colorBlue5);
 	--colorBlueBright3: var(--colorBlue4);
