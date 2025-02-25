@@ -1,5 +1,6 @@
 :root {
-	/* Raw swatches */
+	color-scheme: light;
+
 	--colorBlackIsh: #030e19;
 	--colorBlueBright1: #d8f3ff;
 	--colorBlueBright2: #e6f7fe;
@@ -61,28 +62,26 @@ html {
 	font-family: var(--fontFamilyBody);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		color-scheme: dark;
+html.dark {
+	color-scheme: dark;
 
-		--colorBlueBright1: #051b32;
-		--colorBlueBright2: var(--colorBlue5);
-		--colorBlueBright3: var(--colorBlue4);
-		--colorBlueBright4: var(--colorBlue4);
-		--colorBlueBright5: #196d9a;
-		--colorBlueBright6: #1f7fab;
+	--colorBlueBright1: #051b32;
+	--colorBlueBright2: var(--colorBlue5);
+	--colorBlueBright3: var(--colorBlue4);
+	--colorBlueBright4: var(--colorBlue4);
+	--colorBlueBright5: #196d9a;
+	--colorBlueBright6: #1f7fab;
 
-		--colorAccentLight: var(--colorBlue5);
-		--colorAccentSecond: var(--colorBlue4);
-		--colorAccentMedium: var(--colorBlue2);
-		--colorAccentDark: var(--colorBlue2);
-		--colorBackground: var(--colorWhiteIsh);
-		--colorBackgroundEmphasized: var(--colorBlue4);
-		--colorForeground: var(--colorBlue4);
-		--colorForegroundAccent: var(--colorBlackIsh);
-		--colorForegroundEmphasized: var(--colorBlue1);
-		--colorUnhappy: var(--colorRed1);
-	}
+	--colorAccentLight: var(--colorBlue5);
+	--colorAccentSecond: var(--colorBlue4);
+	--colorAccentMedium: var(--colorBlue2);
+	--colorAccentDark: var(--colorBlue2);
+	--colorBackground: var(--colorWhiteIsh);
+	--colorBackgroundEmphasized: var(--colorBlue4);
+	--colorForeground: var(--colorBlue4);
+	--colorForegroundAccent: var(--colorBlackIsh);
+	--colorForegroundEmphasized: var(--colorBlue1);
+	--colorUnhappy: var(--colorRed1);
 }
 
 @media (prefers-reduced-motion: no-preference) {

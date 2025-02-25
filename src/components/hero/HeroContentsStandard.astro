@@ -1,7 +1,6 @@
 ---
 import Heading from "~/components/Heading.astro";
 import TextSquiggly from "~/components/TextSquiggly.astro";
-import BodyText from "../BodyText.astro";
 
 interface Props {
 	heading: string;
@@ -13,9 +12,9 @@ interface Props {
 		<Heading level="h1" slot="inside">{Astro.props.heading}</Heading>
 	</TextSquiggly>
 
-	<BodyText class="hero-contents-standard-body">
+	<p class="hero-contents-standard-body">
 		<slot />
-	</BodyText>
+	</p>
 </div>
 
 <style>

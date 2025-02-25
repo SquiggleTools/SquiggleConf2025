@@ -1,6 +1,5 @@
 ---
 import Heading from "~/components/Heading.astro";
-import BodyText from "~/components/BodyText.astro";
 import Button from "~/components/Button.astro";
 ---
 
@@ -9,7 +8,7 @@ import Button from "~/components/Button.astro";
 	<div class="explainer-images">
 		<slot />
 	</div>
-	<BodyText class="explainer-body">{Astro.props.body}</BodyText>
+	<p class="explainer-body">{Astro.props.body}</p>
 	{
 		Astro.props.action && (
 			<div class="explainer-action-area">

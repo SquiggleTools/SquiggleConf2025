@@ -1,7 +1,6 @@
 ---
 import clockTower from "~/assets/stills/clock-tower.png";
 import duckBoatTourAfter from "~/assets/stills/duck-boat-tour-after.png";
-import BodyText from "~/components/BodyText.astro";
 import CommonContent from "~/components/CommonContent.astro";
 import Hero from "~/components/hero/Hero.astro";
 import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
@@ -18,7 +17,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	</Hero>
 
 	<CommonContent heading="Location">
-		<BodyText class="explore-body-text">
+		<p class="explore-body-text">
 			SquiggleConf 2024 will be held at the New England Aquarium Simons Theatre
 			at 1 Central Wharf, Boston MA.
 			<br />
@@ -27,7 +26,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 			SquiggleConf banners outside the theater to confirm you're in the right place.
 			<br />
 			<br />
-		</BodyText>
+		</p>
 		<iframe
 			allowfullscreen=""
 			height="280"
@@ -52,7 +51,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	</CommonContent>
 
 	<CommonContent heading="Flights">
-		<BodyText class="explore-body-text">
+		<p class="explore-body-text">
 			<a
 				href="https://massport.com/logan-airport"
 				target="_blank"
@@ -67,20 +66,20 @@ import PageLayout from "~/layouts/PageLayout.astro";
 				href="https://www.massport.com/logan-airport/getting-to-logan/public-transportation"
 				target="_blank">Boston Logan Public Transportation</a
 			>.
-		</BodyText>
+		</p>
 	</CommonContent>
 
 	<CommonContent heading="Hotels">
-		<BodyText class="explore-body-text">
+		<p class="explore-body-text">
 			We recommend the
 			<a href="https://www.harborsideinnboston.com" target="_blank"
 				>Harborside Inn</a
 			> at 185 State St, down the street from the venue.
-		</BodyText>
+		</p>
 	</CommonContent>
 
 	<CommonContent heading="Public Transportation">
-		<BodyText class="explore-body-text">
+		<p class="explore-body-text">
 			Regional & Commuter Trains: The MBTA South Station is a 15–20 minute walk
 			from the conference venue. Amtrak and MBTA Commuter Rail services connect
 			South Station to cities across the Northeast, including ~4-hour trains
@@ -89,11 +88,11 @@ import PageLayout from "~/layouts/PageLayout.astro";
 			<br />
 			Subway/Bus: The MBTA Blue Line Aquarium stop is steps from the venue. The Atlantic
 			Ave @ Milk St 4 Line Bus stop is also nearby.
-		</BodyText>
+		</p>
 	</CommonContent>
 
 	<CommonContent heading="Parking">
-		<BodyText class="explore-body-text">
+		<p class="explore-body-text">
 			The Boston Harbor Garage is located next to the venue.
 			<br />
 			<br />
@@ -103,7 +102,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 			<br />
 			Additional parking garages are within walking distance. For locations and pricing
 			details, visit the New England Aquarium’s parking information page.
-		</BodyText>
+		</p>
 	</CommonContent>
 
 	<ImagesAndTextTwoColumn
@@ -119,10 +118,10 @@ import PageLayout from "~/layouts/PageLayout.astro";
 			],
 		}}
 	>
-		<BodyText class="explore-body-text">
+		<p class="explore-body-text">
 			If you have extra time before or after SquiggleConf, here are a few great
 			places to check out:
-		</BodyText>
+		</p>
 
 		<ul class="explore-body-text">
 			<li>
@@ -151,9 +150,9 @@ import PageLayout from "~/layouts/PageLayout.astro";
 			</li>
 		</ul>
 
-		<BodyText class="explore-body-text">
+		<p class="explore-body-text">
 			For more recommendations, visit Boston’s official visitor guide.
-		</BodyText>
+		</p>
 	</ImagesAndTextTwoColumn>
 	<Registration />
 </PageLayout>
