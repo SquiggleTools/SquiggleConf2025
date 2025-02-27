@@ -40,7 +40,10 @@ import PageLayout from "~/layouts/PageLayout.astro";
 				target="_blank"
 			>
 				Get extra early bird tickets now!
-
+				<Arrow />
+			</Button>
+			<Button as="a" class="hero-button" href={links.tickets} target="_blank">
+				Get the t-shirt here
 				<Arrow />
 			</Button>
 		</div>
@@ -67,6 +70,10 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	}
 
 	.hero-bottom {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 		margin-top: 3.5rem;
 	}
 

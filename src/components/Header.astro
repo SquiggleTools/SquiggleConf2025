@@ -20,7 +20,7 @@ function hrefProps(pathname: string) {
 			<summary aria-label="Toggle header">≡</summary>
 			<div class="header-contents-mobile">
 				<a {...hrefProps("/")}>Home</a>
-				<a {...hrefProps("https://shop.squiggle.tools")}>Shop</a>
+				<a {...hrefProps(links.shop)}>Shop</a>
 				<a {...hrefProps("/travel")}>Travel</a>
 				<Button
 					as="a"
@@ -37,7 +37,7 @@ function hrefProps(pathname: string) {
 		<a class="logo" href="/"><Logo year /></a>
 		<div class="header-links">
 			<a {...hrefProps("/")}>Home</a>
-			<a {...hrefProps("https://shop.squiggle.tools")}>Shop</a>
+			<a {...hrefProps(links.shop)}>Shop</a>
 			<a {...hrefProps("/travel")}>Travel</a>
 			<Button
 				as="a"
