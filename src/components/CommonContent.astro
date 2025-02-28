@@ -5,13 +5,14 @@ import Heading from "./Heading.astro";
 interface Props {
 	class?: string;
 	heading: string;
+	level?: "h2" | "h3";
 }
 
-const { class: className, ...rest } = Astro.props;
+const { class: className, level = "h2", ...rest } = Astro.props;
 ---
 
 <ContentArea class:list={["common-content", className]} width="thin" {...rest}>
-	<Heading level="h2">{Astro.props.heading}</Heading>
+	<Heading level={level}>{Astro.props.heading}</Heading>
 	<slot />
 </ContentArea>
 
@@ -28,11 +29,19 @@ const { class: className, ...rest } = Astro.props;
 		padding-top: 0;
 	}
 
-	h2 {
+	h2,
+	h3 {
 		color: var(--colorForegroundEmphasized);
-		font-size: var(--fontSizeLarge);
 		font-family: var(--fontFamilyLogo);
 		padding-bottom: 2rem;
 		text-align: center;
+	}
+
+	h2 {
+		font-size: var(--fontSizeLarge);
+	}
+
+	h3 {
+		font-size: var(--fontSizeMedium);
 	}
 </style>
