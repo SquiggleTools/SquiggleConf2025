@@ -4,11 +4,12 @@ import TextSquiggly from "~/components/TextSquiggly.astro";
 
 interface Props {
 	heading: string;
+	squiggly?: "medium" | "wide";
 }
 ---
 
 <div class="hero-contents-standard">
-	<TextSquiggly width="medium">
+	<TextSquiggly width={Astro.props.squiggly ?? "medium"}>
 		<Heading level="h1" slot="inside">{Astro.props.heading}</Heading>
 	</TextSquiggly>
 
