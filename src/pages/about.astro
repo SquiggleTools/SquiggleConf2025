@@ -30,24 +30,6 @@ const biosSquiggleTools: BioProps[] = [
 	},
 	{
 		links: {
-			github: "https://github.com/dimitropoulos",
-			linkedin: "https://linkedin.com/in/dimitrimitropoulos",
-		},
-		name: "Dimitri Mitropoulos",
-		photo: dimitriMitropoulos,
-	},
-	{
-		links: {
-			bluesky: "https://bsky.app/profile/joshuakgoldberg.com",
-			github: "https://github.com/JoshuaKGoldberg",
-			mastodon: "https://fosstodon.org/@JoshuaKGoldberg",
-			website: "https://joshuakgoldberg.com",
-		},
-		name: "Josh Goldberg",
-		photo: joshGoldberg,
-	},
-	{
-		links: {
 			bluesky: "https://bsky.app/profile/michigantypescript.com",
 			mastodon: "https://fosstodon.org/@MichiganTypeScript",
 			youtube: "https://youtube.com/@MichiganTypeScript",
@@ -77,10 +59,28 @@ const biosStaff: BioProps[] = [
 	},
 	{
 		links: {
+			github: "https://github.com/dimitropoulos",
+			linkedin: "https://linkedin.com/in/dimitrimitropoulos",
+		},
+		name: "Dimitri Mitropoulos",
+		photo: dimitriMitropoulos,
+	},
+	{
+		links: {
 			linkedin: "https://www.linkedin.com/in/hadley-garrett",
 		},
 		name: "Hadley Garrett",
 		photo: hadleyGarrett,
+	},
+	{
+		links: {
+			bluesky: "https://bsky.app/profile/joshuakgoldberg.com",
+			github: "https://github.com/JoshuaKGoldberg",
+			mastodon: "https://fosstodon.org/@JoshuaKGoldberg",
+			website: "https://joshuakgoldberg.com",
+		},
+		name: "Josh Goldberg",
+		photo: joshGoldberg,
 	},
 	{
 		links: {
@@ -164,7 +164,6 @@ const description = "The SquiggleConf mission and team";
 			the conference and working through the year.
 		</BodyText>
 
-		<Bios bios={biosStaff.slice(0, 3)} />
-		<Bios bios={biosStaff.slice(3)} />
+		<Bios bios={biosStaff} />
 	</CommonContent>
 </PageLayout>
