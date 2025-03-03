@@ -6,7 +6,8 @@ export interface Props {
 
 const { description } = Astro.props;
 
-const image = new URL("favicon.png", Astro.site).toString();
+const banner = new URL("banner.png", Astro.site).toString();
+const favicon = new URL("favicon.png", Astro.site).toString();
 
 const keywords = [
 	"squiggleconf",
@@ -44,11 +45,11 @@ const metaPairs = [
 		property: `og:description`,
 	},
 	{
-		content: image,
+		content: banner,
 		property: `og:image`,
 	},
 	{
-		content: image,
+		content: banner,
 		property: `og:image:secure_url`,
 	},
 	{
@@ -60,7 +61,7 @@ const metaPairs = [
 		property: `og:url`,
 	},
 	{
-		content: image,
+		content: favicon,
 		name: `thumbnail`,
 	},
 	{
@@ -68,28 +69,28 @@ const metaPairs = [
 		name: `twitter:card`,
 	},
 	{
+		content: "Squiggle.Tools",
+		name: `twitter:creator`,
+	},
+	{
 		content: Astro.site,
 		name: `twitter:domain`,
 	},
 	{
-		content: "Josh Goldberg",
-		name: `twitter:creator`,
-	},
-	{
-		content: image,
-		name: `twitter:image`,
-	},
-	{
-		content: `@JoshuaKGoldberg`,
-		name: `twitter:site`,
+		content: description,
+		name: `twitter:description`,
 	},
 	{
 		content: title,
 		name: `twitter:title`,
 	},
 	{
-		content: description,
-		name: `twitter:description`,
+		content: banner,
+		name: `twitter:image`,
+	},
+	{
+		content: `@SquiggleConf`,
+		name: `twitter:site`,
 	},
 ];
 ---
