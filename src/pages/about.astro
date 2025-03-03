@@ -1,6 +1,12 @@
 ---
-import joshGoldberg from "~/assets/avatars/josh-goldberg.png";
+import carlVitullo from "~/assets/avatars/carl-vitullo.webp";
+import dillonMulroy from "~/assets/avatars/dillon-mulroy.webp";
 import dimitriMitropoulos from "~/assets/avatars/dimitri-mitropoulos.jpg";
+import hadleyGarrett from "~/assets/avatars/hadley-garrett.jpg";
+import joshGoldberg from "~/assets/avatars/josh-goldberg.png";
+import katharineMitropoulos from "~/assets/avatars/katharine-mitropoulos.jpg";
+import mariahGoldberg from "~/assets/avatars/mariah-goldberg.webp";
+import sahanaJPrakash from "~/assets/avatars/sahana-j-prakash.jpg";
 import bostonTSClub from "~/assets/logos/boston-ts-club.svg";
 import michiganTypeScript from "~/assets/logos/michigan-typescript.png";
 import { Props as BioProps } from "~/components/Bio.astro";
@@ -24,11 +30,47 @@ const biosSquiggleTools: BioProps[] = [
 	},
 	{
 		links: {
+			bluesky: "https://bsky.app/profile/michigantypescript.com",
+			mastodon: "https://fosstodon.org/@MichiganTypeScript",
+			youtube: "https://youtube.com/@MichiganTypeScript",
+		},
+		name: "Michigan TypeScript",
+		photo: michiganTypeScript,
+	},
+];
+
+const biosStaff: BioProps[] = [
+	{
+		links: {
+			bluesky: "https://bsky.app/profile/vcarl.com",
+			github: "https://github.com/vcarl",
+			website: "https://vcarl.com",
+		},
+		name: "Carl Vitullo",
+		photo: carlVitullo,
+	},
+	{
+		links: {
+			github: "https://github.com/dmmulroy",
+			twitch: "https://twitch.tv/dmmulroy",
+		},
+		name: "Dillon Mulroy",
+		photo: dillonMulroy,
+	},
+	{
+		links: {
 			github: "https://github.com/dimitropoulos",
 			linkedin: "https://linkedin.com/in/dimitrimitropoulos",
 		},
 		name: "Dimitri Mitropoulos",
 		photo: dimitriMitropoulos,
+	},
+	{
+		links: {
+			linkedin: "https://www.linkedin.com/in/hadley-garrett",
+		},
+		name: "Hadley Garrett",
+		photo: hadleyGarrett,
 	},
 	{
 		links: {
@@ -42,12 +84,25 @@ const biosSquiggleTools: BioProps[] = [
 	},
 	{
 		links: {
-			bluesky: "https://bsky.app/profile/michigantypescript.com",
-			mastodon: "https://fosstodon.org/@MichiganTypeScript",
-			youtube: "https://youtube.com/@MichiganTypeScript",
+			linkedin: "https://www.linkedin.com/in/katharinemoroney",
 		},
-		name: "Michigan TypeScript",
-		photo: michiganTypeScript,
+		name: "Katharine Mitropoulos",
+		photo: katharineMitropoulos,
+	},
+	{
+		links: {
+			instagram: "https://www.instagram.com/mariahgoldburger",
+			linkedin: "https://www.linkedin.com/in/mariah-anne-cody",
+		},
+		name: "Mariah Goldberg",
+		photo: mariahGoldberg,
+	},
+	{
+		links: {
+			linkedin: "https://www.linkedin.com/in/sahanajprakash",
+		},
+		name: "Sahana J Prakash",
+		photo: sahanaJPrakash,
 	},
 ];
 
@@ -105,14 +160,10 @@ const description = "The SquiggleConf mission and team";
 
 	<CommonContent heading="Staff Members">
 		<BodyText>
-			SquiggleConf 2025 includes a staff of volunteers who are passionate about
-			the conference and working through the year.
+			SquiggleConf 2025 is run by a year-long volunteer team passionate about
+			the conference and surrounding developer community.
 		</BodyText>
 
-		<br />
-
-		<BodyText>
-			<em class="staff-soon">(staff members bios coming soon!)</em>
-		</BodyText>
+		<Bios bios={biosStaff} />
 	</CommonContent>
 </PageLayout>
