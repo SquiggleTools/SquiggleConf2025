@@ -4,11 +4,16 @@ import TextSquiggly from "~/components/TextSquiggly.astro";
 
 interface Props {
 	heading: string;
+	squiggly?: "medium" | "wide";
 }
+
+const { heading, squiggly = "medium" }: Props = Astro.props;
 ---
 
-<div class="hero-contents-standard">
-	<TextSquiggly width="medium">
+<div
+	class:list={["hero-contents-standard", `hero-contents-standard-${squiggly}`]}
+>
+	<TextSquiggly width={squiggly}>
 		<Heading level="h1" slot="inside">{Astro.props.heading}</Heading>
 	</TextSquiggly>
 
@@ -31,6 +36,10 @@ interface Props {
 	h1 {
 		font-size: var(--fontSizeHero);
 		font-weight: var(--fontWeightMedium);
+	}
+
+	.hero-contents-standard-wide h1 {
+		padding-bottom: 0.25rem;
 	}
 
 	.hero-contents-standard-body {
