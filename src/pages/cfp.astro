@@ -11,6 +11,44 @@ import PageLayout from "~/layouts/PageLayout.astro";
 
 const description =
 	"Advice and general information for submitting talks to SquiggleConf 2025";
+
+const topicAreas = [
+	[`Accessibility`, `the accessibility tree, WCAG, web accessibility`],
+	[`Building`, `CLI tools, deployments, monorepo management`],
+	[
+		`Documentation`,
+		`Writing docs, tools to manage and/or share them, explaining code`,
+	],
+	[
+		`Editors`,
+		`Tools such as IDEs along with integrations and plugins built on them`,
+	],
+	[
+		`Go and/or Zig`,
+		`Using the popular low-level languages for web development and/or tooling`,
+	],
+	[
+		`Open Source`,
+		`The making, maintenance, release, and socialization of shared software`,
+	],
+	[`Performance`, `Enhancing performance of apps, sites, or any web dev tools`],
+	[`Runtimes`, `Execution environments such as Bun, Deno, and Node.js`],
+	[`Rust`, `Working in Rust for the purposes of web dev apps and/or tooling`],
+	[
+		`Testing`,
+		`The art of verifying code, or building tools to help developers test`,
+	],
+	[`Tooling`, `Debuggers, integrations, and general dev tools themselves`],
+	[
+		`TypeScript`,
+		`Integrating, working with, or even contributing to our favorite JS superset`,
+	],
+	[`WebAssembly`, `Tooling or usage of WebAssembly/WASI/WASM`],
+	[
+		`Other`,
+		`Something fun or incredible. We love off-the-beaten-tail fun things.`,
+	],
+];
 ---
 
 <PageLayout description={description} title="Call for Proposals">
@@ -40,7 +78,7 @@ const description =
 		</Button>
 	</CommonContent>
 
-	<CommonContent heading="The Highlights">
+	<CommonContent heading="CFP Highlights">
 		<BodyList as="ul">
 			<li>
 				<strong>📆 Deadline:</strong> We are accepting submissions through May 23rd.
@@ -57,6 +95,25 @@ const description =
 			<li>
 				<strong>👍 Expectations:</strong> Giving us a remote dry run of a rough draft
 				of your talk the week before the conference.
+			</li>
+		</BodyList>
+	</CommonContent>
+
+	<CommonContent heading="Conference Details" level="h3">
+		<BodyList as="ul">
+			<li>
+				<strong>🗺️ Time & Place:</strong> Thursday & Friday September 18th & 19th
+				in Boston, Massachusetts. The Simons Theater at the New England Aquarium,
+				right on the ocean coastline in the very center of downtown Boston.
+			</li>
+			<li>
+				<strong>🗣️ Format:</strong> In-person, either a 30 minute talk + 5 minutes
+				for audience questions, or a 10 minute lightning talk.
+			</li>
+			<li>
+				<strong>✈️ Covered:</strong> We can cover travel and accommodations for speakers,
+				though we have a limited budget and prefer companies to pay if possible.
+				We can work with you.
 			</li>
 		</BodyList>
 	</CommonContent>
@@ -153,71 +210,28 @@ const description =
 		</BodyText>
 
 		<br />
+
 		<BodyList as="ul">
-			<li><strong>Accessibility:</strong> WCAG, web accessibility, etc.</li>
-			<li><strong>Building:</strong> CLI Tools, monorepo management</li>
-			<li>
-				<strong>Documentation:</strong> Writing docs, tools to manage and/or share
-				them, explaining code
-			</li>
-			<li>
-				<strong>Editors:</strong> Tools such as IDEs along with integrations and
-				plugins built on them
-			</li>
-			<li>
-				<strong>Performance:</strong> Enhancing performance of apps, sites, or any
-				web dev tools
-			</li>
-			<li>
-				<strong>Testing:</strong> The art of verifying code, or building tools to
-				help developers test
-			</li>
-			<li>
-				<strong>TypeScript:</strong> Integrating, working with, or even contributing
-				to our favorite JS superset
-			</li>
-			<li>
-				<strong>Rust:</strong> Working in Rust for the purposes of web dev apps and/or
-				tooling
-			</li>
-			<li>
-				<strong>Go and/or Zig:</strong> Using the popular low-level language for
-				web development and/or tooling
-			</li>
-			<li>
-				<strong>WebAssembly:</strong> Tooling or usage of WebAssembly/WASI/WASM
-			</li>
-			<li>
-				<strong>Other:</strong> Something incredible or something fun. We really
-				care about having off-the-beaten-tail fun things. Extra bonus points if it’s
-				visual.
-			</li>
-		</BodyList>
-		<br />
-		<BodyText>
-			We also hope to have talks that cover the following subjects:
-		</BodyText>
-		<br />
-		<BodyList as="ul">
-			<li>
-				<strong>Open Source:</strong> The making, maintenance, release, and socialization
-				of shared software
-			</li>
-			<li>
-				<strong>Runtimes:</strong> Execution environments such as Bun, Deno, and
-				Node.js
-			</li>
+			{
+				topicAreas.map(([topic, description]) => (
+					<li>
+						<strong>{topic}:</strong> {description}
+					</li>
+				))
+			}
 		</BodyList>
 		<br />
 		<BodyText> We don't plan to emphasize the following subjects: </BodyText>
 		<br />
 		<BodyList as="ul">
 			<li>
-				<strong>AI:</strong> We are happy to have AI mentioned in a talk, but its
-				focus should be dev tooling.
+				<strong>AI:</strong> We absolutely welcome AI being in your talk, but the
+				primary topic(s) should be centered on a dev tooling category such as one
+				our suggested ones.
 			</li>
 			<li>
-				<strong>Blockchain:</strong> We will almost definitely not accept this talk.
+				<strong>Blockchain/Crypto/NFTs:</strong> We doubt these will be applicable
+				and useful, but we are open minded and welcome you to make your case.
 			</li>
 		</BodyList>
 
