@@ -1,0 +1,15 @@
+---
+const { as: As, class: className, ...rest } = Astro.props;
+---
+
+<As class:list={[className, "body-list"]} {...rest}>
+	<slot />
+</As>
+
+<style>
+	.body-list {
+		margin: 0 1rem;
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightMedium);
+	}
+</style>

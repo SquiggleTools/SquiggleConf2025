@@ -32,6 +32,8 @@
 		"squiggleconf",
 		"tseslint",
 		"vercel",
+		"WASI",
+		"WCAG",
 		"wght-italic"
 	]
 }
