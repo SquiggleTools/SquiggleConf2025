@@ -9,12 +9,20 @@ export interface Props {
 	links: BioLinksPlatforms;
 	name: string;
 	photo: ImageMetadata;
+	size?: "medium" | "large";
 }
 
-const { class: className, links, name, photo, ...rest } = Astro.props;
+const {
+	class: className,
+	links,
+	name,
+	photo,
+	size = "medium",
+	...rest
+} = Astro.props;
 ---
 
-<li {...rest} class:list={["bio", className]}>
+<li {...rest} class:list={["bio", `bio-${size}`, className]}>
 	<Image alt="" class="bio-image" src={photo} />
 	<div class="name">{name}</div>
 	<BioLinks name={name} links={links} />
@@ -29,11 +37,19 @@ const { class: className, links, name, photo, ...rest } = Astro.props;
 		flex-direction: column;
 		flex-grow: 2;
 		min-width: 7.5rem;
+	}
+
+	.bio-medium {
 		gap: 0.25rem;
+		--imageSize: 5rem;
+	}
+
+	.bio-large {
+		--imageSize: 7.5rem;
+		gap: 0.5rem;
 	}
 
 	.bio-image {
-		--imageSize: 5rem;
 		border-radius: 100%;
 		height: var(--imageSize);
 		margin-bottom: 0.5rem;

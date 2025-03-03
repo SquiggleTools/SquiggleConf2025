@@ -3,11 +3,14 @@ import Bio, { Props as BioProps } from "~/components/Bio.astro";
 
 interface Props {
 	bios: BioProps[];
+	size?: "medium" | "large";
 }
+
+const { bios, size = "medium" } = Astro.props;
 ---
 
-<ul class="bios">
-	{Astro.props.bios.map((bio) => <Bio {...bio} />)}
+<ul class:list={["bios", `bios-${size}`]}>
+	{bios.map((bio) => <Bio {...bio} size={size} />)}
 </ul>
 
 <style>
@@ -17,10 +20,17 @@ interface Props {
 		font-family: var(--fontFamilyHeading);
 		justify-content: center;
 		margin-top: 2rem;
+		margin: 2rem auto;
 		row-gap: 2rem;
 		text-align: center;
-		margin: 2rem auto;
-		max-width: 35rem;
 		width: 100%;
+	}
+
+	.bios-medium {
+		max-width: 35rem;
+	}
+
+	.bios-large {
+		max-width: 49rem;
 	}
 </style>

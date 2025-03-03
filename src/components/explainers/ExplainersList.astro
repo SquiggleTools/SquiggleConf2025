@@ -21,10 +21,6 @@ import ExplainerArea from "./ExplainerArea.astro";
 
 const explainers = [
 	{
-		action: {
-			href: "https://cfp.squiggleconf.com",
-			text: "Apply to be a speaker! CFP now open!",
-		},
 		body: "Enjoy a dozen talks by tooling aficionados, dev experts, and new voices in the space. You’ll emerge with the best techniques to supercharge your projects.",
 		decoration: DolphinDecoration,
 		direction: "up",
@@ -91,6 +87,10 @@ const explainers = [
 		},
 	},
 	{
+		action: {
+			href: "https://cfp.squiggleconf.com",
+			text: "Apply to be a speaker! CFP now open!",
+		},
 		body: "Mingle with fellow backend, frontend, and full stack web developers at meetups and mixers before, during, and after the conference.",
 		decoration: CoralReefDecoration,
 		direction: "up",
@@ -136,7 +136,7 @@ const explainers = [
 			var(--colorBlueBright4) 100%
 		);
 		overflow: hidden;
-		padding-bottom: 1.5rem;
+		padding-bottom: 3.5rem;
 		width: 100%;
 	}
 </style>
