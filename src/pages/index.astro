@@ -5,6 +5,7 @@ import Button from "~/components/Button.astro";
 import ExplainersList from "~/components/explainers/ExplainersList.astro";
 import Hero from "~/components/hero/Hero.astro";
 import InlineBlock from "~/components/InlineBlock.astro";
+import LaunchSpeakers from "~/components/LaunchSpeakers.astro";
 import Newsletter from "~/components/Newsletter.astro";
 import Registration from "~/components/Registration.astro";
 import TextSquiggly from "~/components/TextSquiggly.astro";
@@ -42,18 +43,9 @@ import PageLayout from "~/layouts/PageLayout.astro";
 				Get extra early bird tickets now!
 				<Arrow />
 			</Button>
-			<Button
-				as="a"
-				class="hero-button"
-				href={links.shop}
-				target="_blank"
-				variant="none"
-			>
-				Get the t-shirt here
-				<Arrow />
-			</Button>
 		</div>
 	</Hero>
+	<LaunchSpeakers />
 	<ExplainersList />
 	<AboutUs />
 	<Registration />
