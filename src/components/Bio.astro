@@ -6,6 +6,7 @@ import BioLinks, { BioLinksPlatforms } from "./BioLinks.astro";
 
 export interface Props {
 	class?: string;
+	description?: string;
 	links: BioLinksPlatforms;
 	name: string;
 	photo: ImageMetadata;
@@ -14,6 +15,7 @@ export interface Props {
 
 const {
 	class: className,
+	description,
 	links,
 	name,
 	photo,
@@ -24,7 +26,8 @@ const {
 
 <li {...rest} class:list={["bio", `bio-${size}`, className]}>
 	<Image alt="" class="bio-image" src={photo} />
-	<div class="name">{name}</div>
+	<div class="bio-name">{name}</div>
+	{description && <div class="bio-description">{description}</div>}
 	<BioLinks name={name} links={links} />
 </li>
 
@@ -55,5 +58,14 @@ const {
 		margin-bottom: 0.5rem;
 		user-select: none;
 		width: var(--imageSize);
+	}
+
+	.bio-name {
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightBold);
+	}
+
+	.bio-description {
+		font-size: var(--fontSizeSmallest);
 	}
 </style>
