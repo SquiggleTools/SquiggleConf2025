@@ -32,7 +32,8 @@
 	--fontFamilyHeading: "Urbanist Variable";
 	--fontFamilyLogo: "Josefin Sans Variable";
 
-	--fontSizeSmallest: clamp(0.9rem, 2.25vw, 1.1rem);
+	--fontSizeSmallest: clamp(0.7rem, 1.9vw, 0.9rem);
+	--fontSizeSmaller: clamp(0.9rem, 2.25vw, 1.1rem);
 	--fontSizeSmall: clamp(1.125rem, 2.875vw, 1.25rem);
 	--fontSizeMedium: clamp(1.25rem, 3.25vw, 1.5rem);
 	--fontSizeLarge: clamp(1.5rem, 3.75vw, 2rem);
