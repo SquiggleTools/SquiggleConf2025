@@ -1,6 +1,8 @@
 ---
+import Arrow from "~/components/Arrow.astro";
 import BodyList from "~/components/BodyList.astro";
 import BodyText from "~/components/BodyText.astro";
+import Button from "~/components/Button.astro";
 import CommonContent from "~/components/CommonContent.astro";
 import ContentArea from "~/components/ContentArea.astro";
 import Hero from "~/components/hero/Hero.astro";
@@ -58,6 +60,18 @@ const description =
 			</li>
 			<li>Speak or been an MC at a previous SquiggleConf</li>
 		</BodyList>
+		<BodyText> Speaking of which, our 2025 CFP is open! </BodyText>
+		<Button
+			as="a"
+			class="apply-button"
+			href={links.cfp}
+			size="large"
+			target="_blank"
+			variant="emphasized"
+		>
+			Apply to the CFP here
+			<Arrow />
+		</Button>
 	</CommonContent>
 
 	<CommonContent heading="Open Source">
@@ -129,6 +143,12 @@ const description =
 </PageLayout>
 
 <style>
+	.apply-button {
+		align-self: center;
+		gap: 0.5rem;
+		margin-top: 2rem;
+	}
+
 	.area {
 		font-weight: var(--fontWeightBold);
 	}
