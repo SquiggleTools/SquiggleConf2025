@@ -20,7 +20,7 @@ interface Props {
 			Astro.props.articles.map((article) => (
 				<li>
 					<a href={article.slug}>
-						<Heading level="h3">{article.title}</Heading>
+						<Heading level="h2">{article.title}</Heading>
 					</a>
 					<BodyText>{article.description}</BodyText>
 				</li>
@@ -31,11 +31,11 @@ interface Props {
 
 <style>
 	ul {
-		padding: 3.5rem 0;
+		padding: 5rem 0;
 		list-style-type: none;
 	}
 
-	h3 {
+	h2 {
 		font-size: var(--fontSizeMedium);
 		margin-bottom: 0.5rem;
 	}
