@@ -1,0 +1,28 @@
+---
+import ArticlesList from "~/components/ArticlesList.astro";
+import Hero from "~/components/hero/Hero.astro";
+import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
+import PageLayout from "~/layouts/PageLayout.astro";
+
+const description =
+	"Assorted guides, information, updates, and other useful articles from the SquiggleConf team.";
+---
+
+<PageLayout description={description} title="Articles">
+	<Hero>
+		<HeroContentsStandard heading="Articles">
+			{description}
+		</HeroContentsStandard>
+	</Hero>
+
+	<ArticlesList
+		articles={[
+			{
+				description:
+					"13 different ways you can get a free ticket to SquiggleConf 2025. Free!",
+				slug: "/articles/how-to-attend-squiggleconf-for-free",
+				title: "How to Attend SquiggleConf for Free",
+			},
+		]}
+	/>
+</PageLayout>

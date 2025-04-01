@@ -11,5 +11,9 @@ export default defineConfig({
 	},
 	integrations: [konamiEmojiBlast()],
 	output: "server",
+	redirects: {
+		"/how-to-attend-squiggleconf-for-free":
+			"/articles/how-to-attend-squiggleconf-for-free",
+	},
 	site: "https://2025.squiggleconf.com",
 });
