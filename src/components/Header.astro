@@ -20,7 +20,8 @@ function hrefProps(pathname: string) {
 		<details id="details">
 			<summary aria-label="Toggle header">≡</summary>
 			<div class="header-contents-mobile">
-				<a {...hrefProps("/")}>Home</a>
+				<a {...hrefProps("/about")}>About</a>
+				<a {...hrefProps("/articles")}>Articles</a>
 				<a {...hrefProps("/cfp")}>CFP</a>
 				<a {...hrefProps(links.shop)}>Shop</a>
 				<a {...hrefProps("/travel")}>Travel</a>
@@ -38,7 +39,8 @@ function hrefProps(pathname: string) {
 	<ContentArea class="header-content-area-wide" width="wide">
 		<a class="logo" href="/"><Logo year /></a>
 		<div class="header-links">
-			<a {...hrefProps("/")}>Home</a>
+			<a {...hrefProps("/about")}>About</a>
+			<a {...hrefProps("/articles")}>Articles</a>
 			<a {...hrefProps("/cfp")}>CFP</a>
 			<a {...hrefProps(links.shop)}>Shop</a>
 			<a {...hrefProps("/travel")}>Travel</a>
@@ -146,7 +148,7 @@ function hrefProps(pathname: string) {
 		display: flex;
 		align-items: center;
 		font-weight: var(--fontWeightLight);
-		gap: 2rem;
+		gap: clamp(1rem, 1.5vw, 2rem);
 	}
 
 	.header-link-inactive {
