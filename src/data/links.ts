@@ -7,4 +7,5 @@ export const links = {
 	michiganTypeScript: "https://youtube.com/@MichiganTypeScript",
 	shop: "https://shop.squiggle.tools",
 	tickets: "https://buytickets.at/squiggleconf/1488622",
+	volunteer: "https://volunteer.squiggleconf.com",
 };
