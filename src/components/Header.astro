@@ -23,6 +23,7 @@ function hrefProps(pathname: string) {
 				<a {...hrefProps("/about")}>About</a>
 				<a {...hrefProps("/articles")}>Articles</a>
 				<a {...hrefProps("/cfp")}>CFP</a>
+				<a {...hrefProps("/faqs")}>FAQs</a>
 				<a {...hrefProps(links.shop)}>Shop</a>
 				<a {...hrefProps("/travel")}>Travel</a>
 				<Button
@@ -42,6 +43,7 @@ function hrefProps(pathname: string) {
 			<a {...hrefProps("/about")}>About</a>
 			<a {...hrefProps("/articles")}>Articles</a>
 			<a {...hrefProps("/cfp")}>CFP</a>
+			<a {...hrefProps("/faqs")}>FAQs</a>
 			<a {...hrefProps(links.shop)}>Shop</a>
 			<a {...hrefProps("/travel")}>Travel</a>
 			<Button
@@ -148,7 +150,7 @@ function hrefProps(pathname: string) {
 		display: flex;
 		align-items: center;
 		font-weight: var(--fontWeightLight);
-		gap: clamp(1rem, 1.5vw, 2rem);
+		gap: clamp(0.75rem, 1.5vw, 2rem);
 	}
 
 	.header-link-inactive {

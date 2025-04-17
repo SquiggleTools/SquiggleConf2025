@@ -12,17 +12,13 @@ import PageLayout from "~/layouts/PageLayout.astro";
 
 const description =
 	"13 different ways you can get a free ticket to SquiggleConf 2025. Free!";
+
+const title = "How to Attend SquiggleConf for Free";
 ---
 
-<PageLayout
-	description={description}
-	title="How to Attend SquiggleConf for Free"
->
+<PageLayout description={description} title={title}>
 	<Hero>
-		<HeroContentsStandard
-			heading="How to Attend SquiggleConf for Free"
-			squiggly="none"
-		>
+		<HeroContentsStandard heading={title} squiggly="none">
 			{description}
 		</HeroContentsStandard>
 	</Hero>

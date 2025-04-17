@@ -1,0 +1,252 @@
+---
+import { markdown } from "@astropub/md";
+import { Image } from "astro:assets";
+
+import dropdown from "~/assets/glyphs/dropdown.svg";
+import BodyText from "~/components/BodyText.astro";
+import ContentArea from "~/components/ContentArea.astro";
+import Heading from "~/components/Heading.astro";
+import Hero from "~/components/hero/Hero.astro";
+import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
+import { links } from "~/data/links";
+import PageLayout from "~/layouts/PageLayout.astro";
+
+const description =
+	"Common questions and answers around attending, speaking at, and sponsoring SquiggleConf 2025.";
+
+const title = "Frequently Asked Questions";
+
+type FAQSection = [string, [string, string][]];
+
+const faqs: FAQSection[] = [
+	[
+		"General",
+		[
+			["How big is SquiggleConf?", "We're targeting 200 total attendees."],
+			[
+				"What is the dress code for SquiggleConf?",
+				"Casual. T-shirt and jeans, optionally with a hoodie, is fine for all genders.",
+			],
+			[
+				"Will there be alcohol at SquiggleConf?",
+				"There will be no alcohol provided during any SquiggleConf events, including talks, workshops, and social events.",
+			],
+		],
+	],
+	[
+		"Schedule",
+		[
+			[
+				"What events are you planning?",
+				await markdown(`
+We will let you know soon! This is partially dependent on corporate sponsorships. Subscribe to the <a href="/#newsletter">newsletter</a> to be the first to know!
+
+<br />
+
+At the very least, SquiggleConf will include:
+
+- Social events for all attendees around the conference
+- Breaks and breakout sessions during the conference
+- Spaces to ask speakers questions and network with other attendees
+				`),
+			],
+		],
+	],
+	[
+		"Sessions",
+		[
+			[
+				"How can I ask speakers questions?",
+				await markdown(`Talks have time reserved for live Q&A. Additionally, each session has a channel in Discord where you can ask questions.
+				<br />
+				We'd also encourage you to find them in-person between sessions and start conversations. They're friendly people.`),
+			],
+			[
+				"Will talks be recorded?",
+				"Yes! Talks will be made available online for free after the conference.",
+			],
+			[
+				"Will workshops be recorded?",
+				"No, if we hold workshops this year, they will be intended as a live in-person experience.",
+			],
+		],
+	],
+	[
+		"Tickets",
+		[
+			[
+				"Do you have bulk purchasing and/or group options?",
+				await markdown(
+					`Yes! See the [tickets purchase link](${links.tickets}) for the options.`,
+				),
+			],
+			[
+				"If I can't afford a full ticket, is there a way for me to come?",
+				await markdown(
+					`Yes! See [How to Attend SquiggleConf for Free](/articles/how-to-attend-squiggleconf-for-free).`,
+				),
+			],
+			[
+				"What does or doesn't a ticket include?",
+				await markdown(
+					`
+Your ticket gets you:
+
+- Access to all attendee social events before, during, and after the conference
+- Complete access to all talks
+- Light beverages and snacks through the conference days
+- One "swag bag" with branded apparel and items
+
+Note that talk tickets _do not_ include:
+
+- Meals, including lunch at <a href="https://faneuilhallmarketplace.com" rel="noreferrer" target="_blank">Faneuil Hall Marketplace</a>
+- Travel to or from the conference
+					`,
+				),
+			],
+			[
+				"What is your refund policy?",
+				await markdown(
+					"Full refunds. If you can't make it, please let us know - we can work with you. <br /> Do not come to SquiggleConf if you have any COVID symptoms.",
+				),
+			],
+			[
+				"Will there be ticket sales at the door?",
+				await markdown(
+					"No. All tickets will be sold online. We also cannot guarantee tickets will be available day-of.",
+				),
+			],
+		],
+	],
+] as const;
+---
+
+<PageLayout description={description} title={title}>
+	<Hero>
+		<HeroContentsStandard heading={title} squiggly="none">
+			{description}
+		</HeroContentsStandard>
+	</Hero>
+
+	<ContentArea>
+		<BodyText class="body-text-top">
+			Got questions not covered here? Reach out, we'd be happy to talk!
+			<a href="mailto:questions@squiggleconf.com">questions@squiggleconf.com</a>
+		</BodyText>
+
+		<div class="faqs">
+			{
+				faqs.map(([title, section]) => (
+					<div class="section">
+						<Heading class="h3" level="h3">
+							{title}
+						</Heading>
+						{section.map(([question, answer]) => (
+							<details class="details">
+								<summary>
+									<span>{question}</span>
+									<Image alt="" src={dropdown} />
+								</summary>
+								<div class="answer">{answer}</div>
+							</details>
+						))}
+					</div>
+				))
+			}
+		</div>
+	</ContentArea>
+</PageLayout>
+
+<style>
+	.body-text-top {
+		margin: 5rem auto;
+	}
+</style>
+
+<style>
+	.apply-button {
+		align-self: center;
+		gap: 0.5rem;
+		margin-top: 2rem;
+	}
+
+	.area {
+		font-weight: var(--fontWeightBold);
+	}
+</style>
+
+<style>
+	.action-button {
+		display: inline-block;
+		margin: 2rem;
+	}
+
+	.faqs {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		padding-bottom: 3.5rem;
+		width: 100%;
+	}
+
+	.h3 {
+		font-size: var(--fontSizeMedium);
+		font-weight: var(--fontWeightMedium);
+	}
+
+	details {
+		font-size: var(--fontSizeBody);
+		font-weight: var(--fontWeightLight);
+		line-height: var(--lineHeightBody);
+		margin-bottom: 1.5rem;
+		text-align: left;
+		width: 100%;
+	}
+
+	summary {
+		cursor: pointer;
+		display: flex;
+		font-weight: var(--fontWeightMedium);
+		justify-content: space-between;
+		list-style: none;
+		margin-top: 1.75rem;
+		position: relative;
+	}
+
+	details[open] summary {
+		margin-bottom: 1rem;
+	}
+
+	details summary img {
+		transition: var(--transitionMedium) transform;
+		user-select: none;
+	}
+
+	details[open] summary img {
+		transform: rotate(180deg);
+	}
+
+	html.dark summary img {
+		filter: invert();
+	}
+
+	html:not(.dark) summary img {
+		filter: hue-rotate(180deg);
+	}
+
+	@media (min-width: 819px) {
+		.answer {
+			padding-right: 2rem;
+		}
+	}
+</style>
+
+<style is:global>
+	details ul {
+		margin: 0.75rem 0 0.75rem 1rem;
+	}
+
+	details li {
+		list-style: initial;
+	}
+</style>
