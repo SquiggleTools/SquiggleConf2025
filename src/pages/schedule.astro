@@ -1,0 +1,102 @@
+---
+import BodyText from "~/components/BodyText.astro";
+import CommonContent from "~/components/CommonContent.astro";
+import Hero from "~/components/hero/Hero.astro";
+import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
+import { days } from "~/data/schedule";
+import Registration from "~/components/Registration.astro";
+import PageLayout from "~/layouts/PageLayout.astro";
+import Heading from "~/components/Heading.astro";
+import ScheduledActivity from "~/components/ScheduledActivity.astro";
+
+const description =
+	"Important dates leading up to SquiggleConf 2025 and events during the conference itself.";
+---
+
+<PageLayout description={description} title="Schedule">
+	<Hero>
+		<HeroContentsStandard heading="Schedule" squiggly="wide">
+			{description}
+		</HeroContentsStandard>
+	</Hero>
+
+	<CommonContent heading="CFP">
+		<BodyText>
+			The SquiggleConf CFP will be open through May 23rd. See <a href="/cfp"
+				>CFP</a
+			> for more details.
+		</BodyText>
+	</CommonContent>
+
+	<CommonContent heading="Tickets">
+		<ol class="tickets-list">
+			<li>
+				$350 Extra early bird tickets were be available in limited quantities
+				through March 30th. They are now sold out.
+			</li>
+			<li>
+				$450 Early bird tickets will be available in limited quantities through
+				June 30th.
+			</li>
+			<li>
+				$550 General admission tickets will be available until the morning of
+				the conference.
+			</li>
+		</ol>
+	</CommonContent>
+
+	<CommonContent heading="The Conference">
+		<BodyText class="time-zone-note"
+			>All times are in EDT, local to Boston.</BodyText
+		>
+
+		{
+			days.map(({ activities, title }) => (
+				<section>
+					<Heading
+						class="schedule-heading"
+						id={title.split(/\W+/)[0].toLowerCase()}
+						level="h2"
+						link
+					>
+						{title}
+					</Heading>
+
+					{activities.map((activity) => (
+						<ScheduledActivity
+							at={activity.at}
+							description={activity.description}
+							location={activity.location}
+							title={activity.title}
+						/>
+					))}
+				</section>
+			))
+		}
+	</CommonContent>
+
+	<Registration />
+</PageLayout>
+
+<style>
+	.tickets-list {
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightMedium);
+		display: flex;
+		gap: 1rem;
+		flex-direction: column;
+	}
+
+	.time-zone-note {
+		margin: auto;
+	}
+
+	.schedule-heading {
+		font-family: var(--fontFamilyHeading);
+		font-size: var(--fontSizeLarge);
+		font-weight: var(--fontWeightBold);
+		line-height: 1;
+		margin: 7rem 0 3.5rem;
+		text-align: center;
+	}
+</style>
