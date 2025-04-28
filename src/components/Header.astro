@@ -152,7 +152,7 @@ function hrefProps(pathname: string) {
 		display: flex;
 		align-items: center;
 		font-weight: var(--fontWeightLight);
-		gap: clamp(0.75rem, 1.5vw, 2rem);
+		gap: clamp(0.55rem, 1.25vw, 2rem);
 	}
 
 	.header-link-inactive {
@@ -162,9 +162,10 @@ function hrefProps(pathname: string) {
 	.header-button {
 		justify-content: center;
 		margin-left: 0.35rem;
+		text-wrap: nowrap;
 	}
 
-	@media (width >= 1017px) {
+	@media (width >= 1117px) {
 		.header-content-area-mobile {
 			display: none;
 		}
