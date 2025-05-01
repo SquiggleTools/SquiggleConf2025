@@ -133,11 +133,21 @@ export const days: ScheduleDay[] = [
 				title: "Closing Announcements",
 			},
 			{
-				at: "6:00pm",
+				at: "5:00pm",
+				description: [
+					"Split up into small groups and race to take pictures of historic Boston landmarks as a team.",
+					"We'll provide a list of locations and a map to help you navigate at the end of the closing announcements.",
+					"Prizes will include SquiggleConf swag and free tickets to next year's conference.",
+				],
+				title: "Photo Challenge",
+			},
+			{
+				// todo: switch to string[] for less prominent &
+				at: "6:00pm & 7:00pm",
 				description: [
 					"We'll arrange suggested dinner and casual social gathering locations for attendees.",
 				],
-				title: "Casual Mid-Conference Suggestions",
+				title: "Suggested Dinner Locations",
 			},
 		],
 		title: "Thursday, September 18th",
