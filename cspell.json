@@ -12,8 +12,8 @@
 		"pnpm-lock.yaml"
 	],
 	"words": [
-		"astropub",
 		"astrojs",
+		"astropub",
 		"Bluesky",
 		"d'œuvres",
 		"Devries",
@@ -47,6 +47,8 @@
 		"Vitullo",
 		"vohr",
 		"WASI",
+		"Wasmer",
+		"Wasmtime",
 		"WCAG",
 		"wght-italic"
 	]
