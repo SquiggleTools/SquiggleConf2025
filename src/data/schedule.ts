@@ -1,6 +1,6 @@
 import { Temporal } from "temporal-polyfill";
 
-import { parseTimeToNumber } from "./time";
+import { parseTimeToNumber } from "./time.js";
 
 export interface ActivityBetweenData extends ActivityDataWithinBase {
 	title: string;
