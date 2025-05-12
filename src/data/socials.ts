@@ -5,6 +5,7 @@ import linkedin from "../assets/logos/linkedin.svg";
 import mastodon from "../assets/logos/mastodon.svg";
 import twitter from "../assets/logos/twitter.svg";
 import youtube from "../assets/logos/youtube.svg";
+import { links } from "./links.js";
 
 export const socials = [
 	{
@@ -39,7 +40,7 @@ export const socials = [
 	},
 	{
 		alt: "Discord",
-		href: "https://discord.squiggleconf.com",
+		href: links.discord,
 		src: discord,
 	},
 ].sort((a, b) => a.alt.localeCompare(b.alt));

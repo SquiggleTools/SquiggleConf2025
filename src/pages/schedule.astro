@@ -3,11 +3,10 @@ import BodyText from "~/components/BodyText.astro";
 import CommonContent from "~/components/CommonContent.astro";
 import Hero from "~/components/hero/Hero.astro";
 import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
-import { days } from "~/data/schedule";
+import { publicSchedule } from "~/data/public";
 import Registration from "~/components/Registration.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
-import Heading from "~/components/Heading.astro";
-import ScheduledActivity from "~/components/ScheduledActivity.astro";
+import ScheduledActivities from "~/components/ScheduledActivities.astro";
 
 const description =
 	"Important dates leading up to SquiggleConf 2025 and events during the conference itself.";
@@ -50,29 +49,7 @@ const description =
 			All times are in EDT, local to Boston.
 		</BodyText>
 
-		{
-			days.map(({ activities, title }) => (
-				<section class="schedule-section">
-					<Heading
-						class="schedule-heading"
-						id={title.split(/\W+/)[0].toLowerCase()}
-						level="h2"
-						link
-					>
-						{title}
-					</Heading>
-
-					{activities.map((activity) => (
-						<ScheduledActivity
-							at={activity.at}
-							description={activity.description}
-							location={activity.location}
-							title={activity.title}
-						/>
-					))}
-				</section>
-			))
-		}
+		<ScheduledActivities days={publicSchedule} />
 	</CommonContent>
 
 	<Registration />
@@ -93,14 +70,5 @@ const description =
 
 	.schedule-section {
 		margin-bottom: 3.5rem;
-	}
-
-	.schedule-heading {
-		font-family: var(--fontFamilyHeading);
-		font-size: var(--fontSizeLarge);
-		font-weight: var(--fontWeightBold);
-		line-height: 1;
-		margin: 3.5rem 0;
-		text-align: center;
 	}
 </style>
