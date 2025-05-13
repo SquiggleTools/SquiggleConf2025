@@ -2,11 +2,12 @@
 import TextSquiggly from "./TextSquiggly.astro";
 
 interface Props {
+	invert?: boolean;
 	year?: boolean;
 }
 ---
 
-<div class="logo">
+<div class:list={["logo", Astro.props.invert ? "invert" : "regular"]}>
 	<TextSquiggly width="medium">
 		<Fragment slot="inside">Squiggle</Fragment>
 		<Fragment slot="after">Conf</Fragment>
@@ -16,14 +17,24 @@ interface Props {
 
 <style>
 	.logo {
-		color: var(--colorWhiteIsh);
+		color: var(--colorLogoText);
 		font-family: var(--fontFamilyLogo);
 		font-size: var(--fontSizeLogo);
 		font-style: initial;
 	}
 
+	.logo.invert {
+		--colorLogoText: var(--accentDark);
+		--colorLogoYear: var(--colorBlue3);
+	}
+
+	.logo.regular {
+		--colorLogoText: var(--colorWhiteIsh);
+		--colorLogoYear: var(--colorBlue2);
+	}
+
 	.year {
-		color: var(--colorBlue2);
+		color: var(--colorLogoYear);
 		font-family: var(--fontFamilyHeading);
 	}
 </style>

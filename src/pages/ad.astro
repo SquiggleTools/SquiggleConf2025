@@ -1,6 +1,10 @@
 ---
-import InlineBlock from "~/components/InlineBlock.astro";
+import BodyText from "~/components/BodyText.astro";
+import Hero from "~/components/hero/Hero.astro";
+import HeroLocators from "~/components/hero/HeroLocators.astro";
+import HeroTagline from "~/components/hero/HeroTagline.astro";
 import Logo from "~/components/Logo.astro";
+import TextSquiggly from "~/components/TextSquiggly.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 ---
 
@@ -8,25 +12,33 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 	description="A Boston conference for excellent web dev tooling."
 	title="Ad"
 >
-	<div class="ad">
-		<Logo />
-		<div>
-			<InlineBlock>September 18-19, 2025 · </InlineBlock>
-			<InlineBlock>Boston New England Aquarium</InlineBlock>
+	<Hero>
+		<div class="ad">
+			<Logo invert year />
+
+			<HeroTagline class="ad-hero-tagline">
+				Insert text
+				<TextSquiggly width="medium">
+					<Fragment slot="inside">here</Fragment>
+					<Fragment slot="after">.</Fragment>
+				</TextSquiggly>
+			</HeroTagline>
+
+			<HeroLocators />
 		</div>
-	</div>
+	</Hero>
 </BaseLayout>
 
 <style>
 	.ad {
-		align-items: center;
-		color: var(--colorAccentLight);
+		align-items: flex-start;
+		color: var(--colorAccentDark);
 		display: flex;
 		flex-direction: column;
-
-		gap: 1rem;
-		height: 100vh;
+		gap: 3.5rem;
+		height: calc(100vh - 15rem);
 		justify-content: center;
+		padding-bottom: 2.5rem;
 		width: 100%;
 	}
 </style>
