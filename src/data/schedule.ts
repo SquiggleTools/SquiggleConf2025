@@ -9,6 +9,7 @@ export interface ActivityBetweenData extends ActivityDataWithinBase {
 
 export interface ActivityData {
 	at: string;
+	badge?: string;
 	description: string[];
 	location?: ActivityLocation;
 	privacy?: Partial<Record<ActivityPrivacy, boolean>>;

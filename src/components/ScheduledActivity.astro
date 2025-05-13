@@ -7,6 +7,7 @@ import Heading from "./Heading.astro";
 
 interface Props {
 	at?: string;
+	badge?: string;
 	description?: string[];
 	id?: string;
 	location?: ActivityLocation;
@@ -17,6 +18,7 @@ interface Props {
 
 const {
 	at,
+	badge,
 	class: className,
 	description = [],
 	id,
@@ -38,6 +40,7 @@ const descriptionLines = await Promise.all(
 >
 	<Heading level={level} class="activity-title">
 		{title}
+		{badge && <div class="activity-badge">{badge}</div>}
 	</Heading>
 	<div class="activity-locators">
 		<div class="activity-time">{at ?? "Time TBA"}</div>
@@ -69,14 +72,24 @@ const descriptionLines = await Promise.all(
 	}
 
 	.activity-title {
+		align-items: center;
+		display: flex;
 		font-family: var(--fontFamilyLogo);
 		font-size: var(--fontSizeMedium);
 		font-weight: var(--fontWeightLogo);
+		justify-content: space-between;
 		text-decoration: none;
 	}
 
-	.activity-title-inner {
-		display: inline;
+	.activity-badge {
+		border-radius: 4px;
+		border: 1px solid var(--colorAccentMedium);
+		color: var(--colorAccent);
+		font-size: var(--fontSizeSmaller);
+		font-weight: var(--fontWeightLight);
+		padding: 0.5rem 0.7rem;
+		text-align: center;
+		user-select: none;
 	}
 
 	.activity-locators {
@@ -118,7 +131,14 @@ const descriptionLines = await Promise.all(
 		}
 
 		.activity-title {
+			display: block;
 			grid-area: 1 / 2 / 2 / 3;
+		}
+
+		.activity-badge {
+			float: right;
+			padding: 0.5rem 0.75rem;
+			margin: -0.25rem 0;
 		}
 
 		.activity-locators {

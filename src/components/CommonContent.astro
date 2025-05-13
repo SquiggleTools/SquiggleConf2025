@@ -1,4 +1,5 @@
 ---
+import { slugify } from "~/utils/id";
 import ContentArea from "./ContentArea.astro";
 import Heading from "./Heading.astro";
 
@@ -12,7 +13,9 @@ const { class: className, level = "h2", ...rest } = Astro.props;
 ---
 
 <ContentArea class:list={["common-content", className]} width="thin" {...rest}>
-	<Heading level={level}>{Astro.props.heading}</Heading>
+	<Heading id={slugify(Astro.props.heading)} level={level}>
+		{Astro.props.heading}
+	</Heading>
 	<slot />
 </ContentArea>
 

@@ -53,15 +53,19 @@ const pairs = await Promise.all(
 	details {
 		font-size: var(--fontSizeBody);
 		font-weight: var(--fontWeightLight);
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
 		text-align: left;
 		width: 100%;
+	}
+
+	details[open] {
+		margin-bottom: 2.5rem;
 	}
 
 	summary {
 		cursor: pointer;
 		display: flex;
-		font-weight: var(--fontWeightMedium);
+		font-weight: var(--fontWeightSemibold);
 		justify-content: space-between;
 		list-style: none;
 		margin-top: 1.75rem;

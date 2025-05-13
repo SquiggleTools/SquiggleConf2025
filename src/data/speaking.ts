@@ -1,5 +1,7 @@
 import { mergeScheduleWithPublic, ScheduleDay } from "./schedule.js";
 
+const badge = "Speaker Activity";
+
 export const speakerSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 	{
 		activities: [
@@ -16,6 +18,7 @@ export const speakerSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			},
 			{
 				at: "7:00pm",
+				badge,
 				description: [
 					"Join us for a dinner with the other speakers and sponsors.",
 					"This is a great opportunity to meet your fellow speakers and sponsors, and to get to know each other before the conference.",
@@ -45,6 +48,7 @@ export const speakerSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			},
 			{
 				at: "5:00pm",
+				badge,
 				description: [
 					"A private event for speakers, sponsors, and makers in the dev tooling community.",
 				],
@@ -98,6 +102,7 @@ export const speakerSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			},
 			{
 				at: "10:00am",
+				badge,
 				description: [
 					"Speakers and organizers will go on a fun private Boston-themed event together.",
 				],

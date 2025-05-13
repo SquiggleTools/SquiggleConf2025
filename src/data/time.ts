@@ -16,7 +16,6 @@ export function parseTimeToNumber(timeStr: string) {
 	} else if (period.toLowerCase() === "am" && hour === 12) {
 		hour = 0;
 	}
-	console.log({ firstTimeMentioned, hour, minute, period });
 
 	return Temporal.PlainTime.from({ hour, minute });
 }
