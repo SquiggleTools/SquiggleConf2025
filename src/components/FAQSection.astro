@@ -27,8 +27,8 @@ const pairs = await Promise.all(
 		pairs.map(([question, answer]) => (
 			<details>
 				<summary>
-					<span>{question}</span>
 					<Image alt="" src={dropdown} />
+					<span>{question}</span>
 				</summary>
 				<div class="faq-answer">{answer}</div>
 			</details>
@@ -63,10 +63,12 @@ const pairs = await Promise.all(
 	}
 
 	summary {
+		align-items: center;
 		cursor: pointer;
 		display: flex;
 		font-weight: var(--fontWeightSemibold);
-		justify-content: space-between;
+		justify-content: flex-start;
+		gap: 0.5rem;
 		list-style: none;
 		margin-top: 1.75rem;
 		position: relative;
@@ -79,6 +81,7 @@ const pairs = await Promise.all(
 	details summary img {
 		transition: var(--transitionMedium) transform;
 		user-select: none;
+		height: 0.75rem;
 	}
 
 	details[open] summary img {
