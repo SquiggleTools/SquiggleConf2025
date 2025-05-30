@@ -38,6 +38,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "thealexlichter",
+      "name": "Alexander Lichter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/640208?v=4",
+      "profile": "https://lichter.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
