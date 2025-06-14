@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 import bloombergBlack from "~/assets/2024/sponsors/bloomberg-black.svg";
 import bloombergWhite from "~/assets/2024/sponsors/bloomberg-white.svg";
 import datastaxBlack from "~/assets/2024/sponsors/datastax-black.svg";
@@ -79,7 +81,8 @@ export const sponsorsBySlug = {
 	},
 };
 
-export const sponsorsByPlacement = Object.groupBy(
+// TODO: use Object.groupBy once Vercel supports a newer Node.js version
+export const sponsorsByPlacement = _.groupBy(
 	Object.entries(sponsorsBySlug).map(([slug, sponsor]) => ({
 		slug,
 		...sponsor,
