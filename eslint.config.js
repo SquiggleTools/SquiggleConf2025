@@ -57,6 +57,8 @@ export default tseslint.config(
 		},
 		rules: {
 			"n/no-unpublished-import": "off",
+			"n/no-unsupported-features/es-builtins": "off",
+			"n/no-unsupported-features/es-syntax": "off",
 
 			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
