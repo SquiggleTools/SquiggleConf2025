@@ -3,7 +3,7 @@ import TextSquiggly from "./TextSquiggly.astro";
 
 interface Props {
 	invert?: boolean;
-	year?: boolean;
+	year?: number;
 }
 ---
 
@@ -12,7 +12,7 @@ interface Props {
 		<Fragment slot="inside">Squiggle</Fragment>
 		<Fragment slot="after">Conf</Fragment>
 	</TextSquiggly>
-	{Astro.props.year && <span class="year">2025</span>}
+	{Astro.props.year && <span class="year">{Astro.props.year}</span>}
 </div>
 
 <style>
