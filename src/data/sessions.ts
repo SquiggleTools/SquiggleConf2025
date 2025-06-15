@@ -90,7 +90,7 @@ export const sessions: SessionSummary[] = [
 		image: giacomoCavalieri,
 		qualification: "Gleam language core team member",
 		speaker: "Giacomo Cavalieri",
-		title: "Gleam Compiler Snapshots: Smarter Testing, Less Work",
+		title: "Snapshot Tests in Gleam: Smarter Testing, Less Work",
 	},
 	{
 		image: amyDutton,
