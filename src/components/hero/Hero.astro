@@ -3,11 +3,12 @@ import cityscape from "~/assets/design/cityscape.svg";
 import ContentArea from "~/components/ContentArea.astro";
 
 interface Props {
+	tall?: boolean;
 	scrollNotice?: boolean;
 }
 ---
 
-<section class="hero">
+<section class:list={["hero", Astro.props.tall ? "tall" : "common"]}>
 	<div class="hero-decorations">
 		<div class="hero-decorations-inner">
 			<div
@@ -33,7 +34,6 @@ interface Props {
 
 <style>
 	.hero {
-		--cityscapeHeightArea: 16rem;
 		background: linear-gradient(
 			180deg,
 			var(--colorBlueBright1) 0%,
@@ -42,6 +42,14 @@ interface Props {
 		color: var(--colorBackground);
 		padding-bottom: var(--cityscapeHeightArea);
 		position: relative;
+	}
+
+	.hero.common {
+		--cityscapeHeightArea: 16rem;
+	}
+
+	.hero.tall {
+		--cityscapeHeightArea: 20rem;
 	}
 
 	.hero-decorations {
