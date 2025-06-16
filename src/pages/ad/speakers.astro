@@ -11,7 +11,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 	description="A Boston conference for excellent web dev tooling."
 	title="Ad: Speakers"
 >
-	<Hero tall>
+	<Hero flip tall>
 		<div class="ad">
 			<div class="top">
 				<Logo invert year={currentYear} />
@@ -25,15 +25,14 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 							<Image
 								alt=""
 								class="speaker-image"
-								height={70}
+								height={96}
 								src={speaker.image}
-								width={70}
+								width={96}
 							/>
 							{speaker.name}
 						</li>
 					))
 				}
-				<span class="speaker"></span>
 				<span class="speaker"></span>
 				<span class="speaker"></span>
 			</ul>
@@ -47,28 +46,34 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 		color: var(--colorAccentDark);
 		display: flex;
 		flex-direction: column;
-		gap: 3.5rem;
-		height: calc(100vh - 15rem);
+		gap: 5rem;
+		height: calc(100vh - 8.5rem);
 		justify-content: center;
-		padding: 12.5rem 0 5rem;
+		padding: 7.5rem 0 5rem;
 		margin: 0 -15%;
 		width: 130%;
 	}
 
 	.top {
+		--topFontSize: 3rem;
 		align-items: baseline;
 		color: var(--colorLogoText);
 		display: flex;
 		font-family: var(--fontFamilyLogo);
-		font-size: var(--fontSizeLogo);
+		font-size: var(--topFontSize);
+
 		gap: 1rem;
 		transform: scale(1.1);
 		margin-left: 3.5rem;
 		width: 100%;
 	}
 
+	.logo {
+		font-size: var(--topFontSize) !important;
+	}
+
 	.speaker-announcements {
-		font-weight: var(--fontWeightSemibold);
+		font-weight: var(--fontWeightBold);
 		margin-left: 2rem;
 	}
 
@@ -83,10 +88,9 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 		align-items: center;
 		display: flex;
 		gap: 0.75rem;
-		font-size: var(--fontSizeMedium);
+		font-size: 1.75rem;
 		font-family: var(--fontFamilyHeading);
 		font-weight: var(--fontWeightBold);
-		transform: scale(1.2);
 		width: calc(25% - 3rem);
 	}
 

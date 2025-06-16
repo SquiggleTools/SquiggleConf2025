@@ -3,12 +3,19 @@ import cityscape from "~/assets/design/cityscape.svg";
 import ContentArea from "~/components/ContentArea.astro";
 
 interface Props {
+	flip?: boolean;
 	tall?: boolean;
 	scrollNotice?: boolean;
 }
 ---
 
-<section class:list={["hero", Astro.props.tall ? "tall" : "common"]}>
+<section
+	class:list={[
+		"hero",
+		Astro.props.flip && "flip",
+		Astro.props.tall ? "tall" : "common",
+	]}
+>
 	<div class="hero-decorations">
 		<div class="hero-decorations-inner">
 			<div
@@ -69,6 +76,10 @@ interface Props {
 		width: 0;
 	}
 
+	.flip .hero-decorations-inner {
+		transform: scaleX(-1);
+	}
+
 	.hero-cityscape {
 		background-repeat: repeat-x;
 		height: 32rem;
@@ -98,10 +109,10 @@ interface Props {
 
 	@media (width >= 819px) {
 		.hero-cityscape {
-			/* transform: translateX(-50%); */
+			transform: translateX(-50%);
 
 			/* TEMP TODO */
-			transform: translateX(-50%) scaleY(0.75) scaleX(0.8) translateY(10rem);
+			/* transform: translateX(-50%) scaleY(0.75) scaleX(-0.8) translateY(-10rem); */
 		}
 	}
 </style>
