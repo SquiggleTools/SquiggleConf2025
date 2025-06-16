@@ -9,7 +9,7 @@ import dylanGoings from "~/assets/avatars/dylan-goings.png";
 import giacomoCavalieri from "~/assets/avatars/giacomo-cavalieri.jpg";
 import jakeBailey from "~/assets/avatars/jake-bailey.jpg";
 import jessicaGarson from "~/assets/avatars/jessica-garson.jpg";
-import maddyMontaquila from "~/assets/avatars/maddy-montaquila.jpg";
+import maddyMontaquila from "~/assets/avatars/maddy-montaquila.png";
 import mattiaManzati from "~/assets/avatars/mattia-manzati.jpg";
 import michelleBakels from "~/assets/avatars/michelle-bakels.jpg";
 import nicoloRibaudo from "~/assets/avatars/nicolo-ribaudo.jpg";
