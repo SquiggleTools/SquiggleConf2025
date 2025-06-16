@@ -4,6 +4,7 @@ import { markdown } from "@astropub/md";
 import { ActivityLocation } from "~/data/schedule";
 
 import Heading from "./Heading.astro";
+import Badge from "./hero/Badge.astro";
 
 interface Props {
 	at?: string;
@@ -40,7 +41,7 @@ const descriptionLines = await Promise.all(
 >
 	<Heading level={level} class="activity-title">
 		{title}
-		{badge && <div class="activity-badge">{badge}</div>}
+		{badge && <Badge>{badge}</Badge>}
 	</Heading>
 	<div class="activity-locators">
 		<div class="activity-time">{at ?? "Time TBA"}</div>
@@ -80,18 +81,6 @@ const descriptionLines = await Promise.all(
 		font-weight: var(--fontWeightLogo);
 		justify-content: space-between;
 		text-decoration: none;
-	}
-
-	.activity-badge {
-		border-radius: 4px;
-		background: var(--colorAccentMedium);
-		color: var(--colorForegroundAccent);
-		display: inline-block;
-		font-size: var(--fontSizeSmallest);
-		font-weight: var(--fontWeightBold);
-		padding: 0.35rem 0.5rem;
-		text-align: center;
-		user-select: none;
 	}
 
 	.activity-locators {
@@ -135,11 +124,6 @@ const descriptionLines = await Promise.all(
 		.activity-title {
 			grid-area: 1 / 2 / 2 / 3;
 			justify-content: flex-start;
-		}
-
-		.activity-badge {
-			padding: 0.35rem 0.5rem;
-			margin: -0.5rem 0 -0.35rem;
 		}
 
 		.activity-locators {

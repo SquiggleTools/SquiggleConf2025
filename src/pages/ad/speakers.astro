@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import Hero from "~/components/hero/Hero.astro";
-import HeroLocators from "~/components/hero/HeroLocators.astro";
+import SquigglyThick from "~/assets/design/squiggly-thick.svg";
+import Badge from "~/components/hero/Badge.astro";
 import Logo from "~/components/Logo.astro";
+import { mcs } from "~/data/mcs";
 import { speakers } from "~/data/speakers";
 import { currentYear } from "~/data/years";
 import BaseLayout from "~/layouts/BaseLayout.astro";
@@ -12,93 +13,136 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 	description="A Boston conference for excellent web dev tooling."
 	title="Ad: Speakers"
 >
-	<Hero flip tall>
-		<div class="ad">
-			<div class="top">
-				<Logo invert year={currentYear} />
-				<span class="speaker-announcements">Speaker Announcements</span>
-			</div>
-
-			<ul class="speakers">
-				{
-					speakers.map((speaker) => (
-						<li class="speaker">
-							<Image
-								alt=""
-								class="speaker-image"
-								height={96}
-								src={speaker.image}
-								width={96}
-							/>
-							{speaker.name}
-						</li>
-					))
-				}
-				<span class="speaker">
-					<HeroLocators multiline />
-				</span>
-				<span class="speaker"></span>
-			</ul>
+	<div class="ad">
+		<div class="decorations">
+			<SquigglyThick class="squiggly-thick" />
 		</div>
-	</Hero>
+
+		<div class="top">
+			<Logo invert year={currentYear} />
+			<span class="speaker-announcements">
+				Meet this year's amazing speakers
+			</span>
+		</div>
+
+		<ul class="speakers">
+			{
+				speakers.map((speaker) => (
+					<li class="speaker">
+						<Image
+							alt=""
+							class="speaker-image"
+							height={96}
+							src={speaker.image}
+							width={96}
+						/>
+						<div class="speaker-name">{speaker.name}</div>
+					</li>
+				))
+			}
+			{
+				mcs.map((mc) => (
+					<li class="speaker">
+						<Image
+							alt=""
+							class="speaker-image"
+							height={96}
+							src={mc.image}
+							width={96}
+						/>
+						<div class="speaker-name">{mc.name}</div>
+						<Badge class="mc-badge">MC</Badge>
+					</li>
+				))
+			}
+		</ul>
+	</div>
 </BaseLayout>
 
 <style>
 	.ad {
-		--widthOffset: 25%;
 		align-items: flex-start;
+		background: linear-gradient(
+			180deg,
+			var(--colorBlueBright1) 0%,
+			var(--colorBlueBright2) 100%
+		);
 		color: var(--colorAccentDark);
 		display: flex;
 		flex-direction: column;
-		gap: 5rem;
-		height: calc(100vh - 5rem);
-		justify-content: center;
-		padding: 5rem 0 5rem;
-		margin: 0 calc(-1 * var(--widthOffset));
-		width: calc(100% + var(--widthOffset) * 2);
+		height: 100vh;
+		justify-content: space-evenly;
+		width: 100vw;
+		padding: 0 5rem;
+	}
+
+	.decorations {
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: 0;
 	}
 
 	.top {
-		--topFontSize: 3rem;
+		--topFontSize: 3.5rem;
 		align-items: baseline;
 		color: var(--colorLogoText);
 		display: flex;
 		font-family: var(--fontFamilyLogo);
 		font-size: var(--topFontSize);
-
 		gap: 1rem;
-		transform: scale(1.1);
-		margin-left: 5.5rem;
+		margin-bottom: -1rem;
+		position: relative;
 		width: 100%;
 	}
 
 	.logo {
-		font-size: var(--topFontSize) !important;
+		transform: scale(1.5) translateY(-0.25rem);
+		margin-left: 5rem;
 	}
 
 	.speaker-announcements {
+		font-size: 4rem;
 		font-weight: var(--fontWeightBold);
-		margin-left: 2rem;
+		margin-left: 6rem;
 	}
 
 	.speakers {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		gap: 2.5rem 3.5rem;
+		position: relative;
+		width: 100%;
 	}
 
 	.speaker {
 		align-items: center;
 		display: flex;
 		gap: 0.75rem;
-		font-size: 1.75rem;
+		font-size: 2.25rem;
 		font-family: var(--fontFamilyHeading);
 		font-weight: var(--fontWeightBold);
-		width: calc(25% - 3rem);
+		width: calc(25% - 5rem);
 	}
 
 	.speaker-image {
 		border-radius: 100%;
+	}
+
+	.mc-badge {
+		margin-bottom: 2rem;
+		margin-right: -0.5rem;
+		transform: scale(1.2);
+	}
+
+	.squiggly-thick {
+		position: absolute;
+		top: -20.5rem;
+		right: -13.5rem;
+		width: 45rem;
+		transform: rotate(30deg) scaleX(-1);
 	}
 </style>
