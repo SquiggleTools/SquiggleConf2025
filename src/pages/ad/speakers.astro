@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import SquigglyThick from "~/assets/design/squiggly-thick.svg";
 import Badge from "~/components/hero/Badge.astro";
 import Logo from "~/components/Logo.astro";
 import { mcs } from "~/data/mcs";
@@ -14,10 +13,6 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 	title="Ad: Speakers"
 >
 	<div class="ad">
-		<div class="decorations">
-			<SquigglyThick class="squiggly-thick" />
-		</div>
-
 		<div class="top">
 			<Logo invert year={currentYear} />
 			<span class="speaker-announcements">
@@ -76,15 +71,6 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 		padding: 0 5rem;
 	}
 
-	.decorations {
-		bottom: 0;
-		left: 0;
-		overflow: hidden;
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-
 	.top {
 		--topFontSize: 3.5rem;
 		align-items: baseline;
@@ -136,13 +122,5 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 		margin-bottom: 2rem;
 		margin-right: -0.5rem;
 		transform: scale(1.2);
-	}
-
-	.squiggly-thick {
-		position: absolute;
-		top: -20.5rem;
-		right: -13.5rem;
-		width: 45rem;
-		transform: rotate(30deg) scaleX(-1);
 	}
 </style>
