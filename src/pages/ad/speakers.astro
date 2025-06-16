@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Hero from "~/components/hero/Hero.astro";
+import HeroLocators from "~/components/hero/HeroLocators.astro";
 import Logo from "~/components/Logo.astro";
 import { speakers } from "~/data/speakers";
 import { currentYear } from "~/data/years";
@@ -33,7 +34,9 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 						</li>
 					))
 				}
-				<span class="speaker"></span>
+				<span class="speaker">
+					<HeroLocators multiline />
+				</span>
 				<span class="speaker"></span>
 			</ul>
 		</div>
@@ -48,9 +51,9 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 		display: flex;
 		flex-direction: column;
 		gap: 5rem;
-		height: calc(100vh - 8.5rem);
+		height: calc(100vh - 5rem);
 		justify-content: center;
-		padding: 7.5rem 0 5rem;
+		padding: 5rem 0 5rem;
 		margin: 0 calc(-1 * var(--widthOffset));
 		width: calc(100% + var(--widthOffset) * 2);
 	}
