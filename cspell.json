@@ -11,7 +11,7 @@
 		"node_modules",
 		"pnpm-lock.yaml",
 		"src/assets",
-		"src/data/20*"
+		"src/data"
 	],
 	"words": [
 		"astropub",

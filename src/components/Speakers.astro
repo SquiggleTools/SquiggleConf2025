@@ -1,0 +1,120 @@
+---
+import Heading from "~/components/Heading.astro";
+import BodyText from "./BodyText.astro";
+import ContentArea from "./ContentArea.astro";
+import { sessions } from "~/data/sessions";
+import { Image } from "astro:assets";
+---
+
+<ContentArea class="speakers">
+	<Heading id="speakers" level="h2">Speakers</Heading>
+
+	<BodyText class="speakers-description">
+		Hear from practitioners of excellent web dev tooling: the people who bring
+		you the squigglies you know and love.
+	</BodyText>
+
+	<ul class="sessions">
+		{
+			sessions.map((session) => (
+				<li class="session">
+					<Image
+						alt=""
+						class="session-image"
+						height={40}
+						src={session.image}
+						width={40}
+					/>
+					<Heading class="session-title" level="h3">
+						{session.title}
+					</Heading>
+					<div class="session-speaker">
+						<span class="speaker-speaker">{session.speaker}</span>
+						<span class="speaker-qualification">{session.qualification}</span>
+					</div>
+				</li>
+			))
+		}
+	</ul>
+</ContentArea>
+
+<style>
+	.speakers {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	h2 {
+		font-family: var(--fontFamilyHeading);
+		font-size: var(--fontSizeLarger);
+		margin-top: 3.5rem;
+		text-align: center;
+	}
+
+	.speakers-description {
+		margin-bottom: 1.5rem;
+		max-width: 33rem;
+	}
+
+	.sessions {
+		--sessions-padding: 0.75rem;
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 1.25rem var(--sessions-padding);
+		justify-content: center;
+		list-style-type: none;
+		margin-bottom: 3.5rem;
+	}
+
+	.session {
+		display: grid;
+		gap: 0.25rem 0.75rem;
+		font-family: var(--fontFamilyHeading);
+		grid-template-columns: auto 100%;
+		grid-template-rows: auto 100%;
+		max-width: min(35rem, calc(100vw - 10rem));
+	}
+
+	.session-image {
+		border-radius: 100%;
+		margin-top: 0.35rem;
+		grid-area: 1 / 1 / 3 / 2;
+	}
+
+	.session-title {
+		grid-area: 1 / 2 / 2 / 3;
+		font-size: var(--fontSizeSmall);
+		font-weight: var(--fontWeightBold);
+	}
+
+	.session-speaker {
+		color: var(--colorAccentDark);
+		grid-area: 2 / 2 / 3 / 3;
+	}
+
+	.speaker-speaker {
+		font-size: var(--fontSizeSmaller);
+	}
+
+	.speaker-qualification {
+		font-size: var(--fontSizeSmallest);
+		font-style: italic;
+		font-weight: var(--fontWeightLight);
+	}
+
+	@media (width >= 1117px) {
+		.sessions {
+			align-items: center;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.session {
+			width: calc(50% - var(--sessions-padding));
+		}
+	}
+</style>
