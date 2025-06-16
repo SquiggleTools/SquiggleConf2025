@@ -63,16 +63,16 @@ export const sessions: SessionSummary[] = [
 		title: "A World Class Local Dev Loop with Aspire",
 	},
 	{
+		image: oliverMedhurst,
+		qualification: "creator of Porffor; TC39 & WinterTC invited expert",
+		speaker: "Oliver Medhurst",
+		title: "AoT Compiling TypeScript to WASM and Native",
+	},
+	{
 		image: dominicNguyen,
 		qualification: "Chromatic creator; Storybook maintainer",
 		speaker: "Dominic Nguyen",
 		title: "Catch Accessibility Issues at the Source with Storybook",
-	},
-	{
-		image: oliverMedhurst,
-		qualification: "creator of Porffor; TC39 & WinterTC invited expert",
-		speaker: "Oliver Medhurst",
-		title: "Compiling TypeScript to WASM and Native",
 	},
 	{
 		image: oliverDunk,
