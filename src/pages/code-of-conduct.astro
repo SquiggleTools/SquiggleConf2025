@@ -9,7 +9,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 	description="A Boston conference for excellent web dev tooling."
 	title="Code of Conduct"
 >
-	<ContentArea class="code-of-conduct-body-area" width="thin">
+	<ContentArea width="thin">
 		<Heading level="h1">Code of Conduct</Heading>
 
 		<BodyText class="code-of-conduct-body-text">
@@ -70,13 +70,10 @@ import PageLayout from "~/layouts/PageLayout.astro";
 </PageLayout>
 
 <style>
-	.code-of-conduct-body-area {
-		padding: 3rem 0 2rem;
-	}
-
 	h1 {
 		font-size: var(--fontSizeLarge);
 		padding-bottom: 2rem;
+		padding: 3rem 0 2rem;
 	}
 
 	.code-of-conduct-body-text {
