@@ -38,7 +38,7 @@ export const speakerSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 				at: "8:45am",
 				description: [
 					"Doors open at 8:45am and the conference extends through 5:00pm.",
-					"See [Schedule > Thursday, September 18th](/schedule#thursday) for more details.",
+					"See [Schedule > Thursday, September 18th](/2024/schedule#thursday) for more details.",
 				],
 				location: {
 					href: "https://www.neaq.org/visit/simons-theatre",
@@ -63,7 +63,7 @@ export const speakerSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 				at: "8:45am",
 				description: [
 					"Doors open at 8:45am and the conference extends through 5:00pm.",
-					"See [Schedule > Friday, September 19th](/schedule#friday) for more details.",
+					"See [Schedule > Friday, September 19th](/2024/schedule#friday) for more details.",
 				],
 				location: {
 					href: "https://www.neaq.org/visit/simons-theatre",
