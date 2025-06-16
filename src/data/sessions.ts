@@ -58,7 +58,7 @@ export const sessions: SessionSummary[] = [
 
 	{
 		image: maddyMontaquila,
-		qualification: "product lead for Aspire",
+		qualification: "product lead for Aspire at Microsoft",
 		speaker: "Maddy Montaquila",
 		title: "A World Class Local Dev Loop with Aspire",
 	},
