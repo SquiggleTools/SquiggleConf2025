@@ -1,13 +1,20 @@
 ---
+import { ClassificationTypeNames } from "typescript";
 import TextSquiggly from "./TextSquiggly.astro";
 
 interface Props {
+	class?: string;
 	invert?: boolean;
 	year?: number;
 }
+
+const { class: className, invert, year, ...props } = Astro.props;
 ---
 
-<div class:list={["logo", Astro.props.invert ? "invert" : "regular"]}>
+<div
+	class:list={["logo", Astro.props.invert ? "invert" : "regular", className]}
+	{...props}
+>
 	<TextSquiggly width="medium">
 		<Fragment slot="inside">Squiggle</Fragment>
 		<Fragment slot="after">Conf</Fragment>

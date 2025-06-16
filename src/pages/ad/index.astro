@@ -5,6 +5,7 @@ import HeroLocators from "~/components/hero/HeroLocators.astro";
 import HeroTagline from "~/components/hero/HeroTagline.astro";
 import Logo from "~/components/Logo.astro";
 import TextSquiggly from "~/components/TextSquiggly.astro";
+import { currentYear } from "~/data/years";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 ---
 
@@ -14,7 +15,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 >
 	<Hero>
 		<div class="ad">
-			<Logo invert year />
+			<Logo invert year={currentYear} />
 
 			<HeroTagline class="ad-hero-tagline">
 				Insert text

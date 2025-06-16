@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets";
+import Hero from "~/components/hero/Hero.astro";
+import Logo from "~/components/Logo.astro";
+import { speakers } from "~/data/speakers";
+import { currentYear } from "~/data/years";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+	description="A Boston conference for excellent web dev tooling."
+	title="Ad: Speakers"
+>
+	<Hero tall>
+		<div class="ad">
+			<div class="top">
+				<Logo invert year={currentYear} />
+				<span class="speaker-announcements">Speaker Announcements</span>
+			</div>
+
+			<ul class="speakers">
+				{
+					speakers.map((speaker) => (
+						<li class="speaker">
+							<Image
+								alt=""
+								class="speaker-image"
+								height={70}
+								src={speaker.image}
+								width={70}
+							/>
+							{speaker.name}
+						</li>
+					))
+				}
+				<span class="speaker"></span>
+				<span class="speaker"></span>
+				<span class="speaker"></span>
+			</ul>
+		</div>
+	</Hero>
+</BaseLayout>
+
+<style>
+	.ad {
+		align-items: flex-start;
+		color: var(--colorAccentDark);
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+		height: calc(100vh - 15rem);
+		justify-content: center;
+		padding: 12.5rem 0 5rem;
+		margin: 0 -15%;
+		width: 130%;
+	}
+
+	.top {
+		align-items: baseline;
+		color: var(--colorLogoText);
+		display: flex;
+		font-family: var(--fontFamilyLogo);
+		font-size: var(--fontSizeLogo);
+		gap: 1rem;
+		transform: scale(1.1);
+		margin-left: 3.5rem;
+		width: 100%;
+	}
+
+	.speaker-announcements {
+		font-weight: var(--fontWeightSemibold);
+		margin-left: 2rem;
+	}
+
+	.speakers {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		gap: 2.5rem 3.5rem;
+	}
+
+	.speaker {
+		align-items: center;
+		display: flex;
+		gap: 0.75rem;
+		font-size: var(--fontSizeMedium);
+		font-family: var(--fontFamilyHeading);
+		font-weight: var(--fontWeightBold);
+		transform: scale(1.2);
+		width: calc(25% - 3rem);
+	}
+
+	.speaker-image {
+		border-radius: 100%;
+	}
+</style>
