@@ -32,13 +32,15 @@ import "~/pages/2024/styles.css";
 				{
 					speakers.map((speaker) => (
 						<li class="speaker">
-							<Image
-								alt=""
-								class="speaker-image"
-								height={88}
-								src={speaker.image}
-								width={88}
-							/>
+							<div class="speaker-image-container">
+								<Image
+									alt=""
+									class="speaker-image"
+									height={88}
+									src={speaker.image}
+									width={88}
+								/>
+							</div>
 							<div class="speaker-name">
 								<div>{speaker.name.slice(0, speaker.name.indexOf(" "))}</div>
 								<div>{speaker.name.slice(speaker.name.indexOf(" "))}</div>
@@ -49,13 +51,15 @@ import "~/pages/2024/styles.css";
 				{
 					mcs.map((mc) => (
 						<li class="speaker">
-							<Image
-								alt=""
-								class="speaker-image"
-								height={96}
-								src={mc.image}
-								width={96}
-							/>
+							<div class="speaker-image-container">
+								<Image
+									alt=""
+									class="speaker-image"
+									height={88}
+									src={mc.image}
+									width={88}
+								/>
+							</div>
 							<div class="speaker-name">
 								<div>{mc.name.slice(0, mc.name.indexOf(" "))}</div>
 								<div>{mc.name.slice(mc.name.indexOf(" "))}</div>
@@ -148,20 +152,15 @@ import "~/pages/2024/styles.css";
 	}
 
 	.speaker-image-container {
-		border-radius: 100%;
-		height: 88px;
-		width: 88px;
-	}
-
-	.speaker-image {
-		border-width: 3px;
-		border-style: solid;
-		/* border-color: linear-gradient(to bottom, pink 0%, green 100%); */
-		border-image: linear-gradient(
+		padding: 3px;
+		background: linear-gradient(
 			to bottom,
-			var(--colorBlueBright5) 0%,
+			var(--colorBlueBright6) 0%,
 			var(--colorBlueBright4) 100%
 		);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.mc-badge {
