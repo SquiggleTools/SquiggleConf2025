@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import DeepBlueSea from "~/components/2024/DeepBlueSea.astro";
-import HeroLocators from "~/components/hero/HeroLocators.astro";
 import Badge from "~/components/hero/Badge.astro";
 import Logo from "~/components/Logo.astro";
 import { mcs } from "~/data/mcs";
@@ -22,7 +21,10 @@ import "~/pages/2024/styles.css";
 				<div class="top-announcements">Meet this year's amazing speakers</div>
 				<div class="top-branding">
 					<Logo class="top-logo" year={currentYear} />
-					<HeroLocators class="top-locators" />
+					<div class="top-locators">
+						<div>September 18-19</div>
+						<div>Boston</div>
+					</div>
 				</div>
 			</div>
 
@@ -101,11 +103,15 @@ import "~/pages/2024/styles.css";
 
 	.top-locators {
 		color: var(--colorBlue2);
-		transform: translateX(-2.5rem) translateY(3rem);
+		font-family: var(--fontFamilyHeading);
+		font-size: 2.5rem;
+		text-align: right;
+		transform: translateX(-2.5rem) translateY(1.25rem);
 	}
 
 	.top-logo {
-		transform: scale(2) translateX(6.5rem);
+		/* Please don't just us, this is super hacky, we were short on time 🥲 */
+		transform: scale(2) translateX(-6rem);
 	}
 
 	.top-announcements {
@@ -141,9 +147,21 @@ import "~/pages/2024/styles.css";
 		width: calc(25% - 5rem);
 	}
 
-	.speaker-image {
+	.speaker-image-container {
 		border-radius: 100%;
-		border: 3px solid var(--colorBlue3);
+		height: 88px;
+		width: 88px;
+	}
+
+	.speaker-image {
+		border-width: 3px;
+		border-style: solid;
+		/* border-color: linear-gradient(to bottom, pink 0%, green 100%); */
+		border-image: linear-gradient(
+			to bottom,
+			var(--colorBlueBright5) 0%,
+			var(--colorBlueBright4) 100%
+		);
 	}
 
 	.mc-badge {
