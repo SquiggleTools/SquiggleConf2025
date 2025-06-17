@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import DeepBlueSea from "~/components/2024/DeepBlueSea.astro";
+import HeroLocators from "~/components/hero/HeroLocators.astro";
 import Badge from "~/components/hero/Badge.astro";
 import Logo from "~/components/Logo.astro";
 import { mcs } from "~/data/mcs";
@@ -18,10 +19,11 @@ import "~/pages/2024/styles.css";
 	<DeepBlueSea>
 		<div class="ad">
 			<div class="top">
-				<Logo year={currentYear} />
-				<span class="speaker-announcements">
-					Meet this year's amazing speakers
-				</span>
+				<div class="top-announcements">Meet this year's amazing speakers</div>
+				<div class="top-branding">
+					<Logo class="top-logo" year={currentYear} />
+					<HeroLocators class="top-locators" />
+				</div>
 			</div>
 
 			<ul class="speakers">
@@ -31,9 +33,9 @@ import "~/pages/2024/styles.css";
 							<Image
 								alt=""
 								class="speaker-image"
-								height={80}
+								height={88}
 								src={speaker.image}
-								width={80}
+								width={88}
 							/>
 							<div class="speaker-name">
 								<div>{speaker.name.slice(0, speaker.name.indexOf(" "))}</div>
@@ -71,6 +73,7 @@ import "~/pages/2024/styles.css";
 		color: var(--colorAccentLight);
 		display: flex;
 		flex-direction: column;
+		gap: 2.5rem;
 		height: 100vh;
 		justify-content: space-evenly;
 		padding: 0 7.5rem;
@@ -91,38 +94,47 @@ import "~/pages/2024/styles.css";
 		width: 100%;
 	}
 
-	.logo {
-		transform: scale(2) translateY(0.25rem);
-		margin-left: 10rem;
+	.top-branding {
+		display: flex;
+		flex-direction: column;
 	}
 
-	.speaker-announcements {
-		font-size: 3.5rem;
+	.top-locators {
+		color: var(--colorBlue2);
+		transform: translateX(-2.5rem) translateY(3rem);
+	}
+
+	.top-logo {
+		transform: scale(2) translateX(6.5rem);
+	}
+
+	.top-announcements {
+		font-size: 5rem;
 		font-weight: var(--fontWeightBold);
-		width: 30%;
+		width: 50%;
 		margin-right: 2.5rem;
-		text-align: right;
+		text-align: left;
 	}
 
 	.speakers {
-		--textShadowColor: var(--colorBlueBright7);
-		text-shadow:
-			0 0 1rem var(--textShadowColor),
-			0 0 2rem var(--textShadowColor),
-			0 0 2.5rem var(--textShadowColor);
+		--textShadowColor: #041a31;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 2.5rem 3.5rem;
 		position: relative;
+		text-shadow:
+			0 0 1rem var(--textShadowColor),
+			0 0 2rem var(--textShadowColor),
+			0 0 2.5rem var(--textShadowColor);
 		width: calc(100% + 5rem);
 	}
 
 	.speaker {
 		align-items: center;
 		display: flex;
-		gap: 1rem;
-		font-size: 2rem;
+		gap: 1.25rem;
+		font-size: 2.25rem;
 		font-family: var(--fontFamilyHeading);
 		font-weight: var(--fontWeightBold);
 		position: relative;
@@ -131,6 +143,7 @@ import "~/pages/2024/styles.css";
 
 	.speaker-image {
 		border-radius: 100%;
+		border: 3px solid var(--colorBlue3);
 	}
 
 	.mc-badge {
