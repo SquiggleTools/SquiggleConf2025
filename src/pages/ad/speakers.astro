@@ -1,122 +1,131 @@
 ---
 import { Image } from "astro:assets";
+import DeepBlueSea from "~/components/2024/DeepBlueSea.astro";
 import Badge from "~/components/hero/Badge.astro";
 import Logo from "~/components/Logo.astro";
 import { mcs } from "~/data/mcs";
 import { speakers } from "~/data/speakers";
 import { currentYear } from "~/data/years";
 import BaseLayout from "~/layouts/BaseLayout.astro";
+
+import "~/pages/2024/styles.css";
 ---
 
 <BaseLayout
 	description="A Boston conference for excellent web dev tooling."
 	title="Ad: Speakers"
 >
-	<div class="ad">
-		<div class="top">
-			<Logo invert year={currentYear} />
-			<span class="speaker-announcements">
-				Meet this year's amazing speakers
-			</span>
-		</div>
+	<DeepBlueSea>
+		<div class="ad">
+			<div class="top">
+				<Logo year={currentYear} />
+				<span class="speaker-announcements">
+					Meet this year's amazing speakers
+				</span>
+			</div>
 
-		<ul class="speakers">
-			{
-				speakers.map((speaker) => (
-					<li class="speaker">
-						<Image
-							alt=""
-							class="speaker-image"
-							height={96}
-							src={speaker.image}
-							width={96}
-						/>
-						<div class="speaker-name">
-							<div>{speaker.name.slice(0, speaker.name.indexOf(" "))}</div>
-							<div>{speaker.name.slice(speaker.name.indexOf(" "))}</div>
-						</div>
-					</li>
-				))
-			}
-			{
-				mcs.map((mc) => (
-					<li class="speaker">
-						<Image
-							alt=""
-							class="speaker-image"
-							height={96}
-							src={mc.image}
-							width={96}
-						/>
-						<div class="speaker-name">
-							<div>{mc.name.slice(0, mc.name.indexOf(" "))}</div>
-							<div>{mc.name.slice(mc.name.indexOf(" "))}</div>
-						</div>
-						<Badge class="mc-badge">MC</Badge>
-					</li>
-				))
-			}
-		</ul>
-	</div>
+			<ul class="speakers">
+				{
+					speakers.map((speaker) => (
+						<li class="speaker">
+							<Image
+								alt=""
+								class="speaker-image"
+								height={80}
+								src={speaker.image}
+								width={80}
+							/>
+							<div class="speaker-name">
+								<div>{speaker.name.slice(0, speaker.name.indexOf(" "))}</div>
+								<div>{speaker.name.slice(speaker.name.indexOf(" "))}</div>
+							</div>
+						</li>
+					))
+				}
+				{
+					mcs.map((mc) => (
+						<li class="speaker">
+							<Image
+								alt=""
+								class="speaker-image"
+								height={96}
+								src={mc.image}
+								width={96}
+							/>
+							<div class="speaker-name">
+								<div>{mc.name.slice(0, mc.name.indexOf(" "))}</div>
+								<div>{mc.name.slice(mc.name.indexOf(" "))}</div>
+							</div>
+							<Badge class="mc-badge">MC</Badge>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</DeepBlueSea>
 </BaseLayout>
 
 <style>
 	.ad {
 		align-items: flex-start;
-		background: linear-gradient(
-			180deg,
-			var(--colorBlueBright1) 0%,
-			var(--colorBlueBright2) 100%
-		);
-		color: var(--colorAccentDark);
+		color: var(--colorAccentLight);
 		display: flex;
 		flex-direction: column;
 		height: 100vh;
 		justify-content: space-evenly;
-		width: 100vw;
 		padding: 0 7.5rem;
+		text-align: left;
+		width: 100vw;
 	}
 
 	.top {
 		--topFontSize: 3.5rem;
 		align-items: baseline;
-		color: var(--colorLogoText);
 		display: flex;
 		font-family: var(--fontFamilyLogo);
 		font-size: var(--topFontSize);
 		gap: 1rem;
+		justify-content: space-between;
 		margin-bottom: -1rem;
 		position: relative;
 		width: 100%;
 	}
 
 	.logo {
-		transform: scale(1.5) translateY(-0.25rem);
-		margin-left: 5rem;
+		transform: scale(2) translateY(0.25rem);
+		margin-left: 10rem;
 	}
 
 	.speaker-announcements {
-		font-size: 4rem;
+		font-size: 3.5rem;
 		font-weight: var(--fontWeightBold);
-		margin-left: 6rem;
+		width: 30%;
+		margin-right: 2.5rem;
+		text-align: right;
 	}
 
 	.speakers {
+		--textShadowColor: var(--colorBlueBright7);
+		text-shadow:
+			0 0 1rem var(--textShadowColor),
+			0 0 2rem var(--textShadowColor),
+			0 0 2.5rem var(--textShadowColor);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 2.5rem 3.5rem;
 		position: relative;
-		width: 100%;
+		width: calc(100% + 5rem);
 	}
 
 	.speaker {
 		align-items: center;
 		display: flex;
-		gap: 0.75rem;
-		font-size: 2.25rem;
+		gap: 1rem;
+		font-size: 2rem;
 		font-family: var(--fontFamilyHeading);
 		font-weight: var(--fontWeightBold);
+		position: relative;
 		width: calc(25% - 5rem);
 	}
 
@@ -126,6 +135,9 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 
 	.mc-badge {
 		margin: 0 -2.5em 2rem 1rem;
-		transform: scale(1.5);
+		font-size: 1.5rem;
+		position: absolute;
+		left: -2.5rem;
+		bottom: -2.5rem;
 	}
 </style>
