@@ -5,17 +5,21 @@ import Heading from "./Heading.astro";
 
 interface Props {
 	class?: string;
-	heading: string;
+	heading?: string;
 	level?: "h2" | "h3";
 }
 
-const { class: className, level = "h2", ...rest } = Astro.props;
+const { class: className, level = "h2", heading, ...props } = Astro.props;
 ---
 
-<ContentArea class:list={["common-content", className]} width="thin" {...rest}>
-	<Heading id={slugify(Astro.props.heading)} level={level}>
-		{Astro.props.heading}
-	</Heading>
+<ContentArea class:list={["common-content", className]} width="thin" {...props}>
+	{
+		heading && (
+			<Heading id={slugify(heading)} level={level}>
+				{heading}
+			</Heading>
+		)
+	}
 	<slot />
 </ContentArea>
 
