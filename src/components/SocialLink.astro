@@ -4,18 +4,21 @@ import { Image } from "astro:assets";
 
 interface Props {
 	alt: string;
+	class?: string;
 	href: string;
 	inverted?: boolean;
 	src: ImageMetadata;
 }
+
+const { alt, class: className, inverted, href, src } = Astro.props;
 ---
 
 <a
-	class:list={["social-link", Astro.props.inverted && "social-link-inverted"]}
-	href={Astro.props.href}
+	class:list={["social-link", inverted && "social-link-inverted"]}
+	href={href}
 	target="_blank"
 >
-	<Image alt={Astro.props.alt} class="social-image" src={Astro.props.src} />
+	<Image alt={alt} class="social-image" src={src} />
 </a>
 
 <style>
