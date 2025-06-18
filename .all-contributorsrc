@@ -47,6 +47,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "corinamurg",
+      "name": "Corina Murg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115652409?v=4",
+      "profile": "http://webforeveryone.us",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -55,7 +64,7 @@
     "README.md"
   ],
   "imageSize": 100,
-  "projectName": "SquiggleConf2025",
+  "projectName": "SquiggleConf.com",
   "projectOwner": "SquiggleTools",
   "repoHost": "https://github.com",
   "repoType": "github"
