@@ -30,16 +30,9 @@ const logoHref = year === currentYear ? "/" : `/${year}`;
 			<div class="header-contents-mobile">
 				<a {...hrefProps("/about")}>About</a>
 				<a {...hrefProps("/articles")}>Articles</a>
-				<a {...hrefProps("/faqs")}>FAQs</a>
 				{year === currentYear && <a {...hrefProps("/schedule")}>Schedule</a>}
 				<a {...hrefProps(links.shop)}>Shop</a>
-				{
-					year === currentYear ? (
-						<a {...hrefProps("/travel")}>Travel</a>
-					) : (
-						<a {...hrefProps("/")}>{currentYear}</a>
-					)
-				}
+				{year !== currentYear && <a {...hrefProps("/")}>{currentYear}</a>}
 				<Button
 					as="a"
 					class="header-button"
@@ -56,16 +49,9 @@ const logoHref = year === currentYear ? "/" : `/${year}`;
 		<div class="header-links">
 			<a {...hrefProps("/about")}>About</a>
 			<a {...hrefProps("/articles")}>Articles</a>
-			<a {...hrefProps("/faqs")}>FAQs</a>
 			{year === currentYear && <a {...hrefProps("/schedule")}>Schedule</a>}
 			<a {...hrefProps(links.shop)}>Shop</a>
-			{
-				year === currentYear ? (
-					<a {...hrefProps("/travel")}>Travel</a>
-				) : (
-					<a {...hrefProps("/")}>{currentYear}</a>
-				)
-			}
+			{year !== currentYear && <a {...hrefProps("/")}>{currentYear}</a>}
 			<Button
 				as="a"
 				class="header-button"
