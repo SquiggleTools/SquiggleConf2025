@@ -5,12 +5,23 @@ import SocialLink from "./SocialLink.astro";
 ---
 
 <div class="socials">
-	{socials.map((social) => <SocialLink {...social} />)}
+	{socials.map((social) => <SocialLink class="social-link" {...social} />)}
 </div>
 
 <style>
 	.socials {
 		display: flex;
-		gap: 1rem;
+		flex-wrap: wrap;
+		gap: 2rem;
+		margin-top: 2rem;
+		max-width: 15rem;
+	}
+
+	@media (width >= 490px) {
+		.socials {
+			gap: 1rem;
+			margin-top: 0;
+			max-width: none;
+		}
 	}
 </style>

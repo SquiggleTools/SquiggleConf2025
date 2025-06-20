@@ -21,5 +21,5 @@ export default defineConfig({
 			"/articles/how-to-attend-squiggleconf-for-free",
 		"/travel": "/articles/travel",
 	},
-	site: "https://2025.squiggleconf.com",
+	site: "https://squiggleconf.com",
 });

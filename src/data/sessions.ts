@@ -28,18 +28,11 @@ interface SessionSummary {
 
 // TODO: Source this dynamically using the scripts repo
 export const sessions: SessionSummary[] = [
-	// Launch Speakers
 	{
 		image: anthonyFu,
 		qualification: "open sourceror and design engineer",
 		speaker: "Anthony Fu",
 		title: "Make Tools That People Love",
-	},
-	{
-		image: jakeBailey,
-		qualification: "TypeScript team",
-		speaker: "Jake Bailey",
-		title: "How and Why We Ported TypeScript to Go",
 	},
 	{
 		image: shelleyVohr,
@@ -48,49 +41,16 @@ export const sessions: SessionSummary[] = [
 		title: "Electron's Internal Tooling: Open Source at Scale",
 	},
 	{
-		image: tJDeVries,
-		qualification: "Neovim core team",
-		speaker: "TJ DeVries",
-		title: "Zero to Squiggle with the Language Server Protocol",
-	},
-
-	// Announced in June
-
-	{
-		image: maddyMontaquila,
-		qualification: "product lead for Aspire at Microsoft",
-		speaker: "Maddy Montaquila",
-		title: "A World Class Local Dev Loop with Aspire",
-	},
-	{
-		image: oliverMedhurst,
-		qualification: "creator of Porffor; TC39 & WinterTC invited expert",
-		speaker: "Oliver Medhurst",
-		title: "AoT Compiling TypeScript to WASM and Native",
-	},
-	{
-		image: dominicNguyen,
-		qualification: "Chromatic creator; Storybook maintainer",
-		speaker: "Dominic Nguyen",
-		title: "Catch Accessibility Issues at the Source with Storybook",
-	},
-	{
 		image: oliverDunk,
 		qualification: "Chrome Extensions @ Google, Editor @ W3C WebExtensions CG",
 		speaker: "Oliver Dunk",
 		title: "Cross-Browser DevTools with WebExtensions",
 	},
 	{
-		image: mattiaManzati,
-		qualification: "founding engineer, Effectful Technologies",
-		speaker: "Mattia Manzati",
-		title: "Effect: Type-Safe Errors and Dependency Injection",
-	},
-	{
-		image: giacomoCavalieri,
-		qualification: "Gleam language core team member",
-		speaker: "Giacomo Cavalieri",
-		title: "Snapshot Tests in Gleam: Smarter Testing, Less Work",
+		image: peteGonzalez,
+		qualification: "co-creator of Lockfile Explorer, engineer at TikTok",
+		speaker: "Pete Gonzalez",
+		title: "The Lockfiles PhD You Never Got",
 	},
 	{
 		image: amyDutton,
@@ -99,16 +59,16 @@ export const sessions: SessionSummary[] = [
 		title: "JavaScript Framework Cage Match",
 	},
 	{
-		image: davidSherret,
-		qualification: "Deno developer; creator of ts-morph, dprint, ts-ast-viewer",
-		speaker: "David Sherret",
-		title: "JSR: Designing Package Registry Module Resolution",
+		image: mattiaManzati,
+		qualification: "founding engineer, Effectful Technologies",
+		speaker: "Mattia Manzati",
+		title: "Effect: Type-Safe Errors and Dependency Injection",
 	},
 	{
-		image: jessicaGarson,
-		qualification: "senior developer advocate at Elastic and artist",
-		speaker: "Jessica Garson",
-		title: "Quality Code Samples Make Everything Better",
+		image: jakeBailey,
+		qualification: "TypeScript team",
+		speaker: "Jake Bailey",
+		title: "How and Why We Ported TypeScript to Go",
 	},
 	{
 		image: alexanderLichter,
@@ -117,23 +77,46 @@ export const sessions: SessionSummary[] = [
 		title: "Rolldown: How Vite Bundles at the Speed of Rust",
 	},
 	{
+		image: giacomoCavalieri,
+		qualification: "Gleam language core team member",
+		speaker: "Giacomo Cavalieri",
+		title: "Snapshot Tests in Gleam: Smarter Testing, Less Work",
+	},
+	{
+		image: maddyMontaquila,
+		qualification: "product lead for Aspire at Microsoft",
+		speaker: "Maddy Montaquila",
+		title: "A World Class Local Dev Loop with Aspire",
+	},
+	{
+		image: jessicaGarson,
+		qualification: "senior developer advocate at Elastic and artist",
+		speaker: "Jessica Garson",
+		title: "Quality Code Samples Make Everything Better",
+	},
+	{
 		image: nicoloRibaudo,
 		qualification: "Babel maintainer and TC39 representative at Igalia",
 		speaker: "Nicolò Ribaudo",
 		title: "Source Maps: How Does the Magic Work?",
 	},
 	{
-		image: michelleBakels,
-		qualification:
-			"software developer, program director of developer health at G2i",
-		speaker: "Michelle Bakels",
-		title: "Tech Broke My Heart",
+		image: dominicNguyen,
+		qualification: "Chromatic creator; Storybook maintainer",
+		speaker: "Dominic Nguyen",
+		title: "Catch Accessibility Issues at the Source with Storybook",
 	},
 	{
-		image: peteGonzalez,
-		qualification: "co-creator of Lockfile Explorer, engineer at TikTok",
-		speaker: "Pete Gonzalez",
-		title: "The Lockfiles PhD You Never Got",
+		image: oliverMedhurst,
+		qualification: "creator of Porffor; TC39 & WinterTC invited expert",
+		speaker: "Oliver Medhurst",
+		title: "AoT Compiling TypeScript to WASM and Native",
+	},
+	{
+		image: davidSherret,
+		qualification: "Deno developer; creator of ts-morph, dprint, ts-ast-viewer",
+		speaker: "David Sherret",
+		title: "JSR: Designing Package Registry Module Resolution",
 	},
 	{
 		image: dylanGoings,
@@ -146,5 +129,18 @@ export const sessions: SessionSummary[] = [
 		qualification: "core maintainer of TSDoc",
 		speaker: "Pete Gonzalez",
 		title: "Why We Made TSDoc (and How)",
+	},
+	{
+		image: michelleBakels,
+		qualification:
+			"software developer, program director of developer health at G2i",
+		speaker: "Michelle Bakels",
+		title: "Tech Broke My Heart",
+	},
+	{
+		image: tJDeVries,
+		qualification: "Neovim core team",
+		speaker: "TJ DeVries",
+		title: "Zero to Squiggle with the Language Server Protocol",
 	},
 ];
