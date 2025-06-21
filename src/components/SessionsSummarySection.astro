@@ -3,8 +3,6 @@ import Heading from "./Heading.astro";
 import BodyText from "./BodyText.astro";
 import ContentArea from "./ContentArea.astro";
 import SessionsSummary from "./SessionsSummary.astro";
-import Button from "./Button.astro";
-import Arrow from "./Arrow.astro";
 ---
 
 <ContentArea class="speakers">
@@ -12,22 +10,23 @@ import Arrow from "./Arrow.astro";
 	<Heading id="sessions" level="h2">Sessions</Heading>
 
 	<BodyText class="speakers-description">
-		Hear from practitioners of excellent web dev tooling: the people who bring
-		you the squigglies you know and love.
+		Hear from practitioners of excellent web dev tooling: the devs who bring the
+		squigglies you know and love.
 	</BodyText>
 
 	<SessionsSummary class="speakers-sessions" />
 
-	<Button
-		as="a"
-		class="sessions-button"
-		size="large"
-		variant="emphasized"
-		href="/sessions"
-	>
-		See session details
-		<Arrow />
-	</Button>
+	<div class="after">
+		<BodyText class="after-text">
+			You’ll emerge with the best techniques to supercharge your projects —
+			whether you’re already a tooling wizard or trying to become one.
+		</BodyText>
+
+		<BodyText class="after-text">
+			See full details on <a href="/sessions">Sessions</a> and
+			<a href="/speakers">Speakers</a>.
+		</BodyText>
+	</div>
 </ContentArea>
 
 <style>
@@ -36,23 +35,36 @@ import Arrow from "./Arrow.astro";
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		padding: 3rem 0;
 	}
 
 	h2 {
 		font-family: var(--fontFamilyHeading);
 		font-size: var(--fontSizeLarger);
-		margin-top: 3.5rem;
 		text-align: center;
 	}
 
 	.speakers-description {
 		margin-bottom: 1.5rem;
-		max-width: 33rem;
+		max-width: 32rem;
+		text-align: center;
 	}
 
 	.sessions-button {
 		gap: 0.5rem;
 		margin: 1rem 0 3.5rem;
+	}
+
+	.after {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin: 1.5rem 0;
+		text-align: center;
+	}
+
+	.after-text {
+		max-width: 40rem;
 	}
 
 	@media (width >= 1117px) {

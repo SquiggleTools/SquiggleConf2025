@@ -8,7 +8,7 @@ import linkedin from "~/assets/logos/linkedin.svg";
 import mastodon from "~/assets/logos/mastodon.svg";
 import medium from "~/assets/logos/medium.svg";
 import twitch from "~/assets/logos/twitch.svg";
-import twitter from "~/assets/logos/twitter.svg";
+import x from "~/assets/logos/x.svg";
 import website from "~/assets/logos/website.svg";
 import youtube from "~/assets/logos/youtube.svg";
 
@@ -29,6 +29,7 @@ export interface BioLinksPlatforms {
 	twitch?: string | null;
 	twitter?: string | null;
 	website?: string | null;
+	x?: string | null;
 	youtube?: string | null;
 	medium?: string | null;
 }
@@ -43,7 +44,7 @@ const aliases = [
 	["mastodon", "on Mastodon", mastodon],
 	["medium", "on Medium", medium],
 	["twitch", "on Twitch", twitch],
-	["twitter", "on Twitter", twitter],
+	["x", "on X", x],
 	["youtube", "on YouTube", youtube],
 	["website", "'s website", website],
 ] as const;

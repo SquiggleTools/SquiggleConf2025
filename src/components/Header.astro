@@ -31,6 +31,8 @@ const logoHref = year === currentYear ? "/" : `/${year}`;
 				<a {...hrefProps("/about")}>About</a>
 				<a {...hrefProps("/articles")}>Articles</a>
 				{year === currentYear && <a {...hrefProps("/schedule")}>Schedule</a>}
+				{year === currentYear && <a {...hrefProps("/sessions")}>Sessions</a>}
+				{year === currentYear && <a {...hrefProps("/speakers")}>Speakers</a>}
 				<a {...hrefProps(links.shop)}>Shop</a>
 				{year !== currentYear && <a {...hrefProps("/")}>{currentYear}</a>}
 				<Button
@@ -50,6 +52,8 @@ const logoHref = year === currentYear ? "/" : `/${year}`;
 			<a {...hrefProps("/about")}>About</a>
 			<a {...hrefProps("/articles")}>Articles</a>
 			{year === currentYear && <a {...hrefProps("/schedule")}>Schedule</a>}
+			{year === currentYear && <a {...hrefProps("/sessions")}>Sessions</a>}
+			{year === currentYear && <a {...hrefProps("/speakers")}>Speakers</a>}
 			<a {...hrefProps(links.shop)}>Shop</a>
 			{year !== currentYear && <a {...hrefProps("/")}>{currentYear}</a>}
 			<Button
