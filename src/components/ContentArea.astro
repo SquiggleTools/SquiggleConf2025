@@ -1,8 +1,10 @@
 ---
+export type ContentAreaWidth = "thin" | "normal" | "wide";
+
 export interface Props {
 	as?: string;
 	class?: string;
-	width?: "thin" | "normal" | "wide";
+	width?: ContentAreaWidth;
 }
 
 const {

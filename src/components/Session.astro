@@ -1,0 +1,138 @@
+---
+import { type SessionInfo } from "~/data/sessions";
+
+import Card from "./Card.astro";
+import HiddenTitleLink from "./HiddenTitleLink.astro";
+import SafeMarkdown from "./SafeMarkdown.astro";
+import SessionDiscord from "./SessionDiscord.astro";
+import SessionTags from "./SessionTags.astro";
+import SpeakerImage from "./SpeakerImage.astro";
+import { publicSchedule } from "~/data/public";
+
+interface Props {
+	class?: string;
+	session: SessionInfo;
+}
+
+const {
+	class: className,
+	session: { channel, description, qualification, slug, speakers, tags, title },
+	...props
+} = Astro.props;
+
+const schedule = publicSchedule
+	.flatMap((day) =>
+		day.activities.flatMap((activity) =>
+			activity.within
+				?.filter((inner) => inner.type === "session" && inner.session === slug)
+				.map((inner) => ({ activity: inner, day })),
+		),
+	)
+	.find((x) => !!x?.activity)!;
+---
+
+<li class:list={["session", className]} id={slug} {...props}>
+	<Card>
+		<HiddenTitleLink as="h3" href={`/sessions#${slug}`}>{title}</HiddenTitleLink
+		>
+		<div class="description">
+			{
+				description
+					.split("\n\n")
+					.filter(Boolean)
+					.map((paragraph) => (
+						<p class="paragraph">{<SafeMarkdown of={paragraph} />}</p>
+					))
+			}
+		</div>
+		<SessionTags tags={tags} />
+		<div class="bottom">
+			<div class="speakers">
+				{
+					speakers.map((speaker) => (
+						<a href={`/speakers#${speaker.slug}`} class="speaker-link">
+							<SpeakerImage src={speaker.image} size="medium" />
+							<div class="speaker-bio">
+								<div class="speaker-name">{speaker.name}</div>
+								<div class="speaker-qualification">
+									{qualification ?? speaker.qualification}
+								</div>
+							</div>
+						</a>
+					))
+				}
+			</div>
+			<div class="locators">
+				<SessionDiscord discord={channel} />
+				<a class="talk-time" href={`/schedule#${channel}`}>
+					{schedule.activity.at}
+					{schedule.day.title}
+				</a>
+			</div>
+		</div>
+	</Card>
+</li>
+
+<style>
+	.session {
+		list-style: none;
+		scroll-margin-top: var(--sizeScrollMarginTop);
+	}
+
+	.description {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		margin: 0.75rem 0 1.25rem;
+	}
+
+	.description :global(ol, ul) {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.description :global(li) {
+		margin-left: 1.5rem;
+	}
+
+	.bottom {
+		align-items: center;
+		display: flex;
+		margin-top: 1.5rem;
+		justify-content: space-between;
+	}
+
+	.speaker-link {
+		align-items: center;
+		display: flex;
+		gap: 1rem;
+		text-decoration: none;
+	}
+
+	.speaker-bio {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.speaker-name {
+		font-size: var(--fontSizeMedium);
+		font-weight: var(--fontWeightSemibold);
+	}
+
+	.speaker-qualification {
+		font-size: var(--fontSizeSmallest);
+	}
+
+	.locators {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.talk-time {
+		font-size: var(--fontSizeSmallest);
+		text-decoration: none;
+	}
+</style>

@@ -1,10 +1,11 @@
 ---
 import { markdown } from "@astropub/md";
 
-import { ActivityLocation } from "~/data/schedule";
+import { ActivityDataWithin, ActivityLocation } from "~/data/schedule";
 
 import Heading from "./Heading.astro";
 import Badge from "./hero/Badge.astro";
+import Arrow from "./Arrow.astro";
 
 interface Props {
 	at?: string;
@@ -14,7 +15,9 @@ interface Props {
 	location?: ActivityLocation;
 	class?: string;
 	level?: "h3" | "h4";
+	href?: string;
 	title: string;
+	within?: ActivityDataWithin[];
 }
 
 const {
@@ -22,10 +25,12 @@ const {
 	badge,
 	class: className,
 	description = [],
+	href,
 	id,
 	location,
 	level = "h3",
 	title,
+	within,
 	...rest
 } = Astro.props;
 
@@ -35,12 +40,21 @@ const descriptionLines = await Promise.all(
 ---
 
 <div
-	class:list={["scheduled-activity", "scheduled-activity-h3", className]}
+	class:list={["scheduled-activity", `scheduled-activity-${level}`, className]}
 	id={id}
 	{...rest}
 >
 	<Heading level={level} class="activity-title">
-		{title}
+		{
+			href ? (
+				<a class="activity-title-link" href={href}>
+					{title}
+					<Arrow class="activity-title-link-arrow" />
+				</a>
+			) : (
+				title
+			)
+		}
 		{badge && <Badge>{badge}</Badge>}
 	</Heading>
 	<div class="activity-locators">
@@ -53,11 +67,9 @@ const descriptionLines = await Promise.all(
 			)
 		}
 	</div>
-	{
-		descriptionLines && (
-			<div class="activity-description">{descriptionLines}</div>
-		)
-	}
+	<div class="activity-description">
+		{descriptionLines}
+	</div>
 </div>
 
 <style>
@@ -65,11 +77,18 @@ const descriptionLines = await Promise.all(
 		font-weight: var(--fontWeightLight);
 		margin: 0 var(--widthBodyPadding);
 		max-width: var(--widthBodyLean);
-		scroll-margin-top: 2rem;
+		scroll-margin-top: var(--sizeScrollMarginTop);
 	}
 
 	.scheduled-activity-h3 {
+		--activityGap: 0.75rem;
+		--activityFontSizeTitle: var(--fontSizeMedium);
 		margin-top: 2rem;
+	}
+
+	.scheduled-activity-h4 {
+		--activityFontSizeTitle: var(--fontSizeSmaller);
+		margin-top: 1rem;
 	}
 
 	.activity-title {
@@ -77,10 +96,20 @@ const descriptionLines = await Promise.all(
 		display: flex;
 		gap: 1rem;
 		font-family: var(--fontFamilyLogo);
-		font-size: var(--fontSizeMedium);
+		font-size: var(--activityFontSizeTitle);
 		font-weight: var(--fontWeightLogo);
 		justify-content: space-between;
 		text-decoration: none;
+	}
+
+	.activity-title-link {
+		text-decoration: none;
+	}
+
+	.activity-title-link-arrow {
+		height: 0.75rem;
+		transform: rotate(-45deg);
+		width: 0.75rem;
 	}
 
 	.activity-locators {
@@ -93,7 +122,7 @@ const descriptionLines = await Promise.all(
 	}
 
 	.activity-time {
-		font-size: var(--fontSizeMedium);
+		font-size: var(--activityFontSizeTitle);
 	}
 
 	.activity-location {
@@ -108,17 +137,19 @@ const descriptionLines = await Promise.all(
 		width: 100%;
 	}
 
-	.activity-within {
-		list-style: none;
-		padding-left: 0;
-	}
-
 	@media (min-width: 490px) {
 		.scheduled-activity {
 			display: grid;
 			grid-template-columns: clamp(5rem, 20vw, 10rem) auto;
 			grid-template-rows: auto auto auto;
+		}
+
+		.scheduled-activity-h3 {
 			gap: 0.75rem 1rem;
+		}
+
+		.scheduled-activity-h4 {
+			gap: 0.5rem 0.75rem;
 		}
 
 		.activity-title {
@@ -136,10 +167,6 @@ const descriptionLines = await Promise.all(
 
 		.activity-description {
 			grid-area: 2 / 2 / 3 / 3;
-		}
-
-		.activity-within {
-			grid-area: 3 / 1 / 4 / 3;
 		}
 	}
 </style>

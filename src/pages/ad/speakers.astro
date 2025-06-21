@@ -4,7 +4,7 @@ import DeepBlueSea from "~/components/2024/DeepBlueSea.astro";
 import Badge from "~/components/hero/Badge.astro";
 import Logo from "~/components/Logo.astro";
 import { mcs } from "~/data/mcs";
-import { speakers } from "~/data/speakers";
+import { speakersBySlug } from "~/data/speakers";
 import { currentYear } from "~/data/years";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
@@ -30,7 +30,7 @@ import "~/pages/2024/styles.css";
 
 			<ul class="speakers">
 				{
-					speakers.map((speaker) => (
+					Object.values(speakersBySlug).map((speaker) => (
 						<li class="speaker">
 							<div class="speaker-image-container">
 								<Image

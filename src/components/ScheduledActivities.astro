@@ -2,6 +2,8 @@
 import { ScheduleDay } from "~/data/schedule";
 import Heading from "~/components/Heading.astro";
 import ScheduledActivity from "~/components/ScheduledActivity.astro";
+import ScheduledActivityBetween from "./2024/ScheduledActivityBetween.astro";
+import ScheduledActivitySession from "./ScheduledActivitySession.astro";
 
 interface Props {
 	days: ScheduleDay[];
@@ -22,13 +24,24 @@ interface Props {
 				</Heading>
 
 				{activities.map((activity) => (
-					<ScheduledActivity
-						at={activity.at}
-						badge={activity.badge}
-						description={activity.description}
-						location={activity.location}
-						title={activity.title}
-					/>
+					<>
+						<ScheduledActivity
+							at={activity.at}
+							badge={activity.badge}
+							description={activity.description}
+							location={activity.location}
+							title={activity.title}
+							within={activity.within}
+						/>
+						{activity.within &&
+							activity.within.map((inner) =>
+								inner.type === "between" ? (
+									<ScheduledActivityBetween activity={inner} />
+								) : (
+									<ScheduledActivitySession activity={inner} />
+								),
+							)}
+					</>
 				))}
 			</section>
 		))

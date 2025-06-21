@@ -1,28 +1,27 @@
 ---
-import { type Person } from "~/data/2024/notion-data";
-
-import SafeMarkdown from "../SafeMarkdown.astro";
+import { SpeakerInfo } from "~/data/speakers";
+import SafeMarkdown from "./SafeMarkdown.astro";
 import SpeakerImage from "./SpeakerImage.astro";
 
 export interface Props {
 	as: "div" | "li";
 	class?: string;
 	href?: string;
-	person: Person;
+	speaker: SpeakerInfo;
 }
 
 const {
 	as: As = "div",
 	class: className,
 	href,
-	person: speaker,
+	speaker,
 	...rest
 } = Astro.props;
 ---
 
 <As class:list={["speaker-small", className]} {...rest}>
 	<div class="speaker-image-container">
-		<SpeakerImage name={speaker.name} slug={speaker.slug} />
+		<SpeakerImage name={speaker.name} slug={speaker.slug} src={speaker.image} />
 	</div>
 	<div class="speaker-text">
 		{

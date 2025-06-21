@@ -1,0 +1,43 @@
+---
+interface Props {
+	as: "h2" | "h3";
+	id?: string;
+	class?: string;
+	href: string;
+}
+
+const { as: As, class: className, href, ...props } = Astro.props;
+---
+
+<As class:list={["hidden-title-link", className]} {...props}>
+	<a class="title-link" href={href}>
+		<slot />
+	</a>
+</As>
+
+<style>
+	.hidden-title-link {
+		font-family: var(--fontFamilyHeading);
+		font-size: var(--fontSizeLarge);
+		font-weight: var(--fontWeightBold);
+	}
+
+	.title-link::after {
+		color: var(--colorBackgroundEmphasized);
+		content: "#";
+		display: inline-block;
+		opacity: 0;
+		margin-left: 0.25rem;
+		transition: var(--transitionMedium) opacity;
+		width: 0;
+		position: absolute;
+	}
+
+	.title-link {
+		text-decoration: none;
+	}
+
+	.title-link:is(:focus-within, :hover)::after {
+		opacity: 1;
+	}
+</style>
