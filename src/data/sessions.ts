@@ -96,11 +96,11 @@ You’ll leave armed not just with patterns to ship bulletproof, maintainable co
 	},
 	"electrons-internal-tooling-open-source-at-scale": {
 		channel: "talk-shelley-vohr",
-		description: `Automation can make or break a team's effectiveness, but knowing what to automate—and when—is just as important as the tools themselves. In this talk, we'll take a deep dive into how the Electron team approaches automation: the guiding principles we use to decide when it's worth building a tool, and how our homegrown automation has helped us stay productive while maintaining a complex, fast-moving project.
+		description: `Automation can make or break a team's effectiveness, but knowing what to automate—and when—is just as important as the tools themselves. In this talk, we'll take a deep dive into how the Electron team approaches automation: the guiding principles we use to decide when it's worth building a tool, and how our homegrown automation has helped us stay productive while maintaining a complex, fast-moving project.
 
-We'll take a look at real-world examples of how we've improved our workflows, including our TypeScript types generator, permissions automation, our publishing workflow, backport systems, and automated weekly Chromium version sync PRs. We'll also talk about how automation can help maintain norms and project culture, and why well-designed automation helps us focus on the work that truly matters.
+We'll take a look at real-world examples of how we've improved our workflows, including our TypeScript types generator, permissions automation, our publishing workflow, backport systems, and automated weekly Chromium version sync PRs. We'll also talk about how automation can help maintain norms and project culture, and why well-designed automation helps us focus on the work that truly matters.
 
-If you've ever wondered how to scale developer efficiency without drowning in overhead, or how to make automation work for your team instead of against it, this talk will give you the framework to decide what's worth automating—and what's better left manual.`,
+If you've ever wondered how to scale developer efficiency without drowning in overhead, or how to make automation work for your team instead of against it, this talk will give you the framework to decide what's worth automating—and what's better left manual.`,
 		slug: "electrons-internal-tooling-open-source-at-scale",
 		speakers: [speakersBySlug["shelley-vohr"]],
 		tags: ["C++", "Node.js", "Open Source", "TypeScript"],
@@ -162,7 +162,7 @@ Additionally, it will cover the following:
 - Tips and tricks for ensuring quality code samples, such as starting from a blank environment and thinking of your code as paragraphs in a story
 - Creating a review process for sample code
 
-As developers, we often build tools for others. In this capacity, we aim to reach people at various stages of their development journey. This talk will focus on the processes of creating sample code and the essential elements to consider to ensure your code samples are accessible to anyone who wants to build with your product.`,
+As developers, we often build tools for others. In this capacity, we aim to reach people at various stages of their development journey. This talk will focus on the processes of creating sample code and the essential elements to consider to ensure your code samples are accessible to anyone who wants to build with your product.`,
 		slug: "quality-code-samples-make-everything-better",
 		speakers: [speakersBySlug["jessica-garson"]],
 		tags: ["Developer Relations", "Documentation", "Technical Writing"],

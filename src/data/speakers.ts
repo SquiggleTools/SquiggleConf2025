@@ -229,7 +229,7 @@ I'm the co-organizer of React Miami, co-author of The Developer Health OS, and b
 		slug: "nicolò-ribaudo",
 	},
 	"oliver-dunk": {
-		biography: `I'm on the Chrome DevRel team, where I work as a Developer Relations Engineer focused on Chrome Extensions. I'm also an editor in the W3C WebExtensions Community Group, where I work with other browser vendors and the community to improve the cross-browser extensions platform. In my free time, I've created developer tooling like https://web-extensions.dev and tinker with building other fun side projects. I think that more developers should feel empowered to build their own tooling!`,
+		biography: `I'm on the Chrome DevRel team, where I work as a Developer Relations Engineer focused on Chrome Extensions. I'm also an editor in the W3C WebExtensions Community Group, where I work with other browser vendors and the community to improve the cross-browser extensions platform. In my free time, I've created developer tooling like https://web-extensions.dev and tinker with building other fun side projects. I think that more developers should feel empowered to build their own tooling!`,
 		image: oliverDunk,
 		links: {
 			bluesky: "https://bsky.app/profile/oliverdunk.com",
