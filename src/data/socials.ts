@@ -3,7 +3,7 @@ import discord from "../assets/logos/discord.svg";
 import github from "../assets/logos/github.svg";
 import linkedin from "../assets/logos/linkedin.svg";
 import mastodon from "../assets/logos/mastodon.svg";
-import twitter from "../assets/logos/twitter.svg";
+import x from "../assets/logos/x.svg";
 import youtube from "../assets/logos/youtube.svg";
 import { links } from "./links.js";
 
@@ -24,9 +24,9 @@ export const socials = [
 		src: mastodon,
 	},
 	{
-		alt: "Twitter",
-		href: "https://twitter.com/SquiggleConf",
-		src: twitter,
+		alt: "X",
+		href: "https://x.com/SquiggleConf",
+		src: x,
 	},
 	{
 		alt: "YouTube",

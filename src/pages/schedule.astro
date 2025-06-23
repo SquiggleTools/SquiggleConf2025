@@ -9,7 +9,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
 import ScheduledActivities from "~/components/ScheduledActivities.astro";
 
 const description =
-	"Important dates leading up to SquiggleConf 2025 and events during the conference itself.";
+	"The events leading up to, during, and after the conference, as well as the order of talks.";
 ---
 
 <PageLayout description={description} title="Schedule">
@@ -19,30 +19,7 @@ const description =
 		</HeroContentsStandard>
 	</Hero>
 
-	<CommonContent heading="CFP">
-		<BodyText>
-			The SquiggleConf CFP closed on May 24th. Thanks to everyone who submitted!
-		</BodyText>
-	</CommonContent>
-
-	<CommonContent heading="Tickets">
-		<ol class="tickets-list">
-			<li>
-				$300 Super early bird tickets were available in limited quantities
-				through March 2nd. They are now sold out.
-			</li>
-			<li>
-				$350 Early bird tickets were available in limited quantities through
-				June 16th.
-			</li>
-			<li>
-				$550 General tickets will be available until the morning of September
-				18th.
-			</li>
-		</ol>
-	</CommonContent>
-
-	<CommonContent heading="The Conference">
+	<CommonContent>
 		<BodyText class="time-zone-note">
 			All times are in EDT, local to Boston.
 		</BodyText>

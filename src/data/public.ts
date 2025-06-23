@@ -22,6 +22,38 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 					text: "Simons Theater",
 				},
 				title: "Talks",
+				within: [
+					{
+						at: "9:45am",
+						session: "make-tools-that-people-love",
+						type: "session",
+					},
+					{
+						at: "10:20am",
+						session: "cross-browser-devtools-with-webextensions",
+						type: "session",
+					},
+					{
+						at: "10:40am",
+						session: "javascript-framework-cage-match",
+						type: "session",
+					},
+					{
+						at: "11:15am",
+						title: "Short Break",
+						type: "between",
+					},
+					{
+						at: "11:30am",
+						session: "how-and-why-we-ported-typescript-to-go",
+						type: "session",
+					},
+					{
+						at: "12:05pm",
+						session: "snapshot-tests-in-gleam-smarter-testing-less work",
+						type: "session",
+					},
+				],
 			},
 			{
 				at: "12:30pm",
@@ -36,13 +68,45 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 				title: "Lunch",
 			},
 			{
-				at: "2:15pm",
+				at: "2:20pm",
 				description: ["Full-length and lightning talks from our speakers."],
 				location: {
 					href: "https://www.neaq.org/visit/simons-theatre",
 					text: "Simons Theater",
 				},
 				title: "Talks",
+				within: [
+					{
+						at: "2:25pm",
+						session: "quality-code-samples-make-everything-better",
+						type: "session",
+					},
+					{
+						at: "3:00pm",
+						session: "catch-accessibility-issues-at-the-source-with-storybook",
+						type: "session",
+					},
+					{
+						at: "3:20pm",
+						title: "Short Break",
+						type: "between",
+					},
+					{
+						at: "3:35pm",
+						session: "jsr-designing-package-registry-module-resolution",
+						type: "session",
+					},
+					{
+						at: "4:10pm",
+						session: "why-we-made-tsdoc-and-how",
+						type: "session",
+					},
+					{
+						at: "4:30pm",
+						session: "zero-to-squiggle-with-the-language-server-protocol",
+						type: "session",
+					},
+				],
 			},
 			{
 				at: "3:45pm",
@@ -108,6 +172,38 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 					text: "Simons Theater",
 				},
 				title: "Talks",
+				within: [
+					{
+						at: "9:35am",
+						session: "electrons-internal-tooling-open-source-at-scale",
+						type: "session",
+					},
+					{
+						at: "10:10am",
+						session: "the-lockfiles-phd-you-never-got",
+						type: "session",
+					},
+					{
+						at: "10:30am",
+						session: "effect-type-safe-errors-and-dependency-injection",
+						type: "session",
+					},
+					{
+						at: "11:05am",
+						title: "Short Break",
+						type: "between",
+					},
+					{
+						at: "11:20am",
+						session: "rolldown-how-vite-bundles-at-the-speed-of-rust",
+						type: "session",
+					},
+					{
+						at: "11:55am",
+						session: "a-world-class-local-dev-loop-with-aspire",
+						type: "session",
+					},
+				],
 			},
 			{
 				at: "12:30pm",
@@ -129,29 +225,36 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 					text: "Simons Theater",
 				},
 				title: "Talks",
-			},
-			{
-				at: "3:45pm",
-				description: [
-					"What a day! Let's take a breather to have a snack and chat.",
+				within: [
+					{
+						at: "2:05pm",
+						session: "source-maps-how-does-the-magic-work",
+						type: "session",
+					},
+					{
+						at: "2:40pm",
+						session: "aot-compiling-typescript-to-wasm-and-native",
+						type: "session",
+					},
+					{
+						at: "3:00pm",
+						title: "Short Break",
+						type: "between",
+					},
+					{
+						at: "3:15pm",
+						session: "wasi-building-blocks-for-webassembly",
+						type: "session",
+					},
+					{
+						at: "3:35pm",
+						session: "tech-broke-my-heart",
+						type: "session",
+					},
 				],
-				location: {
-					href: "https://www.neaq.org/visit/simons-theatre",
-					text: "Simons Theater",
-				},
-				title: "Afternoon Snack",
 			},
 			{
-				at: "4:00pm",
-				description: ["Full-length and lightning talks from our speakers."],
-				location: {
-					href: "https://www.neaq.org/visit/simons-theatre",
-					text: "Simons Theater",
-				},
-				title: "Talks",
-			},
-			{
-				at: "4:45pm",
+				at: "4:10pm",
 				description: [
 					"Final pieces of information on upcoming events, raffle giveaways, and appreciation notes to all of the lovely people who attended.",
 				],
