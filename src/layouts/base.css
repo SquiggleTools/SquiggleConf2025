@@ -26,12 +26,12 @@
 	--colorAccentMedium: var(--colorBlue3);
 	--colorAccentSecond: var(--colorBlue2);
 	--colorBackground: var(--colorBlackIsh);
-	--colorBackgroundMono: var(--colorBlackIsh);
 	--colorBackgroundEmphasized: var(--colorBlueBright3);
 	--colorForeground: var(--colorBlue4);
 	--colorForegroundAccent: var(--colorWhiteIsh);
 	--colorForegroundEmphasized: var(--colorBlue5);
-	--colorSand: var(--colorSandLight);
+	--colorSandBackground: var(--colorSandLight);
+	--colorSandForeground: var(--colorBlackIsh);
 	--colorUnhappy: var(--colorRed1);
 
 	--fontFamilyBody: "Inter Variable";
@@ -92,11 +92,11 @@ html.dark {
 	--colorAccentDark: var(--colorBlue2);
 	--colorBackground: var(--colorWhiteIsh);
 	--colorBackgroundEmphasized: var(--colorBlue4);
-	--colorBackgroundMono: var(--colorSandLight);
 	--colorForeground: var(--colorBlue4);
 	--colorForegroundAccent: var(--colorBlackIsh);
 	--colorForegroundEmphasized: var(--colorBlue1);
-	--colorSand: var(--colorSandDark);
+	--colorSandBackground: var(--colorSandDark);
+	--colorSandForeground: var(--colorSandLight);
 	--colorUnhappy: var(--colorRed1);
 }
 
