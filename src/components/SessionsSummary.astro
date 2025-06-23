@@ -80,7 +80,6 @@ const days = publicSchedule
 		font-family: var(--fontFamilyHeading);
 		grid-template-columns: auto 100%;
 		grid-template-rows: auto 100%;
-		max-width: min(35rem, calc(100vw - 10rem));
 	}
 
 	.speaker-image {
@@ -92,6 +91,7 @@ const days = publicSchedule
 		grid-area: 1 / 2 / 2 / 3;
 		font-size: var(--fontSizeSmall);
 		font-weight: var(--fontWeightBold);
+		max-width: calc(90vw - 7rem);
 		text-decoration: none;
 	}
 
@@ -109,6 +109,7 @@ const days = publicSchedule
 	.speaker-qualification {
 		font-size: var(--fontSizeSmallest);
 		font-weight: var(--fontWeightLight);
+		max-width: calc(90vw - 7rem);
 	}
 
 	@media (width >= 1117px) {
@@ -124,6 +125,7 @@ const days = publicSchedule
 
 		.session {
 			gap: 0.25rem 0.75rem;
+			max-width: min(35rem, calc(100vw - 10rem));
 			width: 110%;
 		}
 
