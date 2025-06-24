@@ -45,7 +45,7 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 					},
 					{
 						at: "11:30am",
-						session: "how-and-why-we-ported-typescript-to-go",
+						session: "why-and-how-we-ported-typescript-to-go",
 						type: "session",
 					},
 					{
