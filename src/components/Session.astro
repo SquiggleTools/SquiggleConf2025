@@ -33,8 +33,9 @@ const schedule = publicSchedule
 
 <li class:list={["session", className]} id={slug} {...props}>
 	<Card>
-		<HiddenTitleLink as="h3" href={`/sessions#${slug}`}>{title}</HiddenTitleLink
-		>
+		<HiddenTitleLink as="h3" href={`/sessions#${slug}`}>
+			{title}
+		</HiddenTitleLink>
 		<div class="description">
 			{
 				description
@@ -96,6 +97,10 @@ const schedule = publicSchedule
 		margin-left: 1.5rem;
 	}
 
+	.paragraph {
+		overflow-wrap: break-word;
+	}
+
 	.bottom {
 		align-items: flex-start;
 		display: flex;
@@ -105,14 +110,15 @@ const schedule = publicSchedule
 	}
 
 	.speaker-link {
-		align-items: center;
 		display: flex;
 		gap: 1rem;
+		flex-direction: column;
 		text-decoration: none;
 	}
 
 	.speaker-bio {
 		display: flex;
+		gap: 0.5rem;
 		flex-direction: column;
 	}
 
@@ -140,6 +146,11 @@ const schedule = publicSchedule
 			align-items: center;
 			flex-direction: row;
 			justify-content: space-between;
+		}
+
+		.speaker-link {
+			align-items: center;
+			flex-direction: row;
 		}
 
 		.locators {

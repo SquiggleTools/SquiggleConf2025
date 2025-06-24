@@ -35,6 +35,7 @@ const { as: As, class: className, href, ...props } = Astro.props;
 
 	.title-link {
 		text-decoration: none;
+		overflow-wrap: break-word;
 	}
 
 	.title-link:is(:focus-within, :hover)::after {
