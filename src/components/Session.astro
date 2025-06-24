@@ -29,6 +29,10 @@ const schedule = publicSchedule
 		),
 	)
 	.find((x) => !!x?.activity)!;
+
+function approximateAt(at: string) {
+	return at.endsWith("am") ? "Morning" : "Afternoon";
+}
 ---
 
 <li class:list={["session", className]} id={slug} {...props}>
@@ -66,7 +70,7 @@ const schedule = publicSchedule
 			<div class="locators">
 				<SessionDiscord discord={channel} />
 				<a class="talk-time" href={`/schedule#${channel}`}>
-					{schedule.activity.at}
+					{approximateAt(schedule.activity.at)}
 					{schedule.day.title}
 				</a>
 			</div>

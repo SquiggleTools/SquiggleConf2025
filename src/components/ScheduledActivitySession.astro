@@ -13,7 +13,6 @@ const session = sessionsBySlug[activity.session];
 ---
 
 <ScheduledActivity
-	at={activity.at}
 	description={[session.speakers.map((speaker) => speaker.name).join(" and ")]}
 	href={`/sessions#${session.slug}`}
 	id={session.slug}
