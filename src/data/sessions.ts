@@ -245,7 +245,7 @@ What does it mean for us devs if in the future, we use any programming language 
 	},
 	"why-and-how-we-ported-typescript-to-go": {
 		channel: "talk-jake-bailey",
-		description: `This past March, we surprised everyone by announcing TypeScript's port to Go. This is a certified Big Deal™, given the scale, complexity, and importance of the TypeScript toolchain.
+		description: `In March 2025, we surprised everyone by announcing TypeScript's port to Go. This is a certified Big Deal™, given the scale, complexity, and importance of the TypeScript toolchain.
 
 From the beginning, TypeScript has been written in TypeScript; like most languages, we're self hosting. We work on our own toolchain, fix our own bugs. But as time went on, we faced the challenges with the compiler's performance, largely inherent to the implementation language itself. We squeezed every ounce of performance we could, but we needed to scale further. And through experimentation and testing, we decided to port TypeScript to Go, achieving a 10x faster TypeScript.
 
