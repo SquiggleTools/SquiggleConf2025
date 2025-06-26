@@ -165,13 +165,16 @@ const isLight = whiteStrokeIcons.includes(image);
 
 <div class="session-tag" style={{ zoom: scale, alignSelf: "end" }}>
 	{
-		image && (
+		image ? (
 			<Image
 				class:list={["tag-icon", isLight ? "light-icon" : ""]}
 				alt={`${tag} logo`}
 				src={image}
 				height={24}
+				width={24}
 			/>
+		) : (
+			<div class="tag-icon" />
 		)
 	}
 	{tag}
@@ -198,6 +201,7 @@ const isLight = whiteStrokeIcons.includes(image);
 	}
 
 	.tag-icon {
+		height: 24px;
 		margin-right: 0.25rem;
 		max-width: 24px;
 	}
