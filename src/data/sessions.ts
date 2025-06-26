@@ -125,10 +125,14 @@ Developer experience and tooling play a large role in which framework is "the be
 	},
 	"jsr-designing-package-registry-module-resolution": {
 		channel: "talk-david-sherret",
-		description: "_Coming soon!_",
+		description: `The Deno JavaScript runtime’s explicit module resolution was reaching its limits. While publishing modules to deno.land/x provided a great developer experience, it also presented challenges. A better solution was needed.
+
+This talk will explore the design decisions behind JSR, the open-source package registry for JavaScript and TypeScript. It will focus on the low-level details of JSR's package and module resolution in Deno. The pros and cons of HTTPS specifiers, npm, and the current JSR approach will be discussed, along with the technical challenges that remain.
+
+The talk will also include a brief overview of the Rust crates powering JSR resolution and a demo showing how to leverage this resolution and loading outside of Deno.`,
 		slug: "jsr-designing-package-registry-module-resolution",
 		speakers: [speakersBySlug["david-sherret"]],
-		tags: [],
+		tags: ["Deno", "Open Source", "Rust", "TypeScript"],
 		title: "JSR: Designing Package Registry Module Resolution",
 		type: "full",
 	},
