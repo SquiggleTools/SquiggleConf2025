@@ -199,10 +199,17 @@ I think snapshot testing is criminally underused and -hot take- should actually 
 	},
 	"source-maps-how-does-the-magic-work": {
 		channel: "talk-nicolò-ribaudo",
-		description: "_Coming soon!_",
+		description: `Your app breaks. Users are reporting problems. Tests are failing. You look at your code, and it all seems correct at a first glance (you wrote it, how could it be anything other than perfect!). Luckily, we have a stack trace that is going to tell us where the problem is: in function \`rB()\`, file \`cHuNk-h5tY7y.js\`, line \`1\`, column \`2734942\`, in \`rB(x=(y,!0)){return-c||x,[pH]}\`. You remember writing _exactly_ that code yesterday evening, right?
+
+Most JavaScript code nowadays goes through a myriad of tools from when it leaves our fingertips to when it actually runs in a browser: it gets transformed, compressed, ripped apart, and put back together in pieces upside down. All these tools bring great benefits, but at a cost: debugging becomes incredibly hard.
+
+The good news? We have a solution for this: source maps! And they are becoming _even better_.
+
+Source maps are a set of instructions that the various build tools generate to tell the debugging tools how to _undo_ the transformations that the code went through, so that we can pretend we are debugging the code we wrote rather than the code that is running. Their capabilities have been stagnant for many years, but recently TC39 started a group with the goal of standardizing and expanding what they are capable of. Let's learn together how they work, and what's coming next!
+`,
 		slug: "source-maps-how-does-the-magic-work",
 		speakers: [speakersBySlug["nicolò-ribaudo"]],
-		tags: [],
+		tags: ["Debugging Tools", "Standards"],
 		title: "Source Maps: How Does the Magic Work?",
 		type: "full",
 	},
