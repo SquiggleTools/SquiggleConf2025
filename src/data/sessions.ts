@@ -141,7 +141,7 @@ The talk will also include a brief overview of the Rust crates powering JSR reso
 		description: `As a developer and open-source maintainer that work fully in public, I’ve always been fascinated by what makes tools stand out—not just for their functionality, but because people genuinely love using them. In this talk, I’ll share what I’ve learned about building tools that delight developers. From small UX details to big-picture design decisions, I’ll walk through how empathy, iteration, and community feedback have shaped the way I approach developer experience. I’ll also share some practical methods to help you measure and evaluate your own ideas. Whether you’re creating a library, a framework, or something entirely new, I hope to leave you with ideas and inspiration for making tools that people don’t just use — they advocate for.`,
 		slug: "make-tools-that-people-love",
 		speakers: [speakersBySlug["anthony-fu"]],
-		tags: [],
+		tags: ["Community Building", "Design", "Open Source"],
 		title: "Make Tools That People Love",
 		type: "full",
 	},
