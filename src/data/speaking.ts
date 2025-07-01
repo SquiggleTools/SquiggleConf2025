@@ -62,7 +62,7 @@ export const speakerSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			{
 				at: "8:45am",
 				description: [
-					"Doors open at 8:45am and the conference extends through 5:00pm.",
+					"Doors open at 8:45am and the conference extends through 4:30pm.",
 					"See [Schedule > Friday, September 19th](/2025/schedule#friday) for more details.",
 				],
 				location: {
