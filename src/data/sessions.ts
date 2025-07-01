@@ -72,7 +72,6 @@ In this talk, we'll dive into the world of WebExtensions - this is a cross-brows
 After touching on some technical details, I'll also tell you about the W3C WebExtensions Community Group. This is where we're working to continue building the platform - and if you're interested, you can get involved.`,
 		slug: "cross-browser-devtools-with-webextensions",
 		speakers: [speakersBySlug["oliver-dunk"]],
-		// TODO: Fill in tags
 		tags: ["Browsers", "DevTools", "Extensions"],
 		title: "Cross-Browser DevTools with WebExtensions",
 		type: "medium",
@@ -118,7 +117,6 @@ If you've ever wondered how to scale developer efficiency without drowning in ov
 Developer experience and tooling play a large role in which framework is "the best" for you. I've also partnered with Sentry, using their tools to form non-biased opinions.`,
 		slug: "javascript-framework-cage-match",
 		speakers: [speakersBySlug["amy-dutton"]],
-		// TODO: Fill in tags for Astro, Next.js, React, and Remix
 		tags: ["Astro", "Next.js", "React", "Remix", "TypeScript"],
 		title: "JavaScript Framework Cage Match",
 		type: "full",
@@ -223,7 +221,6 @@ I will share a deeply personal and transformative journey that began with an une
 The takeaways for the audience will be the importance of listening to your body and mind, the value of incorporating restful work into your work routine, and the realization that working in a sustainable way allows us to be even more ambitious. I hope to inspire developers to take intentional steps towards prioritizing their health, and ultimately creating a work environment that supports their well-being. The goal is to empower developers to achieve their professional aspirations without compromising their health, proving that we build better when we feel better.`,
 		slug: "tech-broke-my-heart",
 		speakers: [speakersBySlug["michelle-bakels"]],
-		// TODO: Fill in tags
 		tags: ["Inclusivity", "Mental Health"],
 		title: "Tech Broke My Heart",
 		type: "full",
