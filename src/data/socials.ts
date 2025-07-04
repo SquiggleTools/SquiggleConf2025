@@ -35,7 +35,7 @@ export const socials = [
 	},
 	{
 		alt: "GitHub",
-		href: "https://www.github.com/SquiggleTools/SquiggleConf2025",
+		href: "https://www.github.com/SquiggleTools/SquiggleConf.com",
 		src: github,
 	},
 	{

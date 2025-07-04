@@ -52,7 +52,6 @@ export default tseslint.config(
 				projectService: {
 					allowDefaultProject: ["*.config.*s"],
 				},
-				tsconfigRootDir: import.meta.dirname,
 			},
 		},
 		rules: {
@@ -73,13 +72,6 @@ export default tseslint.config(
 				partitionByComment: true,
 				type: "natural",
 			},
-		},
-	},
-	{
-		extends: [tseslint.configs.disableTypeChecked],
-		files: ["**/*.md/*.ts"],
-		rules: {
-			"n/no-missing-import": ["error", { allowModules: ["SquiggleConf2025"] }],
 		},
 	},
 	{

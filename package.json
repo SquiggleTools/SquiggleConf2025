@@ -1,10 +1,10 @@
 {
-	"name": "squiggleconf2025",
+	"name": "squiggleconf.com",
 	"version": "0.0.0",
 	"description": "Website for SquiggleConf 2025: a conference for excellent web dev tooling",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SquiggleTools/SquiggleConf2025"
+		"url": "https://github.com/SquiggleTools/SquiggleConf.com"
 	},
 	"license": "MIT",
 	"author": {
