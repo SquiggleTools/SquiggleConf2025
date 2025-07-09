@@ -109,26 +109,6 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 				],
 			},
 			{
-				at: "3:45pm",
-				description: [
-					"What a day! Let's take a breather to have a snack and chat.",
-				],
-				location: {
-					href: "https://www.neaq.org/visit/simons-theatre",
-					text: "Simons Theater",
-				},
-				title: "Afternoon Snack",
-			},
-			{
-				at: "4:00pm",
-				description: ["Full-length and lightning talks from our speakers."],
-				location: {
-					href: "https://www.neaq.org/visit/simons-theatre",
-					text: "Simons Theater",
-				},
-				title: "Talks",
-			},
-			{
 				at: "4:45pm",
 				description: [
 					"Final pieces of information on upcoming events, raffle giveaways, and appreciation notes to all of the lovely people who attended.",
