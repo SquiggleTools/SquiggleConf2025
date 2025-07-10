@@ -16,7 +16,7 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			},
 			{
 				at: "9:30am",
-				description: ["Full-length and lightning talks from our speakers."],
+				description: ["Full- and medium-length talks from our speakers."],
 				location: {
 					href: "https://www.neaq.org/visit/simons-theatre",
 					text: "Simons Theater",
@@ -69,7 +69,7 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			},
 			{
 				at: "2:20pm",
-				description: ["Full-length and lightning talks from our speakers."],
+				description: ["Full- and medium-length talks from our speakers."],
 				location: {
 					href: "https://www.neaq.org/visit/simons-theatre",
 					text: "Simons Theater",
@@ -121,7 +121,7 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			},
 			{
 				at: "4:00pm",
-				description: ["Full-length and lightning talks from our speakers."],
+				description: ["Full- and medium-length talks from our speakers."],
 				location: {
 					href: "https://www.neaq.org/visit/simons-theatre",
 					text: "Simons Theater",
@@ -166,7 +166,7 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			},
 			{
 				at: "9:30am",
-				description: ["Full-length and lightning talks from our speakers."],
+				description: ["Full- and medium-length talks from our speakers."],
 				location: {
 					href: "https://www.neaq.org/visit/simons-theatre",
 					text: "Simons Theater",
@@ -219,7 +219,7 @@ export const publicSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 			},
 			{
 				at: "2:15pm",
-				description: ["Full-length and lightning talks from our speakers."],
+				description: ["Full- and medium-length talks from our speakers."],
 				location: {
 					href: "https://www.neaq.org/visit/simons-theatre",
 					text: "Simons Theater",
