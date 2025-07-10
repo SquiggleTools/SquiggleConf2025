@@ -1,6 +1,7 @@
 import afhBlack from "~/assets/logos/afh-black.svg";
 import afhWhite from "~/assets/logos/afh-white.svg";
-import bostonTSClub from "~/assets/logos/boston-ts-club.svg";
+import bostonTSClubDark from "~/assets/logos/boston-ts-club-full-dark.svg";
+import bostonTSClubLight from "~/assets/logos/boston-ts-club-full-light.svg";
 import michiganTypeScript from "~/assets/logos/michigan-typescript.png";
 // import jsheroesDarkMode from "~/assets/logos/jsheroes-dark-mode.png";
 // import jsheroesLightMode from "~/assets/logos/jsheroes-light-mode.png";
@@ -23,8 +24,8 @@ export const partnersBySlug = {
 	bostonTsClub: {
 		href: "https://bostonts.club?utm_source=squiggleconf",
 		logos: {
-			dark: bostonTSClub,
-			light: bostonTSClub,
+			dark: bostonTSClubDark,
+			light: bostonTSClubLight,
 		},
 		title: "Boston TS Club",
 	},
