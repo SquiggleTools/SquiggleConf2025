@@ -95,7 +95,7 @@ html.dark {
 	--colorForeground: var(--colorBlue4);
 	--colorForegroundAccent: var(--colorBlackIsh);
 	--colorForegroundEmphasized: var(--colorBlue1);
-	--colorSandBackground: var(--colorSandDark);
+	--colorSandBackground: var(--colorBlue4);
 	--colorSandForeground: var(--colorSandLight);
 	--colorUnhappy: var(--colorRed1);
 }
