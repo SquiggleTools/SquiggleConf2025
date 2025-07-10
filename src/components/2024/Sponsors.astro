@@ -1,6 +1,5 @@
 ---
-import _ from "lodash";
-
+import { sponsorsByPlacement } from "~/data/2024/sponsors";
 import BodyText from "./BodyText.astro";
 import FullSection from "./FullSection.astro";
 import HeadingFlanked from "./HeadingFlanked.astro";
@@ -14,7 +13,7 @@ import SponsorLogos from "./SponsorLogos.astro";
 		have our sincere appreciation and thanks.
 	</BodyText>
 
-	<SponsorLogos />
+	<SponsorLogos sponsorGroups={sponsorsByPlacement} />
 </FullSection>
 
 <style>

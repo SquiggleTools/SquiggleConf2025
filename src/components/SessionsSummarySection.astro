@@ -1,12 +1,12 @@
 ---
-import Heading from "./Heading.astro";
 import BodyText from "./BodyText.astro";
 import ContentArea from "./ContentArea.astro";
 import SessionsSummary from "./SessionsSummary.astro";
+import ExplainerHeading from "./explainers/ExplainerHeading.astro";
 ---
 
 <ContentArea class="speakers">
-	<Heading id="sessions" level="h2">Sessions</Heading>
+	<ExplainerHeading heading="Sessions" />
 	<div id="sessions"></div>
 
 	<BodyText class="speakers-description">
@@ -34,13 +34,6 @@ import SessionsSummary from "./SessionsSummary.astro";
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-	}
-
-	h2 {
-		font-family: var(--fontFamilyHeading);
-		font-size: var(--fontSizeLarger);
-		margin: 3rem 0 1.5rem;
-		text-align: center;
 	}
 
 	.speakers-description {

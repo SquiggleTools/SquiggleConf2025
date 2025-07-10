@@ -1,0 +1,115 @@
+---
+import { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+	groups: Record<string, LogoGroupData[]>;
+}
+
+export interface LogoGroupData {
+	href: string;
+	logos: {
+		dark: ImageMetadata;
+		light: ImageMetadata;
+	};
+	title: string;
+}
+
+const { groups: logoGroups } = Astro.props;
+---
+
+<div class:list={["logo-groups", "logo-groups-normal"]}>
+	{
+		Object.values(logoGroups).map((logos) => (
+			<div class="logo-group">
+				{logos.map((logo) => (
+					<a
+						class="logo"
+						href={logo.href}
+						rel="noreferrer"
+						target="_blank"
+						title={logo.title}
+					>
+						<Image
+							alt=""
+							class="logo-dark"
+							src={logo.logos.dark}
+							height={128}
+						/>
+						<Image
+							alt=""
+							class="logo-light"
+							src={logo.logos.light}
+							height={128}
+						/>
+					</a>
+				))}
+			</div>
+		))
+	}
+</div>
+
+<style>
+	.logo-groups {
+		margin: auto;
+		max-width: 70rem;
+		width: 100%;
+	}
+
+	.logo-group {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		padding: 0 2rem;
+		justify-content: center;
+		margin: auto;
+	}
+
+	.logo-groups-normal {
+		--logoSizeFirst: 14rem;
+		--logoSpacingFirst: 5rem;
+		--logoSizeSecond: 7rem;
+		--logoSpacingSecond: 10rem;
+		--logoSpacingVertical: 1.5rem;
+	}
+
+	.logo-group:nth-of-type(1) {
+		--logoSize: var(--logoSizeFirst);
+		--logoSpacing: var(--logoSpacingFirst);
+	}
+
+	.logo-groups-normal .logo-group:nth-of-type(1) {
+		margin-top: 1.5rem;
+	}
+
+	.logo-group:nth-of-type(2) {
+		--logoSize: var(--logoSizeSecond);
+		--logoSpacing: var(--logoSpacingSecond);
+	}
+
+	.logo-group img {
+		max-width: var(--logoSize);
+	}
+
+	html.dark .logo-light,
+	html:not(.dark) .logo-dark {
+		display: none;
+	}
+
+	@media (min-width: 819px) {
+		.logo-group {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0;
+		}
+
+		.logo-group a {
+			padding: var(--logoSpacingVertical) 0;
+		}
+
+		.logo {
+			max-width: calc(49% - var(--logoSpacing));
+			width: 100%;
+		}
+	}
+</style>

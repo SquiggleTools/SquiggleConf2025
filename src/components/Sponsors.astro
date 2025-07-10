@@ -1,0 +1,58 @@
+---
+import { links } from "~/data/links";
+import { sponsorsByPlacement } from "~/data/sponsors";
+import BodyText from "./BodyText.astro";
+import Button from "./Button.astro";
+import LogoGroups from "./LogoGroups.astro";
+import ExplainerHeading from "./explainers/ExplainerHeading.astro";
+---
+
+<div class="sponsors">
+	<ExplainerHeading heading="Sponsors" />
+	<BodyText class="caption-text">
+		The support of our generous sponsors help make SquiggleConf possible. They
+		have our sincere appreciation and thanks.
+	</BodyText>
+	<LogoGroups groups={sponsorsByPlacement} />
+	<div class="sponsors-pitch-area">
+		<BodyText class="caption-text caption-text-bottom">
+			Interested in having your logo here and sponsoring SquiggleConf? We'd love
+			to work with you.
+			<br />
+		</BodyText>
+		<Button
+			as="a"
+			class="hero-button"
+			size="large"
+			variant="emphasized"
+			href={links.sponsor}
+			target="_blank"
+		>
+			Sponsorship Prospectus
+		</Button>
+	</div>
+</div>
+
+<style>
+	.sponsors {
+		background: var(--colorBlueBright3);
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.caption-text {
+		padding: 0 2rem;
+		max-width: 38rem;
+		margin: auto;
+	}
+
+	.sponsors-pitch-area {
+		margin: 1.5rem 0 3rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		width: 100%;
+	}
+</style>

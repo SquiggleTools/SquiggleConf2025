@@ -1,0 +1,32 @@
+---
+import { partnersBySlug } from "~/data/partners";
+import BodyText from "./BodyText.astro";
+import ExplainerHeading from "./explainers/ExplainerHeading.astro";
+import LogoGroups from "./LogoGroups.astro";
+---
+
+<div class="partners">
+	<ExplainerHeading heading="Partners" />
+	<BodyText class="caption-text">
+		Our partners are lovely friends in the industry who also work to better the
+		world around them.
+	</BodyText>
+	<LogoGroups groups={{ all: Object.values(partnersBySlug) }} />
+</div>
+
+<style>
+	.partners {
+		background: var(--colorBlueBright2);
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 2rem;
+		text-align: center;
+	}
+
+	.caption-text {
+		padding: 0 2rem;
+		max-width: 38rem;
+		margin: auto;
+		text-align: center;
+	}
+</style>
