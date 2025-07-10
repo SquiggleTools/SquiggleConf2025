@@ -1,15 +1,24 @@
 ---
-import _ from "lodash";
+import { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
-
-import { sponsorsByPlacement } from "~/data/2024/sponsors";
 
 interface Props {
 	light?: boolean;
 	size?: "normal" | "small";
+	sponsorGroups: Record<string, SponsorLogoData[]>;
 }
 
-const { size = "normal", light } = Astro.props;
+export interface SponsorLogoData {
+	href: string;
+	logos: {
+		dark: ImageMetadata;
+		light: ImageMetadata;
+	};
+	placement: "first" | "second";
+	title: string;
+}
+
+const { light, size = "normal", sponsorGroups } = Astro.props;
 ---
 
 <div
@@ -19,9 +28,9 @@ const { size = "normal", light } = Astro.props;
 	]}
 >
 	{
-		Object.values(sponsorsByPlacement).map((sponsors) => (
+		Object.values(sponsorGroups).map((sponsors) => (
 			<div class="sponsor-group">
-				{sponsors!.map((sponsor) => (
+				{sponsors.map((sponsor) => (
 					<a
 						class="sponsor"
 						href={sponsor.href}
@@ -49,6 +58,11 @@ const { size = "normal", light } = Astro.props;
 </div>
 
 <style>
+	.sponsor-logos {
+		margin: auto;
+		max-width: 70rem;
+	}
+
 	.sponsors-blurb {
 		margin: auto;
 	}
