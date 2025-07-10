@@ -30,12 +30,17 @@ const { groups: logoGroups } = Astro.props;
 						target="_blank"
 						title={logo.title}
 					>
-						<Image alt="" class="logo-dark" src={logo.logos.dark} height={88} />
+						<Image
+							alt=""
+							class="logo-dark"
+							src={logo.logos.dark}
+							height={128}
+						/>
 						<Image
 							alt=""
 							class="logo-light"
 							src={logo.logos.light}
-							height={88}
+							height={128}
 						/>
 					</a>
 				))}

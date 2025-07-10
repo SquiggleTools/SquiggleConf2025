@@ -1,13 +1,15 @@
-import afhBlack from "~/assets/2024/partners/afh-black.svg";
-import afhWhite from "~/assets/2024/partners/afh-white.svg";
-// import jsheroesDarkMode from "~/assets/2024/partners/jsheroes-dark-mode.png";
-// import jsheroesLightMode from "~/assets/2024/partners/jsheroes-light-mode.png";
-import reactAfricaDark from "~/assets/2024/partners/react-africa-dark.png";
-import reactAfricaLight from "~/assets/2024/partners/react-africa-light.webp";
-// import reactMiamiDarkMode from "~/assets/2024/partners/react-miami-dark-mode.png";
-// import reactMiamiLightMode from "~/assets/2024/partners/react-miami-light-mode.png";
-// import resilientCodersDarkMode from "~/assets/2024/partners/resilient-coders-dark-mode.png";
-// import resilientCodersLightMode from "~/assets/2024/partners/resilient-coders-light-mode.png";
+import afhBlack from "~/assets/logos/afh-black.svg";
+import afhWhite from "~/assets/logos/afh-white.svg";
+import bostonTSClub from "~/assets/logos/boston-ts-club.svg";
+import michiganTypeScript from "~/assets/logos/michigan-typescript.png";
+// import jsheroesDarkMode from "~/assets/logos/jsheroes-dark-mode.png";
+// import jsheroesLightMode from "~/assets/logos/jsheroes-light-mode.png";
+import reactAfricaDark from "~/assets/logos/react-africa-dark.png";
+import reactAfricaLight from "~/assets/logos/react-africa-light.webp";
+// import reactMiamiDarkMode from "~/assets/logos/react-miami-dark-mode.png";
+// import reactMiamiLightMode from "~/assets/logos/react-miami-light-mode.png";
+// import resilientCodersDarkMode from "~/assets/logos/resilient-coders-dark-mode.png";
+// import resilientCodersLightMode from "~/assets/logos/resilient-coders-light-mode.png";
 
 export const partnersBySlug = {
 	afh: {
@@ -17,6 +19,22 @@ export const partnersBySlug = {
 			light: afhBlack,
 		},
 		title: "Artists for Humanity",
+	},
+	bostonTsClub: {
+		href: "https://bostonts.club?utm_source=squiggleconf",
+		logos: {
+			dark: bostonTSClub,
+			light: bostonTSClub,
+		},
+		title: "Boston TS Club",
+	},
+	michiganTypeScript: {
+		href: "https://www.youtube.com/@MichiganTypeScript?utm_source=squiggleconf",
+		logos: {
+			dark: michiganTypeScript,
+			light: michiganTypeScript,
+		},
+		title: "Michigan TypeScript",
 	},
 	// cascadiaJs: {
 	// 	href: "https://jsheroes.com?utm_source=squiggleconf",
