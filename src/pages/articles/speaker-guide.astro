@@ -4,6 +4,7 @@ import BodyText from "~/components/BodyText.astro";
 import CommonContent from "~/components/CommonContent.astro";
 import ContentArea from "~/components/ContentArea.astro";
 import FAQSections from "~/components/FAQSections.astro";
+import Heading from "~/components/Heading.astro";
 import Hero from "~/components/hero/Hero.astro";
 import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
 import ScheduledActivities from "~/components/ScheduledActivities.astro";
@@ -42,8 +43,7 @@ const title = "Speaker Guide";
 				activities common to all speakers
 			</li>
 			<li>
-				<a href="#talk-guide">Talk Schedule</a>: what will happen around your
-				talk on its day
+				<a href="#talk">Talk</a>: what will happen around your talk on its day
 			</li>
 			<li>
 				<a href="#faqs">FAQs</a>: all other common questions you might have
@@ -92,7 +92,7 @@ const title = "Speaker Guide";
 		<ScheduledActivities days={speakerSchedule} />
 	</CommonContent>
 
-	<CommonContent heading="Talk Schedule">
+	<CommonContent heading="Talk">
 		<BodyText> This is what will happen around your talk on its day. </BodyText>
 
 		<BodyList as="ol">
@@ -111,6 +111,42 @@ const title = "Speaker Guide";
 		<BodyText>
 			We'll have a dedicated channel set up for you in Discord where attendees
 			can ask you questions during the conference.
+		</BodyText>
+
+		<Heading class="sub-heading" level="h3">Audience Personas</Heading>
+
+		<BodyText>
+			We believe most attendees align to at least one of the following three
+			personas:
+		</BodyText>
+
+		<ul class="sub-list">
+			<li>
+				<strong>Developer</strong>: They work on a standard software team for
+				web development. They use web dev tooling every day and might not be
+				experts, but are excited to learn more how to use their tools more
+				effectively. They may even have time to improve their teams' setups
+				after the conference.
+			</li>
+			<li>
+				<strong>Enthusiast</strong>: They appreciate good dev tooling for the
+				sake of it and try to actively keep up with the latest trends. They tend
+				to read blog posts and deep dives. When allowed, they make sure their
+				projects are using comprehensive tooling configured the way they like
+				it.
+			</li>
+			<li>
+				<strong>Maker</strong>: This person works on or around the tools
+				themselves. Much of the common, popular content in conferences in their
+				area of expertise doesn't appeal to them because they already know it
+				deeply. But they of course recognize it's important to both learn and
+				share.
+			</li>
+		</ul>
+
+		<BodyText>
+			We recommend trying to position your talks to appeal to at least two, if
+			not all three of those personas.
 		</BodyText>
 	</CommonContent>
 
@@ -237,5 +273,20 @@ const title = "Speaker Guide";
 <style>
 	.body-text-top {
 		margin: 5rem auto 1.5rem;
+	}
+
+	.sub-heading {
+		font-size: var(--fontSizeMedium);
+		text-align: center;
+		margin: 3rem 0 1rem;
+	}
+
+	.sub-list {
+		display: flex;
+		gap: 0.5rem;
+		flex-direction: column;
+		line-height: 1.35;
+		font-weight: var(--fontWeightMedium);
+		margin: 1rem 1.5rem;
 	}
 </style>
