@@ -1,13 +1,13 @@
-import afhBlack from "~/assets/2024/partners/afh-black.svg";
-import afhWhite from "~/assets/2024/partners/afh-white.svg";
-import conTejasCode from "~/assets/2024/partners/contejas-code.png";
-import hackDiversityBlue from "~/assets/2024/partners/hack-diversity-blue.svg";
-import hackDiversityWhite from "~/assets/2024/partners/hack-diversity-white.svg";
-import jsParty from "~/assets/2024/partners/js-party.png";
-import reactAfricaDark from "~/assets/2024/partners/react-africa-dark.png";
-import reactAfricaLight from "~/assets/2024/partners/react-africa-light.webp";
-import thisWeekInReactDarkMode from "~/assets/2024/partners/this-week-in-react-dark-mode.png";
-import thisWeekInReactLightMode from "~/assets/2024/partners/this-week-in-react-light-mode.png";
+import afhBlack from "~/assets/logos/afh-black.svg";
+import afhWhite from "~/assets/logos/afh-white.svg";
+import conTejasCode from "~/assets/logos/contejas-code.png";
+import hackDiversityBlue from "~/assets/logos/hack-diversity-blue.svg";
+import hackDiversityWhite from "~/assets/logos/hack-diversity-white.svg";
+import jsParty from "~/assets/logos/js-party.png";
+import reactAfricaDark from "~/assets/logos/react-africa-dark.png";
+import reactAfricaLight from "~/assets/logos/react-africa-light.webp";
+import thisWeekInReactDarkMode from "~/assets/logos/this-week-in-react-dark-mode.png";
+import thisWeekInReactLightMode from "~/assets/logos/this-week-in-react-light-mode.png";
 
 export const partnersBySlug = {
 	afh: {

@@ -8,6 +8,7 @@ export const links = {
 	donate: "https://www.paypal.com/US/fundraiser/charity/5334863",
 	michiganTypeScript: "https://youtube.com/@MichiganTypeScript",
 	shop: "https://shop.squiggle.tools",
+	sponsor: "https://sponsor.squiggleconf.com",
 	tickets: "https://buytickets.at/squiggleconf/1488622",
 	volunteer: "https://volunteer.squiggleconf.com",
 };
