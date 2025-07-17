@@ -292,10 +292,15 @@ When we tried to combine CommonMark with JSDoc syntax, we encountered a telescop
 	},
 	"zero-to-squiggle-with-the-language-server-protocol": {
 		channel: "talk-tj-devries",
-		description: "_Coming soon!_",
+		description: `
+Join me for an interactive journey, where we build an LSP from scratch LIVE on stage.
+We'll go over all the basics so you can go from not know what the acronym stands for to creating our own LSP that puts those little red squiggles inside of our editor.
+We won't be using any fancy libraries, complicated abstractions, or obfuscating patterns.
+Instead, we'll start from scratch and step-by-step understand our tools better... by building one!
+		`,
 		slug: "zero-to-squiggle-with-the-language-server-protocol",
 		speakers: [speakersBySlug["tj-devries"]],
-		tags: [],
+		tags: ["DevTools", "Language Server Protocol"],
 		title: "Zero to Squiggle with the Language Server Protocol",
 		type: "full",
 	},

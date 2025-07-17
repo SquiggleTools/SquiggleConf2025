@@ -65,6 +65,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "varunshukla07",
+      "name": "Varun Shukla",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94779584?v=4",
+      "profile": "https://varunshukla07.vercel.app/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -73,7 +82,7 @@
     "README.md"
   ],
   "imageSize": 100,
-  "projectName": "squiggleconf.com",
+  "projectName": "SquiggleConf.com",
   "projectOwner": "SquiggleTools",
   "repoHost": "https://github.com",
   "repoType": "github"

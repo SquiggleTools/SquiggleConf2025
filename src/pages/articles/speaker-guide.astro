@@ -4,6 +4,7 @@ import BodyText from "~/components/BodyText.astro";
 import CommonContent from "~/components/CommonContent.astro";
 import ContentArea from "~/components/ContentArea.astro";
 import FAQSections from "~/components/FAQSections.astro";
+import Heading from "~/components/Heading.astro";
 import Hero from "~/components/hero/Hero.astro";
 import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
 import ScheduledActivities from "~/components/ScheduledActivities.astro";
@@ -42,8 +43,7 @@ const title = "Speaker Guide";
 				activities common to all speakers
 			</li>
 			<li>
-				<a href="#talk-guide">Talk Schedule</a>: what will happen around your
-				talk on its day
+				<a href="#talk">Talk</a>: what will happen around your talk on its day
 			</li>
 			<li>
 				<a href="#faqs">FAQs</a>: all other common questions you might have
@@ -92,7 +92,7 @@ const title = "Speaker Guide";
 		<ScheduledActivities days={speakerSchedule} />
 	</CommonContent>
 
-	<CommonContent heading="Talk Schedule">
+	<CommonContent heading="Talk">
 		<BodyText> This is what will happen around your talk on its day. </BodyText>
 
 		<BodyList as="ol">
@@ -111,6 +111,42 @@ const title = "Speaker Guide";
 		<BodyText>
 			We'll have a dedicated channel set up for you in Discord where attendees
 			can ask you questions during the conference.
+		</BodyText>
+
+		<Heading class="sub-heading" level="h3">Audience Personas</Heading>
+
+		<BodyText>
+			We believe most attendees align to at least one of the following three
+			personas:
+		</BodyText>
+
+		<ul class="sub-list">
+			<li>
+				<strong>Developer</strong>: They work on a standard software team for
+				web development. They use web dev tooling every day and might not be
+				experts, but are excited to learn more how to use their tools more
+				effectively. They may even have time to improve their teams' setups
+				after the conference.
+			</li>
+			<li>
+				<strong>Enthusiast</strong>: They appreciate good dev tooling for the
+				sake of it and try to actively keep up with the latest trends. They tend
+				to read blog posts and deep dives. When allowed, they make sure their
+				projects are using comprehensive tooling configured the way they like
+				it.
+			</li>
+			<li>
+				<strong>Maker</strong>: This person works on or around the tools
+				themselves. Much of the common, popular content in conferences in their
+				area of expertise doesn't appeal to them because they already know it
+				deeply. But they of course recognize it's important to both learn and
+				share.
+			</li>
+		</ul>
+
+		<BodyText>
+			We recommend trying to position your talks to appeal to at least two, if
+			not all three of those personas.
 		</BodyText>
 	</CommonContent>
 
@@ -133,23 +169,19 @@ const title = "Speaker Guide";
 							"Of course! They'll also receive a free ticket to the conference. Note that we don't cover other +1 costs such as travel.",
 						],
 						[
-							"How do I get to and from the airport?",
-							"We'll have a volunteer drive you to and from the airport. Please let us know your flight details as soon as you know them; we'll coordinate with you.",
-						],
-						[
 							"How far is the hotel from the venue?",
 							"About a [2 minute walk by foot towards the water](https://www.google.com/maps/dir/Harborside+Inn,+185+State+St,+Boston,+MA+02109/Simons+Theater,+Central+Wharf,+Boston,+MA/@42.3589577,-71.0541134,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x89e370864b81aa3b:0x29c5617b4f529e85!2m2!1d-71.0528824!2d42.3592384!1m5!1m1!1s0x89e3708790db7415:0xa9fbb8bf1c5e8e24!2m2!1d-71.0501946!2d42.3587791!3e0?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D).",
-						],
-						[
-							"I have a Visa application, can you help with that?",
-							"Yes, we can write you a letter of invitation to help with your Visa application. Please let us know as soon as possible.",
 						],
 						[
 							"Where can I pick up toiletries nearby?",
 							"There is a [7-Eleven next to the hotel](https://www.google.com/maps/place/7-Eleven/@42.3592344,-71.0531519,21z/data=!3m1!5s0x89e3708d5d9bc1dd:0xa146d9e96b0d5416!4m6!3m5!1s0x89e3715588fa5d0d:0xb512a89a39096040!8m2!3d42.359188!4d-71.05307!16s%2Fg%2F11g232jr3m?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D) and a [Walgreens pharmacy a 10 minute walk away](https://www.google.com/maps/dir/Harborside+Inn,+State+Street,+Boston,+MA/Walgreens,+24+School+St,+Boston,+MA+02108/@42.3583403,-71.0571551,18z/data=!3m2!4b1!5s0x89e3708483c2dfa3:0xb1c2f6e51d82959!4m14!4m13!1m5!1m1!1s0x89e370864b81aa3b:0x29c5617b4f529e85!2m2!1d-71.0528824!2d42.3592384!1m5!1m1!1s0x89e370848161a7e5:0x4e2871dbbea4c936!2m2!1d-71.0589654!2d42.3572756!3e2?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D).",
 						],
+						[
+							"What rates can I expect if my employer is sending me?",
+							"We have a discount code we can share with you. You'll need to provide it to the hotel over the phone. Ask us in your speaker hotline channel.",
+						],
 					],
-					title: "Accommodations & Travel",
+					title: "Accommodations",
 				},
 				{
 					pairs: [
@@ -163,6 +195,19 @@ const title = "Speaker Guide";
 						],
 					],
 					title: "Photos & Videos",
+				},
+				{
+					pairs: [
+						[
+							"Can I schedule earlier and/or multiple dry runs than just the week before?",
+							"Of course! Schedule as many as you need. Let us know if there's anything else can do to help you prepare.",
+						],
+						[
+							"What should I do if I need something else?",
+							"You can ask us anything in your speaker hotline channel.",
+						],
+					],
+					title: "Preparation",
 				},
 				{
 					pairs: [
@@ -185,12 +230,33 @@ const title = "Speaker Guide";
 				{
 					pairs: [
 						[
+							"Can I have a +1 ticket?",
+							"Of course! Let us know who you'll be bringing with you.",
+						],
+						[
+							"Can I have a discount code for my friends?",
+							"Of course! Ask us for one in your speaker hotline channel.",
+						],
+					],
+					title: "Tickets",
+				},
+				{
+					pairs: [
+						[
 							"Can I come a day early to offset jetlag?",
 							"We're expecting speakers to arrive the day before the conference and sleep at the hotel the night before. We can also have you speak on the second day if you prefer. We don't have the budget to cover an additional early day, but you can always arrange that with the hotel on your own.",
 						],
 						[
 							"Do I need to bring my own laptop?",
 							"No, we'll have a dedicated stage speaker laptop with a clicker. Send us your slides ahead of time.",
+						],
+						[
+							"How do I get to and from the airport?",
+							"We'll have a volunteer drive you to and from the airport. Please let us know your flight details as soon as you know them; we'll coordinate with you.",
+						],
+						[
+							"I have a Visa application, can you help with that?",
+							"Yes, we can write you a letter of invitation to help with your Visa application. Please let us know as soon as possible.",
 						],
 						[
 							"I'm concerned about border crossing difficulties, what should I do?",
@@ -207,5 +273,20 @@ const title = "Speaker Guide";
 <style>
 	.body-text-top {
 		margin: 5rem auto 1.5rem;
+	}
+
+	.sub-heading {
+		font-size: var(--fontSizeMedium);
+		text-align: center;
+		margin: 3rem 0 1rem;
+	}
+
+	.sub-list {
+		display: flex;
+		gap: 0.5rem;
+		flex-direction: column;
+		line-height: 1.35;
+		font-weight: var(--fontWeightMedium);
+		margin: 1rem 1.5rem;
 	}
 </style>

@@ -16,6 +16,9 @@ import Hero from "~/components/hero/Hero.astro";
 import HeroContentsStandard from "~/components/hero/HeroContentsStandard.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
 import Bios from "~/components/Bios.astro";
+import Arrow from "~/components/Arrow.astro";
+import Button from "~/components/Button.astro";
+import { links } from "~/data/links";
 
 const biosSquiggleTools: BioProps[] = [
 	{
@@ -149,13 +152,25 @@ const description = "The SquiggleConf mission and team";
 
 	<CommonContent heading="Squiggle.Tools">
 		<BodyText>
-			SquiggleConf is a production of Squiggle.Tools, a nonprofit organization
-			(501(c)3 pending) offering ongoing learning opportunities that enable
+			SquiggleConf is a production of Squiggle.Tools, a 501(c)(3) nonprofit
+			organization offering ongoing learning opportunities that enable
 			participants to engage, learn, and advance their careers—regardless of
 			their background or resources.
 		</BodyText>
 
-		<Bios bios={biosSquiggleTools} />
+		<Bios class="about-bios" bios={biosSquiggleTools} />
+
+		<Button
+			as="a"
+			class="donate-button"
+			size="large"
+			variant="emphasized"
+			href={links.donate}
+			target="_blank"
+		>
+			Donate to the Squiggle.Tools 501(c)(3)
+			<Arrow />
+		</Button>
 	</CommonContent>
 
 	<CommonContent heading="Staff Members">
@@ -167,3 +182,15 @@ const description = "The SquiggleConf mission and team";
 		<Bios bios={biosStaff} />
 	</CommonContent>
 </PageLayout>
+
+<style>
+	.about-bios {
+		padding: 1rem 0;
+	}
+
+	.donate-button {
+		align-self: center;
+		display: flex;
+		gap: 0.5rem;
+	}
+</style>
