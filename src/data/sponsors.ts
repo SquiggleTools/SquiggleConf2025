@@ -16,7 +16,7 @@ export const sponsorsBySlug = {
 		title: "Bloomberg",
 	},
 	mintlify: {
-		href: "https://mintlify.com",
+		href: "https://mintlify.com?utm_source=squiggleconf",
 		logos: {
 			dark: mintlifyWhite,
 			light: mintlifyBlack,
