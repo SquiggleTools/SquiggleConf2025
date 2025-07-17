@@ -5,8 +5,8 @@ import bostonTSClubLight from "~/assets/logos/boston-ts-club-full-light.svg";
 import michiganTypeScript from "~/assets/logos/michigan-typescript.png";
 // import jsheroesDarkMode from "~/assets/logos/jsheroes-dark-mode.png";
 // import jsheroesLightMode from "~/assets/logos/jsheroes-light-mode.png";
-import reactAfricaDark from "~/assets/logos/react-africa-dark.png";
-import reactAfricaLight from "~/assets/logos/react-africa-light.webp";
+// import reactAfricaDark from "~/assets/logos/react-africa-dark.png";
+// import reactAfricaLight from "~/assets/logos/react-africa-light.webp";
 // import reactMiamiDarkMode from "~/assets/logos/react-miami-dark-mode.png";
 // import reactMiamiLightMode from "~/assets/logos/react-miami-light-mode.png";
 // import resilientCodersDarkMode from "~/assets/logos/resilient-coders-dark-mode.png";
@@ -45,14 +45,14 @@ export const partnersBySlug = {
 	// 	},
 	// 	title: "This Week In React",
 	// },
-	reactAfrica: {
-		href: "https://react-africa.com/?utm_source=squiggleconf",
-		logos: {
-			dark: reactAfricaLight,
-			light: reactAfricaDark,
-		},
-		title: "React Africa",
-	},
+	// reactAfrica: {
+	// 	href: "https://react-africa.com/?utm_source=squiggleconf",
+	// 	logos: {
+	// 		dark: reactAfricaLight,
+	// 		light: reactAfricaDark,
+	// 	},
+	// 	title: "React Africa",
+	// },
 	// resilientCoders: {
 	// 	href: "https://resilient-coders.com/?utm_source=squiggleconf",
 	// 	logos: {
