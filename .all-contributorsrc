@@ -74,6 +74,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ceci21",
+      "name": "Ceci",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10601897?v=4",
+      "profile": "http://ceci.dev",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
