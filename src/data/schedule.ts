@@ -46,10 +46,10 @@ export const sharedSchedule: ScheduleDay[] = [
 			{
 				at: "4:00pm",
 				description: [
-					"We will arrange a volunteering event with a local non-profit the afternoon before the conference.",
+					"We will arrange a community service event with a local non-profit the afternoon before the conference.",
 					`This event will free and open to any attendee who can code in at least HTML.`,
 				],
-				title: "Volunteering Event",
+				title: "Community Service Event",
 			},
 		],
 		title: "Wednesday, September 17th",

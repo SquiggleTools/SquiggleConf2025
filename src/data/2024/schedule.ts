@@ -46,7 +46,7 @@ export const days: ScheduleDay[] = [
 					href: "https://www.afhboston.org",
 					text: "Artists for Humanity EpiCenter",
 				},
-				title: "Artists for Humanity Volunteering Event",
+				title: "Artists for Humanity Community Service Event",
 			},
 		],
 		title: "Wednesday, October 2nd",
