@@ -21,7 +21,7 @@ export const sponsorSchedule: ScheduleDay[] = mergeScheduleWithPublic([
 				badge,
 				description: [
 					"Join us for a dinner with the other speakers and sponsors.",
-					"Sponsors on the _Gold_ and _Platinum_ tiers will have set number of invites previously sent.",
+					"Sponsors on the _Gold_ and _Platinum_ tiers will have had invites previously sent.",
 				],
 				location: {
 					href: "https://joiaboston.com",
