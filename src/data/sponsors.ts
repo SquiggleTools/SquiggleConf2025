@@ -1,9 +1,9 @@
 import _ from "lodash";
 
-import bloombergBlack from "~/assets/2024/sponsors/bloomberg-black.svg";
-import bloombergWhite from "~/assets/2024/sponsors/bloomberg-white.svg";
-import mintlifyBlack from "~/assets/2024/sponsors/mintlify-black.svg";
-import mintlifyWhite from "~/assets/2024/sponsors/mintlify-white.svg";
+import bloombergBlack from "~/assets/logos/bloomberg-black.svg";
+import bloombergWhite from "~/assets/logos/bloomberg-white.svg";
+import mintlifyBlack from "~/assets/logos/mintlify-black.svg";
+import mintlifyWhite from "~/assets/logos/mintlify-white.svg";
 
 export const sponsorsBySlug = {
 	bloomberg: {
