@@ -4,6 +4,8 @@ import bloombergBlack from "~/assets/logos/bloomberg-black.svg";
 import bloombergWhite from "~/assets/logos/bloomberg-white.svg";
 import mintlifyBlack from "~/assets/logos/mintlify-black.svg";
 import mintlifyWhite from "~/assets/logos/mintlify-white.svg";
+import progressGray from "~/assets/logos/progress-gray.svg";
+import progressWhite from "~/assets/logos/progress-white.svg";
 
 export const sponsorsBySlug = {
 	bloomberg: {
@@ -23,6 +25,15 @@ export const sponsorsBySlug = {
 		},
 		placement: "first",
 		title: "Mintlify",
+	},
+	progress: {
+		href: "https://progress.com?utm_source=squiggleconf",
+		logos: {
+			dark: progressWhite,
+			light: progressGray,
+		},
+		placement: "first",
+		title: "Progress",
 	},
 };
 
