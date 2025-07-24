@@ -4,6 +4,8 @@ import bloombergBlack from "~/assets/logos/bloomberg-black.svg";
 import bloombergWhite from "~/assets/logos/bloomberg-white.svg";
 import mintlifyBlack from "~/assets/logos/mintlify-black.svg";
 import mintlifyWhite from "~/assets/logos/mintlify-white.svg";
+import voidZeroBlack from "~/assets/logos/voidzero-black.svg";
+import voidZeroWhite from "~/assets/logos/voidzero-white.svg";
 
 export const sponsorsBySlug = {
 	bloomberg: {
@@ -23,6 +25,15 @@ export const sponsorsBySlug = {
 		},
 		placement: "first",
 		title: "Mintlify",
+	},
+	voidZero: {
+		href: "https://voidzero.dev?utm_source=squiggleconf",
+		logos: {
+			dark: voidZeroWhite,
+			light: voidZeroBlack,
+		},
+		placement: "second",
+		title: "VoidZero",
 	},
 };
 
