@@ -2,6 +2,8 @@ import afhBlack from "~/assets/logos/afh-black.svg";
 import afhWhite from "~/assets/logos/afh-white.svg";
 import bostonTSClubDark from "~/assets/logos/boston-ts-club-full-dark.svg";
 import bostonTSClubLight from "~/assets/logos/boston-ts-club-full-light.svg";
+import jsheroesDarkMode from "~/assets/logos/jsheroes-logo-dark.svg";
+import jsheroesLightMode from "~/assets/logos/jsheroes-logo-light.svg";
 import magnoliaConfColored from "~/assets/logos/magnoliaconf-colored.svg";
 import magnoliaConfWhite from "~/assets/logos/magnoliaconf-white.svg";
 import michiganTypeScript from "~/assets/logos/michigan-typescript.png";
@@ -22,6 +24,14 @@ export const partnersBySlug = {
 			light: bostonTSClubLight,
 		},
 		title: "Boston TS Club",
+	},
+	jsheroes: {
+		href: "https://jsheroes.io?utm_source=squiggleconf",
+		logos: {
+			dark: jsheroesDarkMode,
+			light: jsheroesLightMode,
+		},
+		title: "JSHeroes",
 	},
 	magnoliaConf: {
 		href: "https://2025.magnoliaconf.com?utm_source=squiggleconf",
